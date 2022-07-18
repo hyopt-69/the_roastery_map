@@ -1,4 +1,5 @@
-import type { AppProps } from "next/app";
+import type { AppProps } from 'next/app';
+import React from 'react';
 
 // FIXME: Headerをつける。
 // FIXME: リセットCSSをかける。

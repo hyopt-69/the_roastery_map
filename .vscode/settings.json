@@ -5,5 +5,5 @@
     "source.fixAll.stylelint": true,
     "source.addMissingImports": true
   },
-  "cSpell.userWords": [""]
+  "cSpell.words": ["linaria", "roastery"]
 }
