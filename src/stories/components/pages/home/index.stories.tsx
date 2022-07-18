@@ -6,6 +6,6 @@ export default {
   component: HomePage,
 } as ComponentMeta<typeof HomePage>;
 
-export const index: ComponentStoryObj<typeof HomePage> = {
+export const Index: ComponentStoryObj<typeof HomePage> = {
   args: {},
 };
