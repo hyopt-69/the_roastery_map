@@ -8,6 +8,6 @@ export default {
 
 export const Index: ComponentStoryObj<typeof Button> = {
   args: {
-    name: 'example'
+    name: 'example',
   },
 };

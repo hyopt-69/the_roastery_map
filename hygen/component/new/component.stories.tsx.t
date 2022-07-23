@@ -13,6 +13,6 @@ export default {
 
 export const Index: ComponentStoryObj<typeof <%= name %>> = {
   args: {
-    name: 'example'
+    name: 'example',
   },
 };
