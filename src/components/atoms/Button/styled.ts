@@ -2,7 +2,7 @@ import { styled } from '@linaria/react';
 
 import { colors } from '@/app/theme/colors';
 import { shadows } from '@/app/theme/shadow';
-import { getOpacifyColor } from '@/app/utils/style';
+import { getOpacifyColor } from '@/app/utils/styles/getOpacifyColor';
 
 export const Example = styled.div`
   color: black;
