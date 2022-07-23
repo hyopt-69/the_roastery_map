@@ -1,4 +1,4 @@
-export const borderRadius = {
+export const borderRadiuses = {
   xs: '2px',
   s: '4px',
   m: '8px',
@@ -6,4 +6,4 @@ export const borderRadius = {
   xl: '16px',
 } as const;
 
-export type BorderRadius = keyof typeof borderRadius;
+export type BorderRadius = keyof typeof borderRadiuses;

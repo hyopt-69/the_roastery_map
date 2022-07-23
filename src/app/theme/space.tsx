@@ -1,4 +1,4 @@
-export const space = {
+export const spaces = {
   xxs: '4px',
   xs: '8px',
   s: '16px',
@@ -8,4 +8,4 @@ export const space = {
   xxl: '64px',
 } as const;
 
-export type Spaces = keyof typeof space;
+export type Spaces = keyof typeof spaces;
