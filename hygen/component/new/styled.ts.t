@@ -4,7 +4,9 @@ unless_exists: true
 ---
 import { styled } from '@linaria/react';
 
-export const Example = styled.div`
-  color: white;
-  background-color: gold;
-`;
+export const Styled = {
+  Example = styled.div`
+    color: white;
+    background-color: gold;
+  `,
+};
