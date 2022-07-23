@@ -1,9 +1,9 @@
 import React from 'react';
 
-import { Button } from '@/components/atoms/Button';
+import { HomePage } from '@/components/pages/HomePage';
 
 const Home: React.FC = () => {
-  return <Button name="HomePage" />;
+  return <HomePage />;
 };
 
 export default Home;
