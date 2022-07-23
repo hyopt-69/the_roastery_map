@@ -7,9 +7,9 @@ import React from 'react';
 import { Styled } from './styled';
 
 type Props = {
-  name: string;
+  chldren: string;
 };
 
-export const <%= name %>: React.FC<Props> = ({ name }) => {
-  return <Styled.Example>{name}</Styled.Example>;
+export const <%= name %>: React.FC<Props> = ({ children }) => {
+  return <Styled.Example>{children}</Styled.Example>;
 };
