@@ -1,3 +1,4 @@
+import { styled } from '@linaria/react';
 import React from 'react';
 
 import { Color } from '@/app/theme/colors';
@@ -19,7 +20,7 @@ export const Title: React.FC<Props> = ({
   color = 'vulcan',
 }) => {
   return (
-    <Text
+    <Styled.Title
       as="h1"
       weight="bold"
       lineHeight="wide"
@@ -28,6 +29,10 @@ export const Title: React.FC<Props> = ({
       size={size}
     >
       {children}
-    </Text>
+    </Styled.Title>
   );
+};
+
+const Styled = {
+  Title: styled(Text)``,
 };

@@ -22,7 +22,7 @@ const fontFamilies = {
   normal: 'sans-serif',
 } as const;
 
-export type TextStyleProps = {
+type Typography = {
   color: Color;
   size: FontSize;
   lineHeight?: keyof typeof lineHeights;
@@ -31,14 +31,12 @@ export type TextStyleProps = {
   weight?: keyof typeof fontWeights;
 };
 
-export const Styled = {
-  Text: styled.p<TextStyleProps>`
-    color: ${({ color }) => colors[color]};
-    font-size: ${({ size }) => fontSizes[size]};
-    font-weight: ${({ weight = 'normal' }) => fontWeights[weight]};
-    font-family: ${({ family = 'normal' }) => fontFamilies[family]};
-    line-height: ${({ lineHeight = 'normal' }) => lineHeights[lineHeight]};
-    letter-spacing: ${({ letterSpacing = 'normal' }) =>
-      letterSpacings[letterSpacing]};
-  `,
-};
+export const Text = styled.p<Typography>`
+  color: ${({ color }) => colors[color]};
+  font-size: ${({ size }) => fontSizes[size]};
+  font-weight: ${({ weight = 'normal' }) => fontWeights[weight]};
+  font-family: ${({ family = 'normal' }) => fontFamilies[family]};
+  line-height: ${({ lineHeight = 'normal' }) => lineHeights[lineHeight]};
+  letter-spacing: ${({ letterSpacing = 'normal' }) =>
+    letterSpacings[letterSpacing]};
+`;
