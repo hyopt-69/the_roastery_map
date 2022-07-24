@@ -9,8 +9,8 @@
     "new-component": "npx hygen component new",
     "lint": "eslint --ext .ts,.tsx,.json,.js,.jsx src/",
     "tsc": " tsc --noEmit",
-    "sb": "start-storybook -p 6006",
-    "build-storybook": "build-storybook"
+    "sb": "start-storybook -s ./public -p 6006",
+    "build-sb": "build-storybook -s ./public"
   },
   "babel": {
     "presets": [
@@ -42,6 +42,7 @@
     "@storybook/react": "^6.5.9",
     "@storybook/testing-library": "^0.0.13",
     "@stylelint/postcss-css-in-js": "^0.38.0",
+    "@svgr/webpack": "^6.3.1",
     "@types/node": "18.0.6",
     "@types/react": "18.0.15",
     "@types/react-dom": "18.0.6",
