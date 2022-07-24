@@ -9,7 +9,7 @@ import { Text } from '..';
 type TitleSize = Extract<FontSize, 'xxl' | 'xl' | 'l'>;
 
 type Props = {
-  children: React.ReactNode;
+  children: string;
   size: TitleSize;
   color?: Color;
 };
@@ -21,7 +21,6 @@ export const Title: React.FC<Props> = ({
 }) => {
   return (
     <Styled.Title
-      as="h1"
       weight="bold"
       lineHeight="wide"
       letterSpacing="wide"
@@ -34,5 +33,8 @@ export const Title: React.FC<Props> = ({
 };
 
 const Styled = {
-  Title: styled(Text)``,
+  Title: styled(Text)`
+    display: 'inline-block';
+    white-space: 'no-wrap';
+  `,
 };
