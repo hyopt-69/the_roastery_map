@@ -10,6 +10,7 @@ export const colors = {
   // サブカラー
 
   // その他
+  transparent: 'transparent',
 } as const;
 
 export type Color = keyof typeof colors;

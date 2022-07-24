@@ -1,6 +1,9 @@
 const path = require('path');
 
 module.exports = {
+  core: {
+    builder: 'webpack5',
+  },
   stories: ['../src/**/*.stories.mdx', '../src/**/*.stories.@(js|jsx|ts|tsx)'],
   addons: [
     '@storybook/addon-links',
@@ -9,6 +12,17 @@ module.exports = {
   ],
   framework: '@storybook/react',
   webpackFinal: async (config) => {
+    // storybookでsvgを読み込めるようにする設定。
+    const fileLoaderRule = config.module.rules.find(
+      (rule) => rule.test && rule.test.test('.svg')
+    );
+    fileLoaderRule.exclude = /\.svg$/;
+    config.module.rules.push({
+      test: /\.svg$/,
+      use: ['@svgr/webpack'],
+    });
+
+    // nextでlinariaを使えるようにする設定。
     config.module.rules.push({
       test: /\.(tsx|ts|js|mjs|jsx)$/,
       exclude: /node_modules/,
@@ -22,6 +36,8 @@ module.exports = {
         },
       ],
     });
+
+    // pathエイリアスの設定
     config.resolve.alias = {
       ...config.resolve.alias,
       '@': path.resolve(__dirname, '../src'),
