@@ -5,9 +5,8 @@ unless_exists: true
 import { styled } from '@linaria/react';
 import React from 'react';
 
-
 type Props = {
-  chldren: string;
+  children: string;
 };
 
 export const <%= name %>: React.FC<Props> = ({ children }) => {
