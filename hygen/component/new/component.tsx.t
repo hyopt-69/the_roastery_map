@@ -14,7 +14,7 @@ export const <%= name %>: React.FC<Props> = ({ children }) => {
 };
 
 export const Styled = {
-  Example : styled.div`
+  Example: styled.div`
     color: white;
     background-color: gold;
   `,

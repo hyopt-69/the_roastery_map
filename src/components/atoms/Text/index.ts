@@ -18,20 +18,25 @@ const letterSpacings = {
   wide: '2px',
 } as const;
 
+// FIXME: 適当なのでいいのを見つける。
 const fontFamilies = {
   normal: 'sans-serif',
+  bold: 'sans-serif',
 } as const;
 
-type Typography = {
-  color: Color;
-  size: FontSize;
-  lineHeight?: keyof typeof lineHeights;
-  letterSpacing?: keyof typeof letterSpacings;
-  family?: keyof typeof fontFamilies;
-  weight?: keyof typeof fontWeights;
+export type Typography = {
+  lineHeight: keyof typeof lineHeights;
+  letterSpacing: keyof typeof letterSpacings;
+  family: keyof typeof fontFamilies;
+  weight: keyof typeof fontWeights;
 };
 
-export const Text = styled.p<Typography>`
+type Props = {
+  color: Color;
+  size: FontSize;
+} & Partial<Typography>;
+
+export const Text = styled.p<Props>`
   color: ${({ color }) => colors[color]};
   font-size: ${({ size }) => fontSizes[size]};
   font-weight: ${({ weight }) => fontWeights[weight || 'normal']};
