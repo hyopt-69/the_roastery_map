@@ -1,6 +1,6 @@
 import { ComponentMeta, ComponentStoryObj } from '@storybook/react';
 
-import { Label } from '@/components/atoms/Text/Label';
+import { Label } from '@/components/parts/Text/Label';
 
 export default {
   component: Label,

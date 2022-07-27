@@ -12,7 +12,7 @@ module.exports = {
         },
       },
       {
-        choices: ['atoms', 'molecules', 'organisms', 'templates'],
+        choices: ['parts', 'patterns', 'layouts'],
         message: `What's the component group ?`,
         name: 'group',
         type: 'select',

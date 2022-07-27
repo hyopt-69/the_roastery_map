@@ -6,9 +6,13 @@ export const colors = {
   gallery: '#EBEDEF',
   white: '#FFFFFF',
   // メインカラー
-
+  sunsetOrange: '#F5474A',
+  froly: '#F87577',
+  cinderella: '#FDDDDD',
   // サブカラー
-
+  mountainMeadow: '#1DAA77',
+  shamrock: '#27E39E',
+  riptide: '#93F1CF',
   // その他
   transparent: 'transparent',
 } as const;

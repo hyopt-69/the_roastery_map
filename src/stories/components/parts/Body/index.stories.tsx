@@ -1,6 +1,6 @@
 import { ComponentMeta, ComponentStoryObj } from '@storybook/react';
 
-import { Body } from '@/components/atoms/Text/Body';
+import { Body } from '@/components/parts/Text/Body';
 
 export default {
   component: Body,
