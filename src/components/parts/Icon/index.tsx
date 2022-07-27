@@ -1,13 +1,8 @@
 import React from 'react';
 
-import * as ICONS from '@/app/assets/icons';
+import { IconPattern, ICONS } from '@/app/assets/icons';
 import { Color, colors } from '@/app/theme/colors';
 
-const Icons = {
-  example: ICONS.Example,
-} as const;
-
-export type IconPattern = keyof typeof Icons;
 type IconSize = 's' | 'm' | 'l';
 
 type Props = {
@@ -16,10 +11,10 @@ type Props = {
   color?: Color;
 };
 
-const ICON_SIZE: Record<IconSize, string> = {
-  s: '36px',
-  m: '48px',
-  l: '64px',
+const ICON_SIZE: Record<IconSize, number> = {
+  s: 36,
+  m: 48,
+  l: 64,
 };
 
 export const Icon: React.FC<Props> = ({
@@ -29,7 +24,7 @@ export const Icon: React.FC<Props> = ({
 }) => {
   const iconSize = ICON_SIZE[size];
   const iconColor = colors[color];
-  const IconElement = Icons[pattern];
+  const IconElement = ICONS[pattern];
 
   return (
     <IconElement

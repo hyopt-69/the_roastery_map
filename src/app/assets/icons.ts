@@ -1,1 +1,7 @@
-export { default as Example } from '@public/svg/example.svg';
+import EXAMPLE from '@public/svg/example.svg';
+
+export const ICONS = {
+  EXAMPLE,
+} as const;
+
+export type IconPattern = keyof typeof ICONS;
