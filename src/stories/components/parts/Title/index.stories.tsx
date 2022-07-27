@@ -1,6 +1,6 @@
 import { ComponentMeta, ComponentStoryObj } from '@storybook/react';
 
-import { Title } from '@/components/parts/Text/Title';
+import { Title } from '@/components/parts/Title';
 
 export default {
   component: Title,

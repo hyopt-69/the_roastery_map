@@ -1,3 +1,5 @@
+import { CSSObject } from '@emotion/react';
+
 import { Color, colors } from '@/app/theme/colors';
 import { FontSize, fontSizes } from '@/app/theme/fontSizes';
 
@@ -33,3 +35,21 @@ type Props = {
   color: Color;
   size: FontSize;
 } & Partial<Typography>;
+
+export const getTypography = ({
+  color,
+  size,
+  family = 'normal',
+  weight = 'normal',
+  letterSpacing = 'normal',
+  lineHeight = 'normal',
+}: Props): CSSObject => {
+  return {
+    color: colors[color],
+    fontSize: fontSizes[size],
+    fontFamily: fontFamilies[family],
+    fontWeight: fontWeights[weight],
+    letterSpacing: letterSpacings[letterSpacing],
+    lineHeight: lineHeights[lineHeight],
+  };
+};

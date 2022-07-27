@@ -8,6 +8,6 @@ export default {
 
 export const Index: ComponentStoryObj<typeof Icon> = {
   args: {
-    pattern: 'example',
+    pattern: 'EXAMPLE',
   },
 };
