@@ -11,16 +11,21 @@ module.exports = {
     '@storybook/addon-interactions',
   ],
   framework: '@storybook/react',
+  // storybookでemotionを使えるようにする設定。
+  babel: async (options) => {
+    options.presets.push('@emotion/babel-preset-css-prop');
+    return options;
+  },
   webpackFinal: async (config) => {
-    // // storybookでsvgを読み込めるようにする設定。
-    // const fileLoaderRule = config.module.rules.find(
-    //   (rule) => rule.test && rule.test.test('.svg')
-    // );
-    // fileLoaderRule.exclude = /\.svg$/;
-    // config.module.rules.push({
-    //   test: /\.svg$/,
-    //   use: ['@svgr/webpack'],
-    // });
+    // storybookでsvgを読み込めるようにする設定。
+    const fileLoaderRule = config.module.rules.find(
+      (rule) => rule.test && rule.test.test('.svg')
+    );
+    fileLoaderRule.exclude = /\.svg$/;
+    config.module.rules.push({
+      test: /\.svg$/,
+      use: ['@svgr/webpack'],
+    });
 
     // pathエイリアスの設定
     config.resolve.alias = {

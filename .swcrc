@@ -1,0 +1,16 @@
+{
+  "jsc": {
+    "parser": {
+      // typescriptとしてパースする
+      "syntax": "typescript",
+      // jsx記法を許可
+      "tsx": true
+    },
+    "transform": {
+      "react": {
+        "runtime": "automatic",
+        "importSource": "@emotion/react"
+      }
+    }
+  }
+}
