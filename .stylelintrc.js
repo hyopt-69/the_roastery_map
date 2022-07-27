@@ -1,6 +1,6 @@
 module.exports = {
   plugins: ['stylelint-prettier'],
-  extends: ['@linaria/stylelint', 'stylelint-config-prettier'],
+  extends: ['stylelint-config-prettier'],
   customSyntax: '@stylelint/postcss-css-in-js',
   rules: {
     'function-whitespace-after': 'never',

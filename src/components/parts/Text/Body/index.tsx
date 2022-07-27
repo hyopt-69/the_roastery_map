@@ -1,10 +1,10 @@
-import { styled } from '@linaria/react';
+// import { styled } from '@linaria/react';
 import React from 'react';
 
 import { Color } from '@/app/theme/colors';
 import { FontSize } from '@/app/theme/fontSizes';
 
-import { Text } from '..';
+// import { Text } from '..';
 
 type BodySize = Extract<FontSize, 'l' | 'm' | 's' | 'xs' | 'xxs'>;
 
@@ -16,15 +16,16 @@ type Props = {
 
 export const Body: React.FC<Props> = ({ children, size, color = 'vulcan' }) => {
   return (
-    <Styled.Body color={color} size={size}>
-      {children}
-    </Styled.Body>
+    <p>ぼでぃ</p>
+    // <Styled.Body color={color} size={size}>
+    //   {children}
+    // </Styled.Body>
   );
 };
 
-const Styled = {
-  Body: styled(Text)`
-    display: 'inline-block';
-    white-space: 'pre-wrap';
-  `,
-};
+// const Styled = {
+//   Body: styled(Text)`
+//     display: 'inline-block';
+//     white-space: 'pre-wrap';
+//   `,
+// };

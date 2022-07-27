@@ -3,19 +3,16 @@
 // eslint-disable-next-line @typescript-eslint/no-var-requires
 const path = require('path');
 
-// eslint-disable-next-line @typescript-eslint/no-var-requires
-const withLinaria = require('next-linaria');
-
 const nextConfig = {
   reactStrictMode: true,
   swcMinify: true,
+  compiler: {
+    emotion: true,
+  },
 };
 
-const linariaOption = {};
-
-module.exports = withLinaria({
+module.exports = {
   ...nextConfig,
-  linaria: linariaOption,
   webpack: (config) => {
     config.resolve.alias['@'] = path.resolve(__dirname, 'src');
     config.resolve.alias['@public'] = path.resolve(__dirname, 'public');
@@ -26,4 +23,4 @@ module.exports = withLinaria({
 
     return config;
   },
-});
+};

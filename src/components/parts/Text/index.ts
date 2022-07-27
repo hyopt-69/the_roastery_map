@@ -1,5 +1,3 @@
-import { styled } from '@linaria/react';
-
 import { Color, colors } from '@/app/theme/colors';
 import { FontSize, fontSizes } from '@/app/theme/fontSizes';
 
@@ -35,13 +33,3 @@ type Props = {
   color: Color;
   size: FontSize;
 } & Partial<Typography>;
-
-export const Text = styled.p<Props>`
-  color: ${({ color }) => colors[color]};
-  font-size: ${({ size }) => fontSizes[size]};
-  font-weight: ${({ weight }) => fontWeights[weight || 'normal']};
-  font-family: ${({ family }) => fontFamilies[family || 'normal']};
-  line-height: ${({ lineHeight }) => lineHeights[lineHeight || 'normal']};
-  letter-spacing: ${({ letterSpacing }) =>
-    letterSpacings[letterSpacing || 'normal']};
-`;

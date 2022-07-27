@@ -11,6 +11,11 @@ module.exports = {
     '@storybook/addon-interactions',
   ],
   framework: '@storybook/react',
+  // storybookでemotionを使えるようにする設定。
+  babel: async (options) => {
+    options.presets.push('@emotion/babel-preset-css-prop');
+    return options;
+  },
   webpackFinal: async (config) => {
     // storybookでsvgを読み込めるようにする設定。
     const fileLoaderRule = config.module.rules.find(
@@ -20,21 +25,6 @@ module.exports = {
     config.module.rules.push({
       test: /\.svg$/,
       use: ['@svgr/webpack'],
-    });
-
-    // nextでlinariaを使えるようにする設定。
-    config.module.rules.push({
-      test: /\.(tsx|ts|js|mjs|jsx)$/,
-      exclude: /node_modules/,
-      use: [
-        {
-          loader: require.resolve('@linaria/webpack-loader'),
-          options: {
-            sourceMap: process.env.NODE_ENV !== 'production',
-            ...(config.linaria || {}),
-          },
-        },
-      ],
     });
 
     // pathエイリアスの設定
