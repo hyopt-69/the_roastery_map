@@ -12,30 +12,15 @@ module.exports = {
   ],
   framework: '@storybook/react',
   webpackFinal: async (config) => {
-    // storybookでsvgを読み込めるようにする設定。
-    const fileLoaderRule = config.module.rules.find(
-      (rule) => rule.test && rule.test.test('.svg')
-    );
-    fileLoaderRule.exclude = /\.svg$/;
-    config.module.rules.push({
-      test: /\.svg$/,
-      use: ['@svgr/webpack'],
-    });
-
-    // nextでlinariaを使えるようにする設定。
-    config.module.rules.push({
-      test: /\.(tsx|ts|js|mjs|jsx)$/,
-      exclude: /node_modules/,
-      use: [
-        {
-          loader: require.resolve('@linaria/webpack-loader'),
-          options: {
-            sourceMap: process.env.NODE_ENV !== 'production',
-            ...(config.linaria || {}),
-          },
-        },
-      ],
-    });
+    // // storybookでsvgを読み込めるようにする設定。
+    // const fileLoaderRule = config.module.rules.find(
+    //   (rule) => rule.test && rule.test.test('.svg')
+    // );
+    // fileLoaderRule.exclude = /\.svg$/;
+    // config.module.rules.push({
+    //   test: /\.svg$/,
+    //   use: ['@svgr/webpack'],
+    // });
 
     // pathエイリアスの設定
     config.resolve.alias = {

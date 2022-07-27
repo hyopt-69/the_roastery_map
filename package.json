@@ -12,27 +12,13 @@
     "sb": "start-storybook -s ./public -p 6006",
     "build-sb": "build-storybook -s ./public"
   },
-  "babel": {
-    "presets": [
-      "next/babel"
-    ]
-  },
   "dependencies": {
-    "@babel/core": "^7.18.6",
-    "@linaria/babel": "3.0.0-beta.0",
-    "@linaria/babel-preset": "3.0.0-beta.22",
-    "@linaria/core": "3.0.0-beta.22",
-    "@linaria/react": "3.0.0-beta.22",
-    "@linaria/shaker": "3.0.0-beta.22",
-    "@linaria/stylelint": "3.0.0-beta.22",
-    "modern-css-reset": "^1.4.0",
     "next": "12.2.2",
-    "next-linaria": "1.0.1-beta",
     "react": "18.2.0",
-    "react-dom": "18.2.0"
+    "react-dom": "18.2.0",
+    "@svgr/webpack": "^6.3.1"
   },
   "devDependencies": {
-    "@linaria/webpack-loader": "3.0.0-beta.22",
     "@storybook/addon-actions": "^6.5.9",
     "@storybook/addon-essentials": "^6.5.9",
     "@storybook/addon-interactions": "^6.5.9",
@@ -42,13 +28,11 @@
     "@storybook/react": "^6.5.9",
     "@storybook/testing-library": "^0.0.13",
     "@stylelint/postcss-css-in-js": "^0.38.0",
-    "@svgr/webpack": "^6.3.1",
     "@types/node": "18.0.6",
     "@types/react": "18.0.15",
     "@types/react-dom": "18.0.6",
     "@typescript-eslint/eslint-plugin": "5.30.4",
     "@typescript-eslint/parser": "5.30.4",
-    "babel-loader": "^8.2.5",
     "chromatic": "^6.7.0",
     "eslint": "8.19.0",
     "eslint-config-airbnb": "18.2.1",
