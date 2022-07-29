@@ -14,7 +14,7 @@ function MyApp({ Component, pageProps }: AppProps) {
         <link rel="icon" sizes="32x32" href="/public/favicon.ico" />
         <meta
           name="description"
-          content="お気に入りのコーヒーロースターをさがそう"
+          content="お気に入りのコーヒーロースターをさがそう!"
         />
         <meta property="og:locale" content="ja_JP" />
         <meta property="og:type" content="website" />
