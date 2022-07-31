@@ -2,7 +2,7 @@ const path = require('path');
 
 module.exports = {
   core: {
-    builder: '@storybook/builder-vite',
+    builder: 'webpack5',
   },
   stories: ['../src/**/*.stories.mdx', '../src/**/*.stories.@(js|jsx|ts|tsx)'],
   addons: [
@@ -16,7 +16,17 @@ module.exports = {
     options.presets.push('@emotion/babel-preset-css-prop');
     return options;
   },
-  viteFinal: async (config) => {
+  webpackFinal: async (config) => {
+    // storybookでsvgを読み込めるようにする設定。
+    const fileLoaderRule = config.module.rules.find(
+      (rule) => rule.test && rule.test.test('.svg')
+    );
+    fileLoaderRule.exclude = /\.svg$/;
+    config.module.rules.push({
+      test: /\.svg$/,
+      use: ['@svgr/webpack'],
+    });
+
     // pathエイリアスの設定
     config.resolve.alias = {
       ...config.resolve.alias,
