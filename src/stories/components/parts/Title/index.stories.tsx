@@ -9,5 +9,8 @@ export default {
 export const Index: ComponentStoryObj<typeof Title> = {
   args: {
     children: 'Example',
+    Tag: 'p',
+    size: 'l',
+    color: 'vulcan',
   },
 };

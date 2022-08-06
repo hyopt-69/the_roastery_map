@@ -5,25 +5,23 @@ import { Color } from '@/app/theme/colors';
 import { Icon } from '@/components/parts/Icon';
 import { Label } from '@/components/parts/Label';
 
-import { getButtonStyle, ButtonSize, styles } from './styles';
+import { styles } from './styles';
 
 type ButtonProps = Pick<React.ComponentProps<'button'>, 'onClick' | 'disabled'>;
 
 type Props = {
   children: string;
-  size: ButtonSize;
   iconPattern?: IconPattern;
 } & ButtonProps;
 
-export const SecondaryButton: React.FC<Props> = ({
+export const TertiaryButton: React.FC<Props> = ({
   children,
-  size,
   disabled,
   iconPattern,
   onClick,
 }) => {
   const contentColor: Color = useMemo(() => {
-    return disabled ? 'pumice' : 'white';
+    return disabled ? 'pumice' : 'abbey';
   }, [disabled]);
 
   return (
@@ -31,7 +29,7 @@ export const SecondaryButton: React.FC<Props> = ({
       type="button"
       disabled={disabled}
       onClick={onClick}
-      css={getButtonStyle({ size })}
+      css={styles.container}
     >
       <div css={styles.innerWrapper}>
         {!!iconPattern && (

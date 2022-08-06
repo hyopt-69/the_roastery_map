@@ -20,7 +20,6 @@ const BUTTON_HEIGHT = 48;
 export const styles = {
   innerWrapper: css({
     display: 'flex',
-    position: 'relative',
     alignItems: 'center',
     justifyContent: 'center',
     gap: spaces.xs,

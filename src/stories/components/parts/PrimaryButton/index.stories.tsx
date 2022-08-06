@@ -8,6 +8,9 @@ export default {
 
 export const Index: ComponentStoryObj<typeof PrimaryButton> = {
   args: {
+    children: 'Example',
+    size: 'm',
+    iconPattern: undefined,
     disabled: false,
   },
 };
