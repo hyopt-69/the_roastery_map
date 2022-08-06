@@ -49,7 +49,6 @@ export const getButtonStyle = ({ size, pointerPosition }: StyleProps) =>
 
     ':enabled': {
       backgroundColor: colors.sunsetOrange,
-      color: colors.white,
       cursor: 'pointer',
       ':before': {
         content: '""',
