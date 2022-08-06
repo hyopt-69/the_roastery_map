@@ -12,9 +12,9 @@ type Props = {
 };
 
 const ICON_SIZE: Record<IconSize, number> = {
-  s: 36,
-  m: 48,
-  l: 64,
+  s: 24,
+  m: 36,
+  l: 48,
 };
 
 export const Icon: React.FC<Props> = ({
