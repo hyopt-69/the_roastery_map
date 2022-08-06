@@ -9,5 +9,7 @@ export default {
 export const Index: ComponentStoryObj<typeof Body> = {
   args: {
     children: 'Example',
+    size: 'm',
+    color: 'vulcan',
   },
 };

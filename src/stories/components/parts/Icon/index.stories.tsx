@@ -9,5 +9,7 @@ export default {
 export const Index: ComponentStoryObj<typeof Icon> = {
   args: {
     pattern: 'EXAMPLE',
+    size: 'm',
+    color: 'vulcan',
   },
 };

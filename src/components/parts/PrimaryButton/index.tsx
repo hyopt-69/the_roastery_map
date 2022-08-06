@@ -10,13 +10,13 @@ import { getButtonStyle, ButtonSize, PointerPosition, styles } from './styles';
 type ButtonProps = Pick<React.ComponentProps<'button'>, 'onClick' | 'disabled'>;
 
 type Props = {
-  label: string;
+  children: string;
   size: ButtonSize;
   iconPattern?: IconPattern;
 } & ButtonProps;
 
 export const PrimaryButton: React.FC<Props> = ({
-  label,
+  children,
   size,
   disabled,
   iconPattern,
@@ -56,8 +56,8 @@ export const PrimaryButton: React.FC<Props> = ({
         {!!iconPattern && (
           <Icon pattern={iconPattern} color={contentColor} size="s" />
         )}
-        <Label size="s" color={contentColor}>
-          {label}
+        <Label size="s" weight="bold" color={contentColor}>
+          {children}
         </Label>
       </div>
     </button>

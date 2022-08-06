@@ -4,7 +4,7 @@ import { Color } from '@/app/theme/colors';
 import { FontSize } from '@/app/theme/fontSizes';
 import { getTypography, Typography } from '@/app/utils/styles/getTypography';
 
-const getTypographyDetails = (size: FontSize): Typography => {
+const getTypographyDetails = (size: FontSize): Omit<Typography, 'weight'> => {
   switch (size) {
     case 'xxs':
     case 'xs':
@@ -13,7 +13,6 @@ const getTypographyDetails = (size: FontSize): Typography => {
       return {
         lineHeight: 'normal',
         letterSpacing: 'normal',
-        weight: 'normal',
         family: 'normal',
       };
     case 'l':
@@ -22,14 +21,12 @@ const getTypographyDetails = (size: FontSize): Typography => {
       return {
         lineHeight: 'wide',
         letterSpacing: 'wide',
-        weight: 'bold',
         family: 'bold',
       };
     default:
       return {
         lineHeight: 'normal',
         letterSpacing: 'normal',
-        weight: 'normal',
         family: 'normal',
       };
   }
@@ -38,11 +35,15 @@ const getTypographyDetails = (size: FontSize): Typography => {
 export type StyleProps = {
   size: FontSize;
   color?: Color;
+  weight?: Typography['weight'];
 };
 
-export const getTextStyle = ({ size, color = 'vulcan' }: StyleProps) => {
-  const { lineHeight, letterSpacing, weight, family } =
-    getTypographyDetails(size);
+export const getTextStyle = ({
+  size,
+  color = 'vulcan',
+  weight = 'normal',
+}: StyleProps) => {
+  const { lineHeight, letterSpacing, family } = getTypographyDetails(size);
 
   return css({
     ...getTypography({
