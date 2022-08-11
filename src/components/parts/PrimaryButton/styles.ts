@@ -73,7 +73,7 @@ export const getButtonStyle = ({ size, pointerPosition }: StyleProps) =>
         background: `radial-gradient(circle closest-side, ${colors.froly}, ${colors.transparent})`,
       },
       ':hover::before': {
-        opacity: opacities.none,
+        opacity: opacities.full,
       },
       ':active::before': {
         width: ACTIVE_OVERLAY_SIZE,
