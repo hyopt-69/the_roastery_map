@@ -3,6 +3,7 @@ import { css } from '@emotion/react';
 import { borderRadiuses } from '@/app/theme/borderRadius';
 import { colors } from '@/app/theme/colors';
 import { durations } from '@/app/theme/durations';
+import { opacities } from '@/app/theme/opacities';
 import { spaces } from '@/app/theme/spaces';
 
 export type ButtonSize = 'm' | 'l';
@@ -22,7 +23,9 @@ const BUTTON_WIDTH: Record<ButtonSize, number> = {
 };
 
 const BUTTON_HEIGHT = 48;
-const OVERLAY_SIZE = BUTTON_HEIGHT * 5;
+const DEFAULT_OVERLAY_SIZE = BUTTON_HEIGHT * 4;
+const ACTIVE_OVERLAY_SIZE = BUTTON_HEIGHT * 2.5;
+const LONG_DURATION = '1.6s';
 
 export const styles = {
   innerWrapper: css({
@@ -40,7 +43,6 @@ export const getButtonStyle = ({ size, pointerPosition }: StyleProps) =>
     overflow: 'hidden',
     position: 'relative',
     whiteSpace: 'nowrap',
-
     height: BUTTON_HEIGHT,
     minWidth: BUTTON_WIDTH[size],
     borderRadius: borderRadiuses.m,
@@ -48,21 +50,34 @@ export const getButtonStyle = ({ size, pointerPosition }: StyleProps) =>
     paddingRight: spaces.s,
 
     ':enabled': {
-      backgroundColor: colors.sunsetOrange,
+      background: `linear-gradient(to right, ${colors.sunsetOrange}, ${colors.valencia})`,
       cursor: 'pointer',
-      ':before': {
+      '::before': {
         content: '""',
         position: 'absolute',
-        width: OVERLAY_SIZE,
-        height: OVERLAY_SIZE,
-        borderRadius: OVERLAY_SIZE / 2,
+        borderRadius: '50%',
+        width: DEFAULT_OVERLAY_SIZE,
+        height: DEFAULT_OVERLAY_SIZE,
+        opacity: opacities.l,
         top: pointerPosition?.y || BUTTON_HEIGHT / 2,
         left: pointerPosition?.x || 0,
-        transitionDuration: durations.l,
         transitionTimingFunction: 'ease-out',
-        transitionProperty: 'top, left',
+        transition: `
+          top ${LONG_DURATION},
+          left ${LONG_DURATION},
+          opacity ${LONG_DURATION},
+          width ${durations.m},
+          height ${durations.m}
+        `,
         transform: 'translate(-50%, -50%)',
         background: `radial-gradient(circle closest-side, ${colors.froly}, ${colors.transparent})`,
+      },
+      ':hover::before': {
+        opacity: opacities.full,
+      },
+      ':active::before': {
+        width: ACTIVE_OVERLAY_SIZE,
+        height: ACTIVE_OVERLAY_SIZE,
       },
     },
 

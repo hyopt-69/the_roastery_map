@@ -2,6 +2,7 @@ import { css } from '@emotion/react';
 
 import { borderRadiuses } from '@/app/theme/borderRadius';
 import { colors } from '@/app/theme/colors';
+import { scales } from '@/app/theme/scales';
 import { spaces } from '@/app/theme/spaces';
 
 export type ButtonSize = 'm' | 'l';
@@ -38,8 +39,14 @@ export const getButtonStyle = ({ size }: StyleProps) =>
     paddingRight: spaces.s,
 
     ':enabled': {
-      backgroundColor: colors.vulcan,
+      backgroundColor: colors.mirage,
       cursor: 'pointer',
+      ':hover': {
+        backgroundColor: colors.black,
+      },
+      ':active': {
+        transform: scales.s,
+      },
     },
 
     ':disabled': {

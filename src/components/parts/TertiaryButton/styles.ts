@@ -1,6 +1,8 @@
 import { css } from '@emotion/react';
 
 import { colors } from '@/app/theme/colors';
+import { durations } from '@/app/theme/durations';
+import { scales } from '@/app/theme/scales';
 import { spaces } from '@/app/theme/spaces';
 
 const BUTTON_HEIGHT = 36;
@@ -19,7 +21,11 @@ export const styles = {
     ':enabled': {
       cursor: 'pointer',
       ':hover': {
+        transitionDuration: durations.s,
         backgroundColor: colors.gallery,
+      },
+      ':active': {
+        transform: scales.s,
       },
     },
 

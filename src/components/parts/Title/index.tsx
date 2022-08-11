@@ -11,7 +11,7 @@ export const Title: React.FC<Props> = ({
   children,
   size,
   Tag = 'p',
-  color = 'vulcan',
+  color = 'mirage',
 }) => {
   return <Tag css={getTextStyle({ size, color })}>{children}</Tag>;
 };
