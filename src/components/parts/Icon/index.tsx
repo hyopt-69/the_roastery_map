@@ -20,7 +20,7 @@ const ICON_SIZE: Record<IconSize, number> = {
 export const Icon: React.FC<Props> = ({
   pattern,
   size = 'm',
-  color = 'vulcan',
+  color = 'mirage',
 }) => {
   const iconSize = ICON_SIZE[size];
   const iconColor = colors[color];

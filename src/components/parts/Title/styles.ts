@@ -11,7 +11,7 @@ export type StyleProps = {
   color?: Color;
 };
 
-export const getTextStyle = ({ size, color = 'vulcan' }: StyleProps) =>
+export const getTextStyle = ({ size, color = 'mirage' }: StyleProps) =>
   css({
     ...getTypography({
       size,

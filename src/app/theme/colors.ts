@@ -1,11 +1,13 @@
 export const colors = {
   // モノクロ
-  vulcan: '#14171A',
+  black: '#000000',
+  mirage: '#1B1F26',
   abbey: '#4F5153',
   pumice: '#C4C5C6',
   gallery: '#EBEDEF',
   white: '#FFFFFF',
   // メインカラー
+  valencia: '#DD4043',
   sunsetOrange: '#F5474A',
   froly: '#F87577',
   cinderella: '#FDDDDD',

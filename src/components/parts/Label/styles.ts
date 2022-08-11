@@ -40,7 +40,7 @@ export type StyleProps = {
 
 export const getTextStyle = ({
   size,
-  color = 'vulcan',
+  color = 'mirage',
   weight = 'normal',
 }: StyleProps) => {
   const { lineHeight, letterSpacing, family } = getTypographyDetails(size);

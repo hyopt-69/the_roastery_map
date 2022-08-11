@@ -11,6 +11,6 @@ export const Index: ComponentStoryObj<typeof Label> = {
     children: 'Example',
     size: 'm',
     weight: 'normal',
-    color: 'vulcan',
+    color: 'mirage',
   },
 };

@@ -11,6 +11,6 @@ export const Index: ComponentStoryObj<typeof Title> = {
     children: 'Example',
     Tag: 'p',
     size: 'l',
-    color: 'vulcan',
+    color: 'mirage',
   },
 };

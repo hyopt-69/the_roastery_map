@@ -38,8 +38,14 @@ export const getButtonStyle = ({ size }: StyleProps) =>
     paddingRight: spaces.s,
 
     ':enabled': {
-      backgroundColor: colors.vulcan,
+      backgroundColor: colors.mirage,
       cursor: 'pointer',
+      ':hover': {
+        backgroundColor: colors.black,
+      },
+      ':active': {
+        transform: 'scale(0.99)',
+      },
     },
 
     ':disabled': {
