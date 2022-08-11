@@ -25,6 +25,7 @@ const BUTTON_WIDTH: Record<ButtonSize, number> = {
 const BUTTON_HEIGHT = 48;
 const DEFAULT_OVERLAY_SIZE = BUTTON_HEIGHT * 4;
 const ACTIVE_OVERLAY_SIZE = BUTTON_HEIGHT * 2.5;
+const LONG_DURATION = '1.6s';
 
 export const styles = {
   innerWrapper: css({
@@ -62,9 +63,9 @@ export const getButtonStyle = ({ size, pointerPosition }: StyleProps) =>
         left: pointerPosition?.x || 0,
         transitionTimingFunction: 'ease-out',
         transition: `
-          top ${durations.xxl},
-          left ${durations.xxl},
-          opacity ${durations.xxl},
+          top ${LONG_DURATION},
+          left ${LONG_DURATION},
+          opacity ${LONG_DURATION},
           width ${durations.m},
           height ${durations.m}
         `,
@@ -72,7 +73,7 @@ export const getButtonStyle = ({ size, pointerPosition }: StyleProps) =>
         background: `radial-gradient(circle closest-side, ${colors.froly}, ${colors.transparent})`,
       },
       ':hover::before': {
-        opacity: opacities.default,
+        opacity: opacities.none,
       },
       ':active::before': {
         width: ACTIVE_OVERLAY_SIZE,
