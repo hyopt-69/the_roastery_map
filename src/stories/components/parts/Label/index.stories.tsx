@@ -10,6 +10,7 @@ export const Index: ComponentStoryObj<typeof Label> = {
   args: {
     children: 'Example',
     size: 'm',
+    mqSizes: ['m', 'xxl'],
     weight: 'normal',
     color: 'mirage',
   },

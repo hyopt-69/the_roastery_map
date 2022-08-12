@@ -14,7 +14,7 @@ export type StyleProps = {
   color?: Color;
 };
 
-export const getTextStyle = ({ size, color = 'mirage', mqSizes }: StyleProps) =>
+export const getStyles = ({ size, mqSizes, color = 'mirage' }: StyleProps) =>
   css(
     {
       ...getTypography({ size, color }),

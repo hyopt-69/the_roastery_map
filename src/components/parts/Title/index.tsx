@@ -1,17 +1,18 @@
 import React from 'react';
 
-import { getTextStyle, StyleProps } from './styles';
+import { getStyles, StyleProps } from './styles';
 
 type Props = {
   children: string;
-  Tag?: Extract<React.ElementType, 'h1' | 'h2' | 'h3' | 'h4' | 'p'>;
+  Tag?: Extract<React.ElementType, 'h1' | 'h2' | 'h3' | 'h4'>;
 } & StyleProps;
 
 export const Title: React.FC<Props> = ({
   children,
   size,
-  Tag = 'p',
+  mqSizes,
+  Tag = 'h1',
   color = 'mirage',
 }) => {
-  return <Tag css={getTextStyle({ size, color })}>{children}</Tag>;
+  return <Tag css={getStyles({ size, mqSizes, color })}>{children}</Tag>;
 };
