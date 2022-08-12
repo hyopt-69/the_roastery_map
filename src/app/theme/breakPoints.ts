@@ -1,5 +1,5 @@
 export const breakPoints = {
-  sp: 541,
+  mobile: 541,
 };
 
 export type BreakPoint = keyof typeof breakPoints;
