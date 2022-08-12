@@ -22,7 +22,7 @@ export const styles = {
       cursor: 'pointer',
       ':hover': {
         transitionDuration: durations.s,
-        backgroundColor: colors.gallery,
+        backgroundColor: colors.blackHaze,
       },
       ':active': {
         transform: scales.s,
