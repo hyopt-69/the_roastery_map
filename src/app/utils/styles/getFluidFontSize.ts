@@ -6,8 +6,6 @@ type Props = {
   max: FontSize;
 };
 
-// 1remあたりのpx
-const DEFAULT_REM = 16;
 // 有効数字
 const SIGNIFICANT = 1_000;
 
@@ -18,14 +16,14 @@ const round = (num: number) => {
 
 // NOTE: 参考記事: https://illustswitch.com/css-clamp-preferredvalue/
 export const getFluidFontSize = ({ min, max }: Props) => {
-  const minRem = fontSizes[min] / DEFAULT_REM;
-  const maxRem = fontSizes[max] / DEFAULT_REM;
-  const minViewPortRem = breakPoints.mobile / DEFAULT_REM;
-  const maxViewPortRem = MAX_WINDOW_WIDTH / DEFAULT_REM;
+  const minFont = fontSizes[min];
+  const maxFont = fontSizes[max];
+  const minViewPort = breakPoints.mobile;
+  const maxViewPort = MAX_WINDOW_WIDTH;
 
-  const slope = (maxRem - minRem) / (maxViewPortRem - minViewPortRem);
+  const slope = (maxFont - minFont) / (maxViewPort - minViewPort);
   const preferredValue = `
-    ${round(minRem - minViewPortRem * slope)}rem + ${round(slope * 100)}vw`;
+    ${round(minFont - minViewPort * slope)}px + ${round(slope * 100)}vw`;
 
-  return `clamp(${minRem}rem, ${preferredValue}, ${maxRem}rem)`;
+  return `clamp(${minFont}px, ${preferredValue}, ${maxFont}px)`;
 };
