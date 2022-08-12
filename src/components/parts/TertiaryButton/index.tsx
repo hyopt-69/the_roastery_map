@@ -20,8 +20,8 @@ export const TertiaryButton: React.FC<Props> = ({
   iconPattern,
   onClick,
 }) => {
-  const contentColor: Color = useMemo(() => {
-    return disabled ? 'pumice' : 'abbey';
+  const contentColor = useMemo((): Color => {
+    return disabled ? 'pumice' : 'mirage';
   }, [disabled]);
 
   return (
@@ -35,7 +35,7 @@ export const TertiaryButton: React.FC<Props> = ({
         {!!iconPattern && (
           <Icon pattern={iconPattern} color={contentColor} size="s" />
         )}
-        <Label size="s" weight="bold" color={contentColor}>
+        <Label size="xs" weight="bold" color={contentColor}>
           {children}
         </Label>
       </div>

@@ -2,9 +2,9 @@ export const colors = {
   // モノクロ
   black: '#000000',
   mirage: '#1B1F26',
-  abbey: '#4F5153',
+  tapa: '#757575',
   pumice: '#C4C5C6',
-  gallery: '#EBEDEF',
+  blackHaze: '#F5F6F7',
   white: '#FFFFFF',
   // メインカラー
   valencia: '#DD4043',

@@ -11,7 +11,11 @@ export const Label: React.FC<Props> = ({
   size,
   mqSizes,
   color,
-  weight,
+  ...typographyProps
 }) => {
-  return <p css={getStyles({ size, color, mqSizes, weight })}>{children}</p>;
+  return (
+    <p css={getStyles({ size, color, mqSizes, ...typographyProps })}>
+      {children}
+    </p>
+  );
 };

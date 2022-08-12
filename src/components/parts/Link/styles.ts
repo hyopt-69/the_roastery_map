@@ -8,61 +8,37 @@ import { getFluidFontSize } from '@/app/utils/styles/getFluidFontSize';
 import { getTypography, Typography } from '@/app/utils/styles/getTypography';
 import { mediaQuery } from '@/app/utils/styles/mediaQuery';
 
-const getTypographyDetails = (size: FontSize): Omit<Typography, 'weight'> => {
-  switch (size) {
-    case 'xxs':
-    case 'xs':
-    case 's':
-    case 'm':
-      return {
-        lineHeight: 'normal',
-        letterSpacing: 'normal',
-        family: 'normal',
-      };
-    case 'l':
-    case 'xl':
-    case 'xxl':
-      return {
-        lineHeight: 'wide',
-        letterSpacing: 'wide',
-        family: 'bold',
-      };
-    default:
-      return {
-        lineHeight: 'normal',
-        letterSpacing: 'normal',
-        family: 'normal',
-      };
-  }
-};
-
 export type StyleProps = {
-  size: FontSize;
+  size?: FontSize;
   mqSizes?: [FontSize, FontSize];
   color?: Color;
-  weight?: Typography['weight'];
+  hoveredColor?: Color;
   hasUnderLine?: boolean;
-};
+} & Partial<Typography>;
 
 export const getStyles = ({
   size,
   mqSizes,
   color = 'mirage',
-  weight = 'normal',
+  hoveredColor = 'mirage',
   hasUnderLine = false,
+  weight,
+  lineHeight,
+  letterSpacing,
+  family,
 }: StyleProps) => {
-  const { lineHeight, letterSpacing, family } = getTypographyDetails(size);
-
   return css(
     {
       ...getTypography({
-        color: 'pumice',
+        color,
         size,
         lineHeight,
         letterSpacing,
         weight,
         family,
       }),
+      cursor: 'pointer',
+      display: 'inline-block',
       whiteSpace: 'nowrap',
       overflow: 'hidden',
       textOverflow: 'ellipsis',
@@ -70,7 +46,7 @@ export const getStyles = ({
       textUnderlineOffset: spaces.xxs,
       transitionDuration: durations.s,
       ':hover': {
-        color: colors[color],
+        color: colors[hoveredColor],
       },
     },
     mediaQuery({
