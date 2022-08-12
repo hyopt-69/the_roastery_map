@@ -24,15 +24,8 @@ export const getFluidFontSize = ({ min, max }: Props) => {
   const maxViewPortRem = MAX_WINDOW_WIDTH / DEFAULT_REM;
 
   const slope = (maxRem - minRem) / (maxViewPortRem - minViewPortRem);
+  const preferredValue = `
+    ${round(minRem - minViewPortRem * slope)}rem + ${round(slope * 100)}vw`;
 
-  const valueA = minRem - minViewPortRem * slope;
-  const valueB = slope * 100;
-
-  const fluidSize = `
-    clamp(
-      ${round(minRem)}rem, 
-      ${round(valueA)}rem + ${round(valueB)}vw, 
-      ${round(maxRem / minRem)}rem)`;
-
-  return fluidSize;
+  return `clamp(${minRem}rem, ${preferredValue}, ${maxRem}rem)`;
 };

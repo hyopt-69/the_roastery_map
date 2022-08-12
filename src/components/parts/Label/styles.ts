@@ -1,8 +1,10 @@
 import { css } from '@emotion/react';
 
 import { Color } from '@/app/theme/colors';
-import { FontSize } from '@/app/theme/fontSizes';
+import { FontSize, fontSizes } from '@/app/theme/fontSizes';
+import { getFluidFontSize } from '@/app/utils/styles/getFluidFontSize';
 import { getTypography, Typography } from '@/app/utils/styles/getTypography';
+import { mediaQuery } from '@/app/utils/styles/mediaQuery';
 
 const getTypographyDetails = (size: FontSize): Omit<Typography, 'weight'> => {
   switch (size) {
@@ -34,28 +36,38 @@ const getTypographyDetails = (size: FontSize): Omit<Typography, 'weight'> => {
 
 export type StyleProps = {
   size: FontSize;
+  mqSizes?: [FontSize, FontSize];
   color?: Color;
   weight?: Typography['weight'];
 };
 
-export const getTextStyle = ({
+export const getStyles = ({
   size,
+  mqSizes,
   color = 'mirage',
   weight = 'normal',
 }: StyleProps) => {
   const { lineHeight, letterSpacing, family } = getTypographyDetails(size);
 
-  return css({
-    ...getTypography({
-      size,
-      color,
-      lineHeight,
-      letterSpacing,
-      weight,
-      family,
-    }),
-    whiteSpace: 'nowrap',
-    overflow: 'hidden',
-    textOverflow: 'ellipsis',
-  });
+  return css(
+    {
+      ...getTypography({
+        size,
+        color,
+        lineHeight,
+        letterSpacing,
+        weight,
+        family,
+      }),
+      whiteSpace: 'nowrap',
+      overflow: 'hidden',
+      textOverflow: 'ellipsis',
+    },
+    mediaQuery({
+      fontSize: mqSizes && [
+        fontSizes[mqSizes[0]],
+        getFluidFontSize({ min: mqSizes[0], max: mqSizes[1] }),
+      ],
+    })
+  );
 };
