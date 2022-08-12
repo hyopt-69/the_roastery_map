@@ -1,4 +1,6 @@
+import { css } from '@emotion/react';
 import { ComponentMeta, ComponentStoryObj } from '@storybook/react';
+import React from 'react';
 
 import { QRcode } from '@/components/parts/QRcode';
 
@@ -11,6 +13,10 @@ export default {
 export const Index: ComponentStoryObj<typeof QRcode> = {
   args: {
     url: DUMMY_URL,
-    size: 's',
   },
+  render: (args) => (
+    <div css={css({ width: 300 })}>
+      <QRcode {...args} />
+    </div>
+  ),
 };
