@@ -3,8 +3,7 @@ import { ComponentMeta, ComponentStoryObj } from '@storybook/react';
 import React from 'react';
 
 import { QRcode } from '@/components/parts/QRcode';
-
-const DUMMY_URL = 'google.com';
+import { DUMMY_URL } from '@/stories/dummys/url';
 
 export default {
   component: QRcode,
