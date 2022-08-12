@@ -6,6 +6,6 @@ type Props = {
   children: string;
 } & StyleProps;
 
-export const Body: React.FC<Props> = ({ children, size, color }) => {
-  return <p css={getTextStyle({ size, color })}>{children}</p>;
+export const Body: React.FC<Props> = ({ children, size, mqSizes, color }) => {
+  return <p css={getTextStyle({ size, mqSizes, color })}>{children}</p>;
 };
