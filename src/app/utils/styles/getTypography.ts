@@ -33,12 +33,12 @@ export type Typography = {
 
 type Props = {
   color: Color;
-  size: FontSize;
+  size?: FontSize;
 } & Partial<Typography>;
 
 export const getTypography = ({
   color,
-  size,
+  size = 'm',
   family = 'normal',
   weight = 'normal',
   letterSpacing = 'normal',
@@ -51,5 +51,7 @@ export const getTypography = ({
     fontWeight: fontWeights[weight],
     letterSpacing: letterSpacings[letterSpacing],
     lineHeight: lineHeights[lineHeight],
+
+    cursor: 'default',
   };
 };

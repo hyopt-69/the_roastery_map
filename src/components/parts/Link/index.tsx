@@ -1,31 +1,23 @@
-import NextLink from 'next/link';
 import React from 'react';
 
 import { getStyles, StyleProps } from './styles';
 
-type AProps = Pick<React.ComponentProps<'a'>, 'target' | 'children'>;
-type NextLinkProps = Pick<React.ComponentProps<typeof NextLink>, 'href'>;
+type AProps = Pick<
+  React.ComponentProps<'a'>,
+  'target' | 'children' | 'href' | 'aria-disabled'
+>;
 
-type Props = AProps & NextLinkProps & StyleProps;
+type Props = AProps & StyleProps;
 
 export const Link: React.FC<Props> = ({
   children,
   target,
   href,
-  size,
-  mqSizes,
-  color,
-  weight,
-  hasUnderLine,
+  ...styleProps
 }) => {
   return (
-    <NextLink href={href} passHref>
-      <a
-        target={target}
-        css={getStyles({ size, color, mqSizes, weight, hasUnderLine })}
-      >
-        {children}
-      </a>
-    </NextLink>
+    <a target={target} href={href} css={getStyles(styleProps)}>
+      {children}
+    </a>
   );
 };

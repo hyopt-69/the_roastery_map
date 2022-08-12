@@ -14,7 +14,7 @@ export const Header: React.FC<Props> = ({ ...props }) => {
   const { isMobile } = useResponsive();
 
   if (isMobile) {
-    return <MobileLayout />;
+    return <MobileLayout {...props} />;
   }
   return <DesktopLayout {...props} />;
 };

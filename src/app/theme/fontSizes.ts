@@ -1,11 +1,11 @@
 export const fontSizes = {
-  xxs: 8,
-  xs: 12,
-  s: 16,
+  xxs: 12,
+  xs: 16,
+  s: 20,
   m: 24,
   l: 32,
-  xl: 48,
-  xxl: 64,
+  xl: 40,
+  xxl: 48,
 } as const;
 
 export type FontSize = keyof typeof fontSizes;

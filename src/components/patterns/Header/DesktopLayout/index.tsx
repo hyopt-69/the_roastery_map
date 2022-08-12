@@ -1,8 +1,9 @@
+import NextLink from 'next/link';
 import React from 'react';
 
 import { Path, PATHS } from '@/app/constants/path';
 import { Label } from '@/components/parts/Label';
-import { TertiaryButton } from '@/components/parts/TertiaryButton';
+import { Link } from '@/components/parts/Link';
 
 import { styles } from './styles';
 
@@ -14,12 +15,23 @@ export const DesktopLayout: React.FC<Props> = ({ currentPath }) => {
   return (
     <header css={styles.container}>
       {/* FIXME: Logoコンポーネント埋め込む */}
-      <Label size="m">THE ROASTERY MAP</Label>
+      <Label size="s">THE ROASTERY MAP</Label>
       <nav css={styles.navWrapper}>
-        {Object.entries(PATHS).map(([name, route]) => (
-          // TextButtonを作成し、VercelのHeaderみたいにする。
-          <TertiaryButton>{name}</TertiaryButton>
-        ))}
+        {Object.entries(PATHS).map(([name, route]) => {
+          const isCurrentPage = currentPath === name;
+
+          return (
+            <NextLink passHref={!isCurrentPage} href={route}>
+              <Link
+                size="xxs"
+                color={isCurrentPage ? 'mirage' : 'tapa'}
+                hoveredColor="mirage"
+              >
+                {name}
+              </Link>
+            </NextLink>
+          );
+        })}
       </nav>
     </header>
   );

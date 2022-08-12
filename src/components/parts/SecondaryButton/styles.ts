@@ -50,7 +50,7 @@ export const getButtonStyle = ({ size }: StyleProps) =>
     },
 
     ':disabled': {
-      backgroundColor: colors.gallery,
+      backgroundColor: colors.blackHaze,
       cursor: 'not-allowed',
     },
   });
