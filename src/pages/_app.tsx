@@ -12,6 +12,10 @@ function MyApp({ Component, pageProps }: AppProps) {
         <meta charSet="utf-8" />
         <title>THE ROASTERY MAP</title>
         <link rel="icon" sizes="32x32" href="/public/favicon.ico" />
+        <link
+          href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@400;700&display=swap"
+          rel="stylesheet"
+        />
         <meta
           name="description"
           content="お気に入りのコーヒーロースターをさがそう!"
