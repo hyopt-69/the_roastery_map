@@ -9,8 +9,8 @@ const lineHeights = {
 } as const;
 
 const fontWeights = {
-  normal: 'normal',
-  bold: 'bold',
+  normal: 400,
+  bold: 600,
 } as const;
 
 const letterSpacings = {
