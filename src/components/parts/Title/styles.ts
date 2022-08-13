@@ -21,7 +21,6 @@ export const getStyles = ({ size, mqSizes, color = 'mirage' }: StyleProps) =>
         size,
         color,
         weight: 'bold',
-        family: 'bold',
         lineHeight: 'wide',
         letterSpacing: 'wide',
       }),
