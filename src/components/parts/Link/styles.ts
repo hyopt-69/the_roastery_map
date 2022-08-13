@@ -25,7 +25,6 @@ export const getStyles = ({
   weight,
   lineHeight,
   letterSpacing,
-  family,
 }: StyleProps) => {
   return css(
     {
@@ -35,7 +34,6 @@ export const getStyles = ({
         lineHeight,
         letterSpacing,
         weight,
-        family,
       }),
       cursor: 'pointer',
       display: 'inline-block',

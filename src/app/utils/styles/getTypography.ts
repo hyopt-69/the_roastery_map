@@ -18,10 +18,8 @@ const letterSpacings = {
   wide: '2px',
 } as const;
 
-// FIXME: 適当なのでいいのを見つける。
 const fontFamilies = {
-  normal: 'sans-serif',
-  bold: 'sans-serif',
+  normal: 'Source Sans Pro, sans-serif',
 } as const;
 
 export type Typography = {
