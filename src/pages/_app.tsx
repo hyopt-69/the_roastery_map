@@ -2,7 +2,6 @@ import type { AppProps } from 'next/app';
 import NextHead from 'next/head';
 import React from 'react';
 
-// リセットCSS(https://github.com/hankchizljaw/modern-css-reset)
 import 'modern-css-reset';
 
 function MyApp({ Component, pageProps }: AppProps) {
