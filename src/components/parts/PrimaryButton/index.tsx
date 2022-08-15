@@ -56,7 +56,7 @@ export const PrimaryButton: React.FC<Props> = ({
         {!!iconPattern && (
           <Icon pattern={iconPattern} stroke={contentColor} size="s" />
         )}
-        <Label size="s" weight="bold" color={contentColor}>
+        <Label size="s" color={contentColor}>
           {children}
         </Label>
       </div>

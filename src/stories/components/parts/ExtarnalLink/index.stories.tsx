@@ -1,19 +1,19 @@
 import { ComponentMeta, ComponentStoryObj } from '@storybook/react';
 
-import { Link } from '@/components/parts/Link';
+import { ExternalLink } from '@/components/parts/ExternalLink';
 import { DUMMY_URL } from '@/stories/dummy/url';
 
 export default {
-  component: Link,
-} as ComponentMeta<typeof Link>;
+  component: ExternalLink,
+} as ComponentMeta<typeof ExternalLink>;
 
-const Index: ComponentStoryObj<typeof Link> = {
+const Index: ComponentStoryObj<typeof ExternalLink> = {
   args: {
     children: 'Example',
     href: DUMMY_URL,
     weight: 'normal',
-    target: '_blank',
     color: 'mirage',
+    hasUnderLine: false,
   },
 };
 
