@@ -1,6 +1,6 @@
 import { css } from '@emotion/react';
 
-import { Color, colors } from '@/app/theme/colors';
+import { Color } from '@/app/theme/colors';
 import { durations } from '@/app/theme/durations';
 import { FontSize, fontSizes } from '@/app/theme/fontSizes';
 import { spaces } from '@/app/theme/spaces';
@@ -34,7 +34,7 @@ export const getStyles = ({
         weight,
       }),
       cursor: 'pointer',
-      display: 'inline-block',
+      display: 'inline-flex',
       whiteSpace: 'nowrap',
       overflow: 'hidden',
       textOverflow: 'ellipsis',
