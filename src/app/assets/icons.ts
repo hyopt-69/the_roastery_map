@@ -1,7 +1,9 @@
-import EXAMPLE from '@public/svg/example.svg';
+import X from '@public/svg/x.svg';
+
+// NOTE: https://feathericons.com/ から取得
 
 export const ICONS = {
-  EXAMPLE,
+  X,
 } as const;
 
 export type IconPattern = keyof typeof ICONS;
