@@ -25,7 +25,7 @@ export const styles = {
         backgroundColor: colors.blackHaze,
       },
       ':active': {
-        transform: scales.s,
+        transform: scales.smaller,
       },
     },
 

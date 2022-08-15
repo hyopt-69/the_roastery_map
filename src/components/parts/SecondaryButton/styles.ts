@@ -45,7 +45,7 @@ export const getButtonStyle = ({ size }: StyleProps) =>
         backgroundColor: colors.black,
       },
       ':active': {
-        transform: scales.s,
+        transform: scales.smaller,
       },
     },
 

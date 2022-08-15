@@ -6,7 +6,7 @@ import { getFluidFontSize } from '@/app/utils/styles/getFluidFontSize';
 import { getTypography } from '@/app/utils/styles/getTypography';
 import { mediaQuery } from '@/app/utils/styles/mediaQuery';
 
-type TitleSize = Extract<FontSize, 'xxl' | 'xl' | 'l'>;
+type TitleSize = Extract<FontSize, 'xxl' | 'xl' | 'l' | 'm' | 's'>;
 
 export type StyleProps = {
   size: TitleSize;
