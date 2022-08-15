@@ -7,15 +7,26 @@ export default {
   component: Link,
 } as ComponentMeta<typeof Link>;
 
-export const Index: ComponentStoryObj<typeof Link> = {
+const Index: ComponentStoryObj<typeof Link> = {
   args: {
     children: 'Example',
     href: DUMMY_URL,
-    size: 'm',
-    mqSizes: ['m', 'xxl'],
     weight: 'normal',
     target: '_blank',
     color: 'mirage',
-    hoveredColor: 'mirage',
+  },
+};
+
+export const Fixed = {
+  args: {
+    ...Index.args,
+    size: 's',
+  },
+};
+
+export const Fluid = {
+  args: {
+    ...Index.args,
+    mqSizes: ['m', 'xxl'],
   },
 };
