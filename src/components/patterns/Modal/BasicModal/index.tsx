@@ -4,8 +4,8 @@ import { Title } from '@/components/parts/Title';
 
 import { styles } from './styles';
 
-import { ModalHeader } from '../ModalHeader';
-import { ModalWrapper } from '../ModalWrapper';
+import { ModalHeader } from '../utils/ModalHeader';
+import { ModalWrapper } from '../utils/ModalWrapper';
 
 type Props = Omit<React.ComponentProps<typeof ModalWrapper>, 'children'> & {
   title?: string;
