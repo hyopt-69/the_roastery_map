@@ -1,11 +1,10 @@
 import React from 'react';
 
+import { ModalHeader } from '@/components/libs/Modal/ModalHeader';
+import { ModalWrapper } from '@/components/libs/Modal/ModalWrapper';
 import { Title } from '@/components/parts/Title';
 
 import { styles } from './styles';
-
-import { ModalHeader } from '../utils/ModalHeader';
-import { ModalWrapper } from '../utils/ModalWrapper';
 
 type Props = Omit<React.ComponentProps<typeof ModalWrapper>, 'children'> & {
   title?: string;

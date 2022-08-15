@@ -1,16 +1,18 @@
 import { IconPattern } from '@/app/assets/icons';
 import { Path } from '@/app/constants/path';
 
-export const NAV_LIST: Path[] = ['HOME', 'NEWS', 'ABOUT'];
+type HeaderPath = Extract<Path, 'HOME' | 'NEWS' | 'ABOUT'>;
 
-export const NAV_ICONS: Record<Path, IconPattern> = {
+export const NAV_LIST: HeaderPath[] = ['HOME', 'NEWS', 'ABOUT'];
+
+export const NAV_ICONS: Record<HeaderPath, IconPattern> = {
   HOME: 'HOME',
   NEWS: 'BOOK',
   ABOUT: 'HELP_CIRCLE',
 };
 
-export const NAV_LABELS: Record<Path, string> = {
-  HOME: 'HOME',
-  NEWS: 'NEWS',
-  ABOUT: 'ABOUT',
+export const NAV_LABELS: Record<HeaderPath, string> = {
+  HOME: 'Home',
+  NEWS: 'News',
+  ABOUT: 'About',
 };

@@ -1,10 +1,9 @@
-import NextLink from 'next/link';
 import React, { useState } from 'react';
 
-import { Path, PATHS } from '@/app/constants/path';
+import { Path } from '@/app/constants/path';
 import { Icon } from '@/components/parts/Icon';
+import { InternalLink } from '@/components/parts/InternalLink';
 import { Label } from '@/components/parts/Label';
-import { Link } from '@/components/parts/Link';
 
 import { styles, getStyles } from './styles';
 
@@ -28,11 +27,19 @@ export const MobileLayout: React.FC<Props> = ({ currentPath }) => {
           const isCurrentPage = currentPath === nav;
 
           return (
-            <NextLink passHref={!isCurrentPage} href={PATHS[nav]}>
-              <Link size="xxs" color={isCurrentPage ? 'mirage' : 'tapa'}>
-                <Icon pattern={NAV_ICONS[nav]} size="s" stroke="tapa" />
-              </Link>
-            </NextLink>
+            <InternalLink
+              key={nav}
+              path={nav}
+              passHref={!isCurrentPage}
+              size="xxs"
+              color={isCurrentPage ? 'mirage' : 'tapa'}
+            >
+              <Icon
+                pattern={NAV_ICONS[nav]}
+                size="s"
+                stroke={isCurrentPage ? 'mirage' : 'tapa'}
+              />
+            </InternalLink>
           );
         })}
         <button
