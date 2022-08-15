@@ -18,11 +18,22 @@ export const styles = {
       alignItems: 'center',
       width: '100%',
       padding: `${spaces.s}px ${spaces.m}px`,
-      flexWrap: 'wrap-reverse',
-      rowGap: spaces.s,
+      rowGap: spaces.xs,
     },
     mediaQuery({
+      flexDirection: ['column-reverse', 'row'],
       justifyContent: ['center', 'space-between'],
+    })
+  ),
+  linksWrapper: css(
+    {
+      display: 'flex',
+      flexDirection: 'column',
+
+      rowGap: spaces.xxs,
+    },
+    mediaQuery({
+      textAlign: ['center', 'right'],
     })
   ),
   navWrapper: css({

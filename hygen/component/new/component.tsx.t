@@ -11,5 +11,5 @@ type Props = {
 };
 
 export const <%= name %>: React.FC<Props> = ({ children }) => {
-  return <div css={styles}>{children}</div>;
+  return <div css={styles.container}>{children}</div>;
 };

@@ -3,6 +3,7 @@ import React, { useCallback } from 'react';
 import { Path } from '@/app/constants/path';
 import { useResponsive } from '@/app/hooks/useResponsive';
 import { InternalLink } from '@/components/parts/InternalLink';
+import { Label } from '@/components/parts/Label';
 import { SecondaryButton } from '@/components/parts/SecondaryButton';
 
 import { NAV_LABELS, NAV_LIST } from './navData';
@@ -31,23 +32,28 @@ export const Footer: React.FC<Props> = ({ currentPath }) => {
         <SecondaryButton iconPattern="INSTAGRAM" size="m" onClick={handleClick}>
           follow me
         </SecondaryButton>
-        <nav css={styles.navWrapper}>
-          {NAV_LIST.map((nav) => {
-            const isCurrentPage = currentPath === nav;
+        <div css={styles.linksWrapper}>
+          <nav css={styles.navWrapper}>
+            {NAV_LIST.map((nav) => {
+              const isCurrentPage = currentPath === nav;
 
-            return (
-              <InternalLink
-                key={nav}
-                path={nav}
-                passHref={!isCurrentPage}
-                size="xxs"
-                color={isCurrentPage ? 'mirage' : 'tapa'}
-              >
-                {NAV_LABELS[nav]}
-              </InternalLink>
-            );
-          })}
-        </nav>
+              return (
+                <InternalLink
+                  key={nav}
+                  path={nav}
+                  passHref={!isCurrentPage}
+                  size="xxs"
+                  color={isCurrentPage ? 'mirage' : 'tapa'}
+                >
+                  {NAV_LABELS[nav]}
+                </InternalLink>
+              );
+            })}
+          </nav>
+          <Label size="xxxs" color="pumice">
+            © 2022 kana-chan.
+          </Label>
+        </div>
       </Container>
     </footer>
   );
