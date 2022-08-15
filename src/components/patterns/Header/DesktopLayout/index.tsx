@@ -22,11 +22,7 @@ export const DesktopLayout: React.FC<Props> = ({ currentPath }) => {
 
           return (
             <NextLink passHref={!isCurrentPage} href={route}>
-              <Link
-                size="xxs"
-                color={isCurrentPage ? 'mirage' : 'tapa'}
-                hoveredColor="mirage"
-              >
+              <Link size="xxs" color={isCurrentPage ? 'mirage' : 'tapa'}>
                 {name}
               </Link>
             </NextLink>
