@@ -8,6 +8,8 @@ import { SecondaryButton } from '@/components/parts/SecondaryButton';
 import { NAV_LABELS, NAV_LIST } from './navData';
 import { styles } from './styles';
 
+import { Container } from '../Container';
+
 type Props = {
   currentPath: Path;
 };
@@ -25,26 +27,28 @@ export const Footer: React.FC<Props> = ({ currentPath }) => {
 
   return (
     <footer css={styles.container}>
-      <SecondaryButton iconPattern="INSTAGRAM" size="m" onClick={handleClick}>
-        follow me
-      </SecondaryButton>
-      <nav css={styles.navWrapper}>
-        {NAV_LIST.map((nav) => {
-          const isCurrentPage = currentPath === nav;
+      <Container cssProp={styles.innerContainer}>
+        <SecondaryButton iconPattern="INSTAGRAM" size="m" onClick={handleClick}>
+          follow me
+        </SecondaryButton>
+        <nav css={styles.navWrapper}>
+          {NAV_LIST.map((nav) => {
+            const isCurrentPage = currentPath === nav;
 
-          return (
-            <InternalLink
-              key={nav}
-              path={nav}
-              passHref={!isCurrentPage}
-              size="xxs"
-              color={isCurrentPage ? 'mirage' : 'tapa'}
-            >
-              {NAV_LABELS[nav]}
-            </InternalLink>
-          );
-        })}
-      </nav>
+            return (
+              <InternalLink
+                key={nav}
+                path={nav}
+                passHref={!isCurrentPage}
+                size="xxs"
+                color={isCurrentPage ? 'mirage' : 'tapa'}
+              >
+                {NAV_LABELS[nav]}
+              </InternalLink>
+            );
+          })}
+        </nav>
+      </Container>
     </footer>
   );
 };

@@ -6,14 +6,18 @@ import { spaces } from '@/app/theme/spaces';
 import { mediaQuery } from '@/app/utils/styles/mediaQuery';
 
 export const styles = {
-  container: css(
+  container: css({
+    display: 'flex',
+    justifyContent: 'center',
+    backgroundColor: colors.white,
+    borderTop: `solid ${colors.blackHaze} ${borderWidths.m}px`,
+  }),
+  innerContainer: css(
     {
       display: 'flex',
       alignItems: 'center',
       width: '100%',
-      backgroundColor: colors.white,
       padding: `${spaces.s}px ${spaces.m}px`,
-      borderTop: `solid ${colors.blackHaze} ${borderWidths.m}px`,
       flexWrap: 'wrap-reverse',
       rowGap: spaces.s,
     },

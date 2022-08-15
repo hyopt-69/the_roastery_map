@@ -1,6 +1,6 @@
 import { ComponentMeta, ComponentStoryObj } from '@storybook/react';
 
-import { Header } from '@/components/patterns/Header';
+import { Header } from '@/components/layouts/Header';
 
 export default {
   component: Header,

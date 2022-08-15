@@ -1,6 +1,6 @@
 import { ComponentMeta, ComponentStoryObj } from '@storybook/react';
 
-import { Footer } from '@/components/patterns/Footer';
+import { Footer } from '@/components/layouts/Footer';
 
 export default {
   component: Footer,
