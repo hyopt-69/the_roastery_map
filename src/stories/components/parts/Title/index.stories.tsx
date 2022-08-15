@@ -6,12 +6,24 @@ export default {
   component: Title,
 } as ComponentMeta<typeof Title>;
 
-export const Index: ComponentStoryObj<typeof Title> = {
+const Index: ComponentStoryObj<typeof Title> = {
   args: {
     children: 'Example',
     Tag: 'h1',
-    size: 'l',
-    mqSizes: ['l', 'xxl'],
     color: 'mirage',
+  },
+};
+
+export const Fixed = {
+  args: {
+    ...Index.args,
+    size: 's',
+  },
+};
+
+export const Fluid = {
+  args: {
+    ...Index.args,
+    mqSizes: ['s', 'xxl'],
   },
 };

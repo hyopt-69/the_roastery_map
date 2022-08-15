@@ -20,5 +20,9 @@ export const styles = {
     justifyContent: 'space-between',
     alignItems: 'center',
     gap: spaces.s,
+
+    'a:hover': {
+      color: colors.mirage,
+    },
   }),
 };

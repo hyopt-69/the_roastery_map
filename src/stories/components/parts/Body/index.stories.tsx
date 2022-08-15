@@ -6,11 +6,23 @@ export default {
   component: Body,
 } as ComponentMeta<typeof Body>;
 
-export const Index: ComponentStoryObj<typeof Body> = {
+const Index: ComponentStoryObj<typeof Body> = {
   args: {
     children: 'Example',
-    size: 's',
-    mqSizes: ['s', 'm'],
     color: 'mirage',
+  },
+};
+
+export const Fixed = {
+  args: {
+    ...Index.args,
+    size: 's',
+  },
+};
+
+export const Fluid = {
+  args: {
+    ...Index.args,
+    mqSizes: ['s', 'xl'],
   },
 };

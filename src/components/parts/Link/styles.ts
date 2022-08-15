@@ -12,7 +12,6 @@ export type StyleProps = {
   size?: FontSize;
   mqSizes?: [FontSize, FontSize];
   color?: Color;
-  hoveredColor?: Color;
   hasUnderLine?: boolean;
 } & Partial<Typography>;
 
@@ -20,7 +19,6 @@ export const getStyles = ({
   size,
   mqSizes,
   color = 'mirage',
-  hoveredColor = 'mirage',
   hasUnderLine = false,
   weight,
   lineHeight,
@@ -43,9 +41,6 @@ export const getStyles = ({
       textDecoration: hasUnderLine ? 'underline' : 'none',
       textUnderlineOffset: spaces.xxs,
       transitionDuration: durations.s,
-      ':hover': {
-        color: colors[hoveredColor],
-      },
     },
     mediaQuery({
       fontSize: mqSizes && [
