@@ -7,6 +7,7 @@ import { spaces } from '@/app/theme/spaces';
 export const styles = {
   container: css({
     display: 'flex',
+    width: '100%',
     justifyContent: 'center',
     backgroundColor: colors.white,
     borderBottom: `solid ${colors.blackHaze} ${borderWidths.m}px`,
