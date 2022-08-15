@@ -8,7 +8,8 @@ type IconSize = 's' | 'm' | 'l';
 type Props = {
   pattern: IconPattern;
   size?: IconSize;
-  color?: Color;
+  fill?: Color;
+  stroke?: Color;
 };
 
 const ICON_SIZE: Record<IconSize, number> = {
@@ -20,16 +21,16 @@ const ICON_SIZE: Record<IconSize, number> = {
 export const Icon: React.FC<Props> = ({
   pattern,
   size = 'm',
-  color = 'mirage',
+  fill = 'transparent',
+  stroke = 'mirage',
 }) => {
   const iconSize = ICON_SIZE[size];
-  const iconColor = colors[color];
   const IconElement = ICONS[pattern];
 
   return (
     <IconElement
-      fill={iconColor}
-      stroke={iconColor}
+      fill={colors[fill]}
+      stroke={colors[stroke]}
       width={iconSize}
       height={iconSize}
     />

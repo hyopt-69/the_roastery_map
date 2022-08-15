@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
 
-import { Icon } from '@/components/parts/Icon';
 import { TertiaryButton } from '@/components/parts/TertiaryButton';
 import { Title } from '@/components/parts/Title';
 import { BasicModal } from '@/components/patterns/Modal/BasicModal';
@@ -10,7 +9,6 @@ export const HomePage: React.FC = () => {
   return (
     <>
       <Title size="l">Home</Title>
-      <Icon pattern="EXAMPLE" />
       <TertiaryButton
         onClick={() => {
           seta((pre) => !pre);

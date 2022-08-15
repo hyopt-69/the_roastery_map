@@ -33,7 +33,7 @@ export const TertiaryButton: React.FC<Props> = ({
     >
       <div css={styles.innerWrapper}>
         {!!iconPattern && (
-          <Icon pattern={iconPattern} color={contentColor} size="s" />
+          <Icon pattern={iconPattern} stroke={contentColor} size="s" />
         )}
         <Label size="s" weight="bold" color={contentColor}>
           {children}

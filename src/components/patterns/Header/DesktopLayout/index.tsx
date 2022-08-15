@@ -7,6 +7,8 @@ import { Link } from '@/components/parts/Link';
 
 import { styles } from './styles';
 
+import { NAV_LABELS, NAV_LIST } from '../navData';
+
 type Props = {
   currentPath: Path;
 };
@@ -14,16 +16,16 @@ type Props = {
 export const DesktopLayout: React.FC<Props> = ({ currentPath }) => {
   return (
     <header css={styles.container}>
-      {/* FIXME: Logoコンポーネント埋め込む */}
+      {/* FIXME: Logoコンポーネント埋め込む。テキストとロゴ */}
       <Label size="s">THE ROASTERY MAP</Label>
       <nav css={styles.navWrapper}>
-        {Object.entries(PATHS).map(([name, route]) => {
-          const isCurrentPage = currentPath === name;
+        {NAV_LIST.map((nav) => {
+          const isCurrentPage = currentPath === nav;
 
           return (
-            <NextLink passHref={!isCurrentPage} href={route}>
+            <NextLink passHref={!isCurrentPage} href={PATHS[nav]}>
               <Link size="xxs" color={isCurrentPage ? 'mirage' : 'tapa'}>
-                {name}
+                {NAV_LABELS[nav]}
               </Link>
             </NextLink>
           );
