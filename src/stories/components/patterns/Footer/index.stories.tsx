@@ -8,6 +8,6 @@ export default {
 
 export const Index: ComponentStoryObj<typeof Footer> = {
   args: {
-    children: 'Example',
+    currentPath: 'HOME',
   },
 };
