@@ -1,26 +1,55 @@
-import React, { useState } from 'react';
+import { css } from '@emotion/react';
+import React, { useRef, useState } from 'react';
 
-import { TertiaryButton } from '@/components/parts/TertiaryButton';
+import { colors } from '@/app/theme/colors';
+import { CarouselIndicator } from '@/components/libs/Carousel/CarouselIndicator';
+import {
+  CarouselHandler,
+  CarouselWrapper,
+} from '@/components/libs/Carousel/CarouselWrapper';
 import { Title } from '@/components/parts/Title';
-import { BasicModal } from '@/components/patterns/Modal/BasicModal';
 
 export const HomePage: React.FC = () => {
-  const [a, seta] = useState(false);
+  const carouselRef = useRef<CarouselHandler>(null);
+  const [activeIndex, setActiveIndex] = useState(0);
+
   return (
-    <>
+    <div css={css({ background: colors.blackHaze })}>
       <Title size="l">Home</Title>
-      <TertiaryButton
-        onClick={() => {
-          seta((pre) => !pre);
-        }}
+      <CarouselWrapper
+        ref={carouselRef}
+        edgeSpace={100}
+        gapSpace={30}
+        activeIndex={activeIndex}
+        setActiveIndex={setActiveIndex}
       >
-        あ
-      </TertiaryButton>
-      <BasicModal
-        isVisible={a}
-        title="タイトル"
-        handleClose={() => seta(false)}
+        {[...new Array(8)].map((_, i) => {
+          return (
+            <div
+              key={i}
+              css={css({
+                width: 500,
+                height: 200,
+                background: colors.white,
+              })}
+              role="none"
+              onClick={() => {
+                if (i === activeIndex) console.log('hello');
+              }}
+            >
+              {i}
+            </div>
+          );
+        })}
+      </CarouselWrapper>
+      <CarouselIndicator
+        itemLength={8}
+        activeIndex={activeIndex}
+        handleClickItem={(i) => carouselRef.current?.scrollTo(i)}
       />
-    </>
+      <button type="button" onClick={() => carouselRef.current?.scrollNext()}>
+        {`next: ${activeIndex}`}
+      </button>
+    </div>
   );
 };

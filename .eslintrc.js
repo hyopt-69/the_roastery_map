@@ -59,6 +59,8 @@ module.exports = {
     ],
     // 基本的に引数は型で強制しているので無闇に渡されることがない、スプレッド的な渡し方もしたい場合があるので許可する
     'react/jsx-props-no-spreading': 'off',
+    // indexしかkeyになるものがない場合が往々にしてあるのでoff
+    'react/no-array-index-key': 'off',
     // importのorderを強制
     'import/order': [
       'error',
