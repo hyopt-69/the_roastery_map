@@ -1,22 +1,22 @@
-import { css } from '@emotion/react';
+import { css, CSSObject } from '@emotion/react';
 
 import { borderRadiuses } from '@/app/theme/borderRadius';
 import { colors } from '@/app/theme/colors';
 import { scales } from '@/app/theme/scales';
 import { spaces } from '@/app/theme/spaces';
 
-export type ButtonSize = 'm' | 'l';
+import { DEFAULT_BUTTON_HEIGHT, DEFAULT_BUTTON_WIDTH } from '../constants';
 
-type StyleProps = {
+type ButtonSize = 'm' | 'l';
+
+export type StyleProps = {
   size: ButtonSize;
 };
 
-const BUTTON_WIDTH: Record<ButtonSize, number> = {
-  m: 100,
-  l: 300,
+const BUTTON_WIDTH: Record<ButtonSize, CSSObject['width']> = {
+  m: DEFAULT_BUTTON_WIDTH.MEDIUM,
+  l: DEFAULT_BUTTON_WIDTH.LARGE,
 };
-
-const BUTTON_HEIGHT = 48;
 
 export const styles = {
   innerWrapper: css({
@@ -32,8 +32,8 @@ export const getButtonStyle = ({ size }: StyleProps) =>
     all: 'unset',
     overflow: 'hidden',
     whiteSpace: 'nowrap',
-    height: BUTTON_HEIGHT,
-    minWidth: BUTTON_WIDTH[size],
+    height: DEFAULT_BUTTON_HEIGHT,
+    width: BUTTON_WIDTH[size],
     borderRadius: borderRadiuses.m,
     paddingLeft: spaces.s,
     paddingRight: spaces.s,

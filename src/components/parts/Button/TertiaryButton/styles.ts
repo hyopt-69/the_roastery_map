@@ -1,27 +1,56 @@
-import { css } from '@emotion/react';
+import { css, CSSObject } from '@emotion/react';
 
+import { borderRadiuses } from '@/app/theme/borderRadius';
+import { borderWidths } from '@/app/theme/borderWidths';
 import { colors } from '@/app/theme/colors';
 import { durations } from '@/app/theme/durations';
 import { scales } from '@/app/theme/scales';
 import { spaces } from '@/app/theme/spaces';
 
-const BUTTON_HEIGHT = 36;
+import { DEFAULT_BUTTON_HEIGHT, DEFAULT_BUTTON_WIDTH } from '../constants';
+
+type ButtonSize = 'm' | 'l';
+
+export type StyleProps = {
+  size: ButtonSize;
+  isOutlined: boolean;
+};
+
+const BUTTON_WIDTH: Record<ButtonSize, CSSObject['width']> = {
+  m: DEFAULT_BUTTON_WIDTH.MEDIUM,
+  l: DEFAULT_BUTTON_WIDTH.LARGE,
+};
 
 export const styles = {
-  container: css({
+  innerWrapper: css({
+    display: 'flex',
+    alignItems: 'center',
+    justifyContent: 'center',
+    gap: spaces.xs,
+  }),
+};
+
+export const getStyles = ({ size, isOutlined }: StyleProps) => {
+  return css({
     all: 'unset',
     overflow: 'hidden',
     whiteSpace: 'nowrap',
-    height: BUTTON_HEIGHT,
-    borderRadius: BUTTON_HEIGHT / 2,
+    height: DEFAULT_BUTTON_HEIGHT,
+    width: BUTTON_WIDTH[size],
+
     paddingLeft: spaces.s,
     paddingRight: spaces.s,
-    backgroundColor: colors.transparent,
+
+    borderRadius: borderRadiuses.m,
+    borderWidth: borderWidths.m,
+    borderColor: colors.tapa,
+    borderStyle: isOutlined ? 'solid' : 'none',
 
     ':enabled': {
       cursor: 'pointer',
       ':hover': {
         transitionDuration: durations.s,
+        borderColor: colors.black,
         backgroundColor: colors.blackHaze,
       },
       ':active': {
@@ -32,11 +61,5 @@ export const styles = {
     ':disabled': {
       cursor: 'not-allowed',
     },
-  }),
-  innerWrapper: css({
-    display: 'flex',
-    alignItems: 'center',
-    justifyContent: 'center',
-    gap: spaces.xs,
-  }),
+  });
 };
