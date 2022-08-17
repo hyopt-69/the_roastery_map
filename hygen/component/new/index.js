@@ -27,7 +27,7 @@ module.exports = {
         validate: (input) => {
           const isNull = input === '';
           const isLowerCase = input.toLowerCase() === input;
-          return isNull || isLowerCase;
+          return isNull || !isLowerCase;
         },
       },
     ];
