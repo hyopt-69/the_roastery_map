@@ -1,10 +1,13 @@
-import { css } from '@emotion/react';
+import { css, CSSObject } from '@emotion/react';
 
 import { borderRadiuses } from '@/app/theme/borderRadius';
 import { colors } from '@/app/theme/colors';
 import { durations } from '@/app/theme/durations';
 import { opacities } from '@/app/theme/opacities';
+import { scales } from '@/app/theme/scales';
 import { spaces } from '@/app/theme/spaces';
+
+import { DEFAULT_BUTTON_HEIGHT, DEFAULT_BUTTON_WIDTH } from '../constants';
 
 export type ButtonSize = 'm' | 'l';
 export type PointerPosition = {
@@ -17,14 +20,13 @@ type StyleProps = {
   pointerPosition?: PointerPosition;
 };
 
-const BUTTON_WIDTH: Record<ButtonSize, number> = {
-  m: 100,
-  l: 300,
+const BUTTON_WIDTH: Record<ButtonSize, CSSObject['width']> = {
+  m: DEFAULT_BUTTON_WIDTH.MEDIUM,
+  l: DEFAULT_BUTTON_WIDTH.LARGE,
 };
 
-const BUTTON_HEIGHT = 48;
-const DEFAULT_OVERLAY_SIZE = BUTTON_HEIGHT * 4;
-const ACTIVE_OVERLAY_SIZE = BUTTON_HEIGHT * 2.5;
+const DEFAULT_OVERLAY_SIZE = DEFAULT_BUTTON_HEIGHT * 4;
+const ACTIVE_OVERLAY_SIZE = DEFAULT_BUTTON_HEIGHT * 2.5;
 const LONG_DURATION = '1.6s';
 
 export const styles = {
@@ -43,8 +45,8 @@ export const getButtonStyle = ({ size, pointerPosition }: StyleProps) =>
     overflow: 'hidden',
     position: 'relative',
     whiteSpace: 'nowrap',
-    height: BUTTON_HEIGHT,
-    minWidth: BUTTON_WIDTH[size],
+    height: DEFAULT_BUTTON_HEIGHT,
+    width: BUTTON_WIDTH[size],
     borderRadius: borderRadiuses.m,
     paddingLeft: spaces.s,
     paddingRight: spaces.s,
@@ -59,7 +61,7 @@ export const getButtonStyle = ({ size, pointerPosition }: StyleProps) =>
         width: DEFAULT_OVERLAY_SIZE,
         height: DEFAULT_OVERLAY_SIZE,
         opacity: opacities.l,
-        top: pointerPosition?.y || BUTTON_HEIGHT / 2,
+        top: pointerPosition?.y || DEFAULT_BUTTON_HEIGHT / 2,
         left: pointerPosition?.x || 0,
         transitionTimingFunction: 'ease-out',
         transition: `
@@ -75,9 +77,12 @@ export const getButtonStyle = ({ size, pointerPosition }: StyleProps) =>
       ':hover::before': {
         opacity: opacities.full,
       },
-      ':active::before': {
-        width: ACTIVE_OVERLAY_SIZE,
-        height: ACTIVE_OVERLAY_SIZE,
+      ':active': {
+        transform: scales.smaller,
+        '::before': {
+          width: ACTIVE_OVERLAY_SIZE,
+          height: ACTIVE_OVERLAY_SIZE,
+        },
       },
     },
 

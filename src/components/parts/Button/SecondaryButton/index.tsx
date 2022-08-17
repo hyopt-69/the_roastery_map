@@ -5,15 +5,15 @@ import { Color } from '@/app/theme/colors';
 import { Icon } from '@/components/parts/Image/Icon';
 import { Label } from '@/components/parts/Text/Label';
 
-import { getButtonStyle, ButtonSize, styles } from './styles';
+import { getButtonStyle, StyleProps, styles } from './styles';
 
 type ButtonProps = Pick<React.ComponentProps<'button'>, 'onClick' | 'disabled'>;
 
 type Props = {
   children: string;
-  size: ButtonSize;
   iconPattern?: IconPattern;
-} & ButtonProps;
+} & ButtonProps &
+  StyleProps;
 
 export const SecondaryButton: React.FC<Props> = ({
   children,

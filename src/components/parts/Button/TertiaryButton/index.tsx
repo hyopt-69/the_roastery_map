@@ -5,20 +5,23 @@ import { Color } from '@/app/theme/colors';
 import { Icon } from '@/components/parts/Image/Icon';
 import { Label } from '@/components/parts/Text/Label';
 
-import { styles } from './styles';
+import { styles, getStyles, StyleProps } from './styles';
 
 type ButtonProps = Pick<React.ComponentProps<'button'>, 'onClick' | 'disabled'>;
 
 type Props = {
   children: string;
   iconPattern?: IconPattern;
-} & ButtonProps;
+} & ButtonProps &
+  StyleProps;
 
 export const TertiaryButton: React.FC<Props> = ({
   children,
   disabled,
   iconPattern,
   onClick,
+  size,
+  isOutlined,
 }) => {
   const contentColor = useMemo((): Color => {
     return disabled ? 'tapa' : 'mirage';
@@ -29,13 +32,13 @@ export const TertiaryButton: React.FC<Props> = ({
       type="button"
       disabled={disabled}
       onClick={onClick}
-      css={styles.container}
+      css={getStyles({ size, isOutlined })}
     >
       <div css={styles.innerWrapper}>
         {!!iconPattern && (
           <Icon pattern={iconPattern} stroke={contentColor} size="s" />
         )}
-        <Label size="s" weight="bold" color={contentColor}>
+        <Label size="s" color={contentColor}>
           {children}
         </Label>
       </div>
