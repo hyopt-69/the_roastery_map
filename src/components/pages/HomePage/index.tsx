@@ -28,7 +28,7 @@ export const HomePage: React.FC = () => {
             <div
               key={i}
               css={css({
-                width: 500,
+                width: 700,
                 height: 200,
                 background: colors.white,
               })}
