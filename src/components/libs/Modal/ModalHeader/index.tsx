@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { Icon } from '@/components/parts/Icon';
+import { Icon } from '@/components/parts/Image/Icon';
 
 import { styles } from './styles';
 

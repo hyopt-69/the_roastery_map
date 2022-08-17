@@ -2,9 +2,9 @@ import React, { useCallback } from 'react';
 
 import { Path } from '@/app/constants/path';
 import { useResponsive } from '@/app/hooks/useResponsive';
-import { InternalLink } from '@/components/parts/InternalLink';
-import { Label } from '@/components/parts/Label';
-import { SecondaryButton } from '@/components/parts/SecondaryButton';
+import { SecondaryButton } from '@/components/parts/Button/SecondaryButton';
+import { InternalLink } from '@/components/parts/Text/InternalLink';
+import { Label } from '@/components/parts/Text/Label';
 
 import { NAV_LABELS, NAV_LIST } from './navData';
 import { styles } from './styles';
