@@ -2,7 +2,7 @@ import React from 'react';
 
 import { ModalHeader } from '@/components/libs/Modal/ModalHeader';
 import { ModalWrapper } from '@/components/libs/Modal/ModalWrapper';
-import { Title } from '@/components/parts/Title';
+import { Title } from '@/components/parts/Text/Title';
 
 import { styles } from './styles';
 

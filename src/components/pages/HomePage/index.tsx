@@ -7,7 +7,7 @@ import {
   CarouselHandler,
   CarouselWrapper,
 } from '@/components/libs/Carousel/CarouselWrapper';
-import { Title } from '@/components/parts/Title';
+import { Title } from '@/components/parts/Text/Title';
 
 export const HomePage: React.FC = () => {
   const carouselRef = useRef<CarouselHandler>(null);

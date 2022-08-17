@@ -2,9 +2,9 @@ import React, { useState } from 'react';
 
 import { Path } from '@/app/constants/path';
 import { Container } from '@/components/layouts/Container';
-import { Icon } from '@/components/parts/Icon';
-import { InternalLink } from '@/components/parts/InternalLink';
-import { Label } from '@/components/parts/Label';
+import { Icon } from '@/components/parts/Image/Icon';
+import { InternalLink } from '@/components/parts/Text/InternalLink';
+import { Label } from '@/components/parts/Text/Label';
 
 import { styles, getStyles } from './styles';
 
