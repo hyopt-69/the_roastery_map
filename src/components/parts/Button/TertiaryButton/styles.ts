@@ -9,16 +9,17 @@ import { spaces } from '@/app/theme/spaces';
 
 import { DEFAULT_BUTTON_HEIGHT, DEFAULT_BUTTON_WIDTH } from '../constants';
 
-type ButtonSize = 'm' | 'l';
+type ButtonSize = 'm' | 'l' | 'auto';
 
 export type StyleProps = {
-  size: ButtonSize;
-  isOutlined: boolean;
+  size?: ButtonSize;
+  isOutlined?: boolean;
 };
 
 const BUTTON_WIDTH: Record<ButtonSize, CSSObject['width']> = {
   m: DEFAULT_BUTTON_WIDTH.MEDIUM,
   l: DEFAULT_BUTTON_WIDTH.LARGE,
+  auto: 'auto',
 };
 
 export const styles = {
@@ -30,7 +31,7 @@ export const styles = {
   }),
 };
 
-export const getStyles = ({ size, isOutlined }: StyleProps) => {
+export const getStyles = ({ size = 'auto', isOutlined }: StyleProps) => {
   return css({
     all: 'unset',
     overflow: 'hidden',

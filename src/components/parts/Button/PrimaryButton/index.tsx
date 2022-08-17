@@ -11,7 +11,7 @@ type ButtonProps = Pick<React.ComponentProps<'button'>, 'onClick' | 'disabled'>;
 
 type Props = {
   children: string;
-  size: ButtonSize;
+  size?: ButtonSize;
   iconPattern?: IconPattern;
 } & ButtonProps;
 

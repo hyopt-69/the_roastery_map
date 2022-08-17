@@ -29,8 +29,8 @@ export const Footer: React.FC<Props> = ({ currentPath }) => {
   return (
     <footer css={styles.container}>
       <Container cssProp={styles.innerContainer}>
-        <SecondaryButton iconPattern="INSTAGRAM" size="m" onClick={handleClick}>
-          follow me
+        <SecondaryButton iconPattern="INSTAGRAM" onClick={handleClick}>
+          follow me !
         </SecondaryButton>
         <div css={styles.linksWrapper}>
           <nav css={styles.navWrapper}>

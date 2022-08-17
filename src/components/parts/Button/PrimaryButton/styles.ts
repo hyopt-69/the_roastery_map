@@ -9,20 +9,21 @@ import { spaces } from '@/app/theme/spaces';
 
 import { DEFAULT_BUTTON_HEIGHT, DEFAULT_BUTTON_WIDTH } from '../constants';
 
-export type ButtonSize = 'm' | 'l';
+export type ButtonSize = 'm' | 'l' | 'auto';
 export type PointerPosition = {
   x: number;
   y: number;
 };
 
 type StyleProps = {
-  size: ButtonSize;
+  size?: ButtonSize;
   pointerPosition?: PointerPosition;
 };
 
 const BUTTON_WIDTH: Record<ButtonSize, CSSObject['width']> = {
   m: DEFAULT_BUTTON_WIDTH.MEDIUM,
   l: DEFAULT_BUTTON_WIDTH.LARGE,
+  auto: 'auto',
 };
 
 const DEFAULT_OVERLAY_SIZE = DEFAULT_BUTTON_HEIGHT * 4;
@@ -39,7 +40,10 @@ export const styles = {
   }),
 };
 
-export const getButtonStyle = ({ size, pointerPosition }: StyleProps) =>
+export const getButtonStyle = ({
+  size = 'auto',
+  pointerPosition,
+}: StyleProps) =>
   css({
     all: 'unset',
     overflow: 'hidden',

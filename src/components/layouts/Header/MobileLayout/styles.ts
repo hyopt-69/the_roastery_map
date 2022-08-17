@@ -40,15 +40,16 @@ export const getStyles = (isVisible: boolean) => {
       justifyContent: 'space-between',
       alignItems: 'center',
       gap: spaces.s,
-      transitionDuration: durations.s,
       a: {
         display: 'flex',
         flexDirection: 'column',
         alignItems: 'center',
         justifyContent: 'center',
 
+        transitionDuration: durations.s,
+
         visibility: isVisible ? 'visible' : 'hidden',
-        transform: isVisible ? 'translateX(0)' : 'translateX(30%)',
+        transform: isVisible ? 'translateX(0)' : 'translateX(20%)',
         opacity: isVisible ? opacities.full : opacities.none,
         ':hover': {
           svg: {
