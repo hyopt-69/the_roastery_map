@@ -3,9 +3,14 @@ import { css } from '@emotion/react';
 export type StyleProps = {
   gapSpace?: number;
   edgeSpace?: number;
+  isFluidLayout?: boolean;
 };
 
-export const getStyles = ({ gapSpace, edgeSpace }: StyleProps) => {
+export const getStyles = ({
+  gapSpace,
+  edgeSpace,
+  isFluidLayout,
+}: StyleProps) => {
   return {
     carouselWrapper: css({
       position: 'relative',
@@ -21,6 +26,10 @@ export const getStyles = ({ gapSpace, edgeSpace }: StyleProps) => {
 
       div: {
         cursor: 'pointer',
+        ...(isFluidLayout && {
+          flexBasis: '100%',
+          flexShrink: 0,
+        }),
       },
     }),
   };
