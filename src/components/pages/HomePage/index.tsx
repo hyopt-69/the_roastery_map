@@ -7,9 +7,11 @@ import {
   CarouselHandler,
   CarouselWrapper,
 } from '@/components/libs/Carousel/CarouselWrapper';
+import { TooltipWrapper } from '@/components/libs/Toolttip/TooltipWrapper';
 import { Title } from '@/components/parts/Text/Title';
 
 export const HomePage: React.FC = () => {
+  const buttonRef = useRef<React.ElementRef<'button'>>(null);
   const carouselRef = useRef<CarouselHandler>(null);
   const [activeIndex, setActiveIndex] = useState(0);
 
@@ -47,9 +49,20 @@ export const HomePage: React.FC = () => {
         activeIndex={activeIndex}
         handleClickItem={(i) => carouselRef.current?.scrollTo(i)}
       />
-      <button type="button" onClick={() => carouselRef.current?.scrollNext()}>
-        {`next: ${activeIndex}`}
-      </button>
+      <div css={css({ position: 'relative' })}>
+        <div css={css({ position: 'absolute', top: 300 })}>
+          <TooltipWrapper targetRef={buttonRef} revealFrom="bottom">
+            <div css={css({ width: 200, height: 200, background: 'red' })} />
+          </TooltipWrapper>
+        </div>
+        <button
+          type="button"
+          ref={buttonRef}
+          onClick={() => carouselRef.current?.scrollNext()}
+        >
+          {`next: ${activeIndex}`}
+        </button>
+      </div>
     </div>
   );
 };
