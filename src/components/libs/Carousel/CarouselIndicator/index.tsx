@@ -21,7 +21,7 @@ export const CarouselIndicator: React.FC<Props> = ({
           key={i}
           type="radio"
           checked={activeIndex === i}
-          onClick={() => handleClickItem?.(i)}
+          onChange={() => handleClickItem?.(i)}
           disabled={!handleClickItem}
         />
       ))}
