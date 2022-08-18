@@ -49,7 +49,5 @@ export const getTypography = ({
     fontWeight: fontWeights[weight],
     letterSpacing: letterSpacings[letterSpacing],
     lineHeight: lineHeights[lineHeight],
-
-    cursor: 'default',
   };
 };
