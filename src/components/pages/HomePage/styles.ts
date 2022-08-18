@@ -1,7 +1,3 @@
----
-to: src/components/pages/<%= directory %>/styles.ts
-unless_exists: true
----
 import { css } from '@emotion/react';
 
 export const styles = {

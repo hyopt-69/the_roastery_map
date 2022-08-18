@@ -1,5 +1,5 @@
 ---
-to: src/components/pages/<%= directory %>/<%= name %>/index.tsx
+to: src/components/pages/<%= directory %>/index.tsx
 unless_exists: true
 ---
 import React from 'react';
