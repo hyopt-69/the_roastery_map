@@ -59,7 +59,7 @@ export const Footer: React.FC<Props> = ({ currentPath }) => {
             })}
           </nav>
           <Label size="xxxs" color="pumice">
-            © 2022 kana-chan.
+            © 2022 kana-chan. All rights reserved
           </Label>
         </div>
       </Container>
