@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { Balloon } from '@/components/parts/Container/Balloon';
+import { Balloon } from '@/components/parts/Balloon';
 import { QRcode } from '@/components/parts/Image/QRcode';
 import { ExternalLink } from '@/components/parts/Text/ExternalLink';
 
