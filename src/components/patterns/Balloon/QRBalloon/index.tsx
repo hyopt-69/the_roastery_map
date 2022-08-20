@@ -1,6 +1,7 @@
 import React from 'react';
 
-import { Balloon } from '@/components/parts/Container/Balloon';
+import { Balloon } from '@/components/parts/Balloon';
+import { Divider } from '@/components/parts/Divider';
 import { QRcode } from '@/components/parts/Image/QRcode';
 import { ExternalLink } from '@/components/parts/Text/ExternalLink';
 
@@ -17,7 +18,7 @@ export const QRBalloon: React.FC<Props> = ({ url }) => {
         <div css={styles.qrWrapper}>
           <QRcode url={url} />
         </div>
-        <div css={styles.divider}>または</div>
+        <Divider label="または" />
         <ExternalLink size="xxxs" color="tapa" href={url} hasUnderLine>
           ブラウザで開く
         </ExternalLink>

@@ -2,7 +2,7 @@ import { css } from '@emotion/react';
 import { ComponentMeta, ComponentStoryObj } from '@storybook/react';
 import React from 'react';
 
-import { Balloon } from '@/components/parts/Container/Balloon';
+import { Balloon } from '@/components/parts/Balloon';
 
 export default {
   component: Balloon,
