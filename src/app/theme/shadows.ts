@@ -1,5 +1,6 @@
-// FIXME: color定義後修正する?
-const SHADOW_COLOR = '#0000004D';
+import { getOpacifyColor } from '@/app/utils/styles/getOpacifyColor';
+
+export const SHADOW_COLOR = getOpacifyColor('pumice', 's');
 
 export const shadows = {
   s: `0 2px 4px ${SHADOW_COLOR}`,
