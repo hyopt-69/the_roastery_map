@@ -19,16 +19,12 @@ export const getStyles = ({
   color = 'mirage',
   hasUnderLine = false,
   weight,
-  lineHeight,
-  letterSpacing,
 }: StyleProps) => {
   return css(
     {
       ...getTypography({
         color,
         size,
-        lineHeight,
-        letterSpacing,
         weight,
       }),
       cursor: 'pointer',

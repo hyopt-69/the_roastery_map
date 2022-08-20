@@ -3,19 +3,9 @@ import { CSSObject } from '@emotion/react';
 import { Color, colors } from '@/app/theme/colors';
 import { FontSize, fontSizes } from '@/app/theme/fontSizes';
 
-const lineHeights = {
-  normal: '1.2',
-  wide: '1.5',
-} as const;
-
 const fontWeights = {
   normal: 400,
   bold: 600,
-} as const;
-
-const letterSpacings = {
-  normal: '1px',
-  wide: '2px',
 } as const;
 
 const fontFamilies = {
@@ -23,8 +13,6 @@ const fontFamilies = {
 } as const;
 
 export type Typography = {
-  lineHeight: keyof typeof lineHeights;
-  letterSpacing: keyof typeof letterSpacings;
   family: keyof typeof fontFamilies;
   weight: keyof typeof fontWeights;
 };
@@ -39,15 +27,11 @@ export const getTypography = ({
   size = 'm',
   family = 'normal',
   weight = 'normal',
-  letterSpacing = 'normal',
-  lineHeight = 'normal',
 }: Props): CSSObject => {
   return {
     color: colors[color],
     fontSize: fontSizes[size],
     fontFamily: fontFamilies[family],
     fontWeight: fontWeights[weight],
-    letterSpacing: letterSpacings[letterSpacing],
-    lineHeight: lineHeights[lineHeight],
   };
 };

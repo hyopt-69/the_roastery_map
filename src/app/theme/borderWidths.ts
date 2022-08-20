@@ -4,4 +4,4 @@ export const borderWidths = {
   l: 2,
 } as const;
 
-export type BorderRadius = keyof typeof borderWidths;
+export type BorderWidth = keyof typeof borderWidths;

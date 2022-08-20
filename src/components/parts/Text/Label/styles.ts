@@ -17,16 +17,12 @@ export const getStyles = ({
   mqSizes,
   color = 'mirage',
   weight,
-  lineHeight,
-  letterSpacing,
 }: StyleProps) => {
   return css(
     {
       ...getTypography({
         size,
         color,
-        lineHeight,
-        letterSpacing,
         weight,
       }),
       display: 'inline-block',

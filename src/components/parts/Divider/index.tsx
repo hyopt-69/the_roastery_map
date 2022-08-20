@@ -1,11 +1,11 @@
 import React from 'react';
 
-import { styles } from './styles';
+import { StyleProps, getStyles } from './styles';
 
 type Props = {
-  children: string;
-};
+  label?: string;
+} & Omit<StyleProps, 'hasLabel'>;
 
-export const Divider: React.FC<Props> = ({ children }) => {
-  return <div css={styles.container}>{children}</div>;
+export const Divider: React.FC<Props> = ({ label, ...styleProps }) => {
+  return <p css={getStyles({ ...styleProps, hasLabel: !!label })}>{label}</p>;
 };

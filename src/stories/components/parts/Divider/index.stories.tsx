@@ -8,6 +8,6 @@ export default {
 
 export const Index: ComponentStoryObj<typeof Divider> = {
   args: {
-    children: 'Example',
+    label: 'Example',
   },
 };
