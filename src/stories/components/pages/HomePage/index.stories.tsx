@@ -7,7 +7,5 @@ export default {
 } as ComponentMeta<typeof HomePage>;
 
 export const Index: ComponentStoryObj<typeof HomePage> = {
-  args: {
-    children: 'Example',
-  },
+  args: {},
 };
