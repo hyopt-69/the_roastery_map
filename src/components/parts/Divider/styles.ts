@@ -29,21 +29,23 @@ export const getStyles = ({
     backgroundColor: colors[borderColor],
   };
 
-  const space = hasLabel ? spaces.xxs : undefined;
-
   return css({
     display: 'flex',
     alignItems: 'center',
     width: '100%',
-
     ...getTypography({ size: labelSize, color: labelColor }),
+
     '::before': {
       ...dividerStyle,
-      marginRight: space,
+      ...(hasLabel && {
+        marginRight: spaces.xxs,
+      }),
     },
     '::after': {
       ...dividerStyle,
-      marginLeft: space,
+      ...(hasLabel && {
+        marginLeft: spaces.xxs,
+      }),
     },
   });
 };
