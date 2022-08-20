@@ -1,9 +1,7 @@
 import { css } from '@emotion/react';
 
 import { Color } from '@/app/theme/colors';
-import { durations } from '@/app/theme/durations';
 import { FontSize, fontSizes } from '@/app/theme/fontSizes';
-import { spaces } from '@/app/theme/spaces';
 import { getFluidFontSize } from '@/app/utils/styles/getFluidFontSize';
 import { getTypography, Typography } from '@/app/utils/styles/getTypography';
 import { mediaQuery } from '@/app/utils/styles/mediaQuery';
@@ -39,8 +37,6 @@ export const getStyles = ({
       overflow: 'hidden',
       textOverflow: 'ellipsis',
       textDecoration: hasUnderLine ? 'underline' : 'none',
-      textUnderlineOffset: spaces.xxs,
-      transitionDuration: durations.s,
     },
     mediaQuery({
       fontSize: mqSizes && [

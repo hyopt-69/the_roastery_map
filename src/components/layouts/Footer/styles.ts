@@ -29,8 +29,7 @@ export const styles = {
     {
       display: 'flex',
       flexDirection: 'column',
-
-      rowGap: spaces.xxs,
+      rowGap: spaces.xs,
     },
     mediaQuery({
       textAlign: ['center', 'right'],
