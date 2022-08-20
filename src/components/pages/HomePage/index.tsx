@@ -36,6 +36,7 @@ export const HomePage: React.FC = () => {
               })}
               role="none"
               onClick={() => {
+                // eslint-disable-next-line no-console
                 if (i === activeIndex) console.log('hello');
               }}
             >

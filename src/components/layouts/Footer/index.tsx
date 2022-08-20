@@ -1,13 +1,15 @@
-import React, { useCallback } from 'react';
+import React, { useCallback, useState } from 'react';
 
 import { Path } from '@/app/constants/path';
+import { URLS } from '@/app/constants/urls';
 import { useResponsive } from '@/app/hooks/useResponsive';
 import { SecondaryButton } from '@/components/parts/Button/SecondaryButton';
 import { InternalLink } from '@/components/parts/Text/InternalLink';
 import { Label } from '@/components/parts/Text/Label';
+import { QRBalloon } from '@/components/patterns/Balloon/QRBalloon';
 
 import { NAV_LABELS, NAV_LIST } from './navData';
-import { styles } from './styles';
+import { getBalloonStyle, styles } from './styles';
 
 import { Container } from '../Container';
 
@@ -17,21 +19,27 @@ type Props = {
 
 export const Footer: React.FC<Props> = ({ currentPath }) => {
   const { isMobile } = useResponsive();
+  const [isVisibleQR, setIsVisibleQR] = useState(false);
 
   const handleClick = useCallback(() => {
     if (isMobile) {
-      // インスタに飛んでいく。
-      return console.log('go to Instagram');
+      return window.open(URLS.INSTAGRAM, '_blank');
     }
-    return console.log('open QR code');
+    return setIsVisibleQR((prev) => !prev);
   }, [isMobile]);
 
   return (
     <footer css={styles.container}>
       <Container cssProp={styles.innerContainer}>
-        <SecondaryButton iconPattern="INSTAGRAM" onClick={handleClick}>
-          follow me !
-        </SecondaryButton>
+        <div css={styles.buttonWrapper}>
+          <div css={getBalloonStyle(isVisibleQR)}>
+            <QRBalloon url={URLS.INSTAGRAM} />
+          </div>
+          <SecondaryButton iconPattern="INSTAGRAM" onClick={handleClick}>
+            follow me !
+          </SecondaryButton>
+        </div>
+
         <div css={styles.linksWrapper}>
           <nav css={styles.navWrapper}>
             {NAV_LIST.map((nav) => {

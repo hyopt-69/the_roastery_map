@@ -9,6 +9,5 @@ export default {
 export const Index: ComponentStoryObj<typeof InputField> = {
   args: {
     placeholder: 'Search',
-    onSubmit: (e) => console.log(e.currentTarget.value),
   },
 };
