@@ -1,4 +1,4 @@
-import { getOpacifyColor } from '../utils/styles/getOpacifyColor';
+import { getOpacifyColor } from '@/app/utils/styles/getOpacifyColor';
 
 export const SHADOW_COLOR = getOpacifyColor('pumice', 's');
 
