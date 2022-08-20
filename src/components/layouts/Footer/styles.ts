@@ -2,8 +2,22 @@ import { css } from '@emotion/react';
 
 import { borderWidths } from '@/app/theme/borderWidths';
 import { colors } from '@/app/theme/colors';
+import { durations } from '@/app/theme/durations';
+import { opacities } from '@/app/theme/opacities';
 import { spaces } from '@/app/theme/spaces';
 import { mediaQuery } from '@/app/utils/styles/mediaQuery';
+
+export const getBalloonStyle = (isVisible: boolean) =>
+  css({
+    position: 'absolute',
+    bottom: '100%',
+    right: '50%',
+
+    transitionDuration: durations.s,
+    visibility: isVisible ? 'visible' : 'hidden',
+    translate: isVisible ? `50% -${spaces.s}px` : `50% -${spaces.xs}px`,
+    opacity: isVisible ? opacities.full : opacities.none,
+  });
 
 export const styles = {
   container: css({
@@ -25,11 +39,14 @@ export const styles = {
       justifyContent: ['center', 'space-between'],
     })
   ),
+  buttonWrapper: css({
+    position: 'relative',
+  }),
   linksWrapper: css(
     {
       display: 'flex',
       flexDirection: 'column',
-      rowGap: spaces.xs,
+      rowGap: spaces.xxs,
     },
     mediaQuery({
       textAlign: ['center', 'right'],

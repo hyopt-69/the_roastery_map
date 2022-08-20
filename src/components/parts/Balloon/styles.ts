@@ -32,7 +32,7 @@ const getVerticalPosition = (dir: Direction): CSSObject => {
     return {
       top: '100%',
       translate: '0 -50%',
-      boxShadow: `6px 6px 12px 0 ${SHADOW_COLOR}`,
+      boxShadow: `4px 4px 10px 0 ${SHADOW_COLOR}`,
     };
   }
   return {
