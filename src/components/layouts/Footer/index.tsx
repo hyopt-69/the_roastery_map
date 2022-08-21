@@ -36,7 +36,7 @@ export const Footer: React.FC<Props> = ({ currentPath }) => {
             <QRBalloon url={URLS.INSTAGRAM} />
           </div>
           <SecondaryButton iconPattern="INSTAGRAM" onClick={handleClick}>
-            follow me !
+            Follow Me !
           </SecondaryButton>
         </div>
 
