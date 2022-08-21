@@ -28,8 +28,10 @@ export const getStyles = ({
     overflow: 'hidden',
     backgroundColor: colors.white,
     borderRadius: borderRadiuses.l,
-    boxShadow: shadow === 'none' ? 'unset' : shadows[shadow],
 
+    ...(shadow !== 'none' && {
+      boxShadow: shadows[shadow],
+    }),
     ...(hasTransition && {
       transitionDuration: durations.s,
       ':hover': {
