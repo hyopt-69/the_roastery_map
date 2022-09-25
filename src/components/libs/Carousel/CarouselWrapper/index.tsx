@@ -2,6 +2,7 @@ import React, {
   useCallback,
   useRef,
   createRef,
+  useState,
   useImperativeHandle,
 } from 'react';
 
@@ -22,17 +23,20 @@ export type CarouselHandler = {
 export const CarouselWrapper = React.forwardRef<CarouselHandler, Props>(
   ({ children, activeIndex, setActiveIndex, ...styleProps }, ref) => {
     const dynamicStyles = getStyles(styleProps);
+    const [isWheeling, setIsWheeling] = useState(false);
+    const wheelTimerRef = useRef<NodeJS.Timer | null>(null);
     const itemRefList = useRef(
       children.map(() => createRef<React.ElementRef<'div'>>())
     );
 
-    const handleClickItem = useCallback(
+    const handleScrollTo = useCallback(
       (index: number) => {
         if (activeIndex === index) return;
 
         itemRefList.current[index]?.current?.scrollIntoView({
           behavior: 'smooth',
           inline: 'center',
+          block: 'nearest',
         });
         setActiveIndex(index);
       },
@@ -41,29 +45,47 @@ export const CarouselWrapper = React.forwardRef<CarouselHandler, Props>(
 
     const handleScrollToNext = useCallback(() => {
       if (activeIndex === children.length - 1) return;
-      handleClickItem(activeIndex + 1);
-    }, [activeIndex, children, handleClickItem]);
+      handleScrollTo(activeIndex + 1);
+    }, [activeIndex, children, handleScrollTo]);
 
     const handleScrollToPrev = useCallback(() => {
       if (activeIndex === 0) return;
-      handleClickItem(activeIndex - 1);
-    }, [activeIndex, handleClickItem]);
+      handleScrollTo(activeIndex - 1);
+    }, [activeIndex, handleScrollTo]);
+
+    const handleWheel = useCallback(
+      (e: React.WheelEvent<HTMLDivElement>) => {
+        if (wheelTimerRef.current) clearTimeout(wheelTimerRef.current);
+        setIsWheeling(true);
+
+        if (isWheeling) {
+          wheelTimerRef.current = setTimeout(() => {
+            if (wheelTimerRef.current) clearTimeout(wheelTimerRef.current);
+            setIsWheeling(false);
+          }, 50);
+        } else {
+          if (e.deltaX > 0) handleScrollToNext();
+          if (e.deltaX < 0) handleScrollToPrev();
+        }
+      },
+      [handleScrollToNext, handleScrollToPrev, isWheeling]
+    );
 
     useImperativeHandle(ref, () => ({
-      scrollTo: handleClickItem,
+      scrollTo: handleScrollTo,
       scrollNext: handleScrollToNext,
       scrollPrev: handleScrollToPrev,
     }));
 
     return (
-      <div css={dynamicStyles.carouselWrapper}>
+      <div css={dynamicStyles.carouselWrapper} onWheel={handleWheel}>
         {children.map((child, i) => {
           return (
             <div
               key={i}
               ref={itemRefList.current[i]}
               role="none"
-              onClick={() => handleClickItem(i)}
+              onClick={() => handleScrollTo(i)}
             >
               {child}
             </div>
