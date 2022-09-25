@@ -11,7 +11,6 @@ export default {
 export const Index: ComponentStoryObj<typeof Balloon> = {
   args: {
     pointDirection: 'down',
-    pointPosition: 'center',
     color: 'white',
   },
   render: (args) => (
