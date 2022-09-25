@@ -15,7 +15,7 @@ export const getBalloonStyle = (isVisible: boolean) =>
 
     transitionDuration: durations.s,
     visibility: isVisible ? 'visible' : 'hidden',
-    translate: isVisible ? `50% -${spaces.s}px` : `50% -${spaces.xs}px`,
+    translate: isVisible ? `50% 0` : `50% ${spaces.s}px`,
     opacity: isVisible ? opacities.full : opacities.none,
   });
 

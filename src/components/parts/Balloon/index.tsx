@@ -9,15 +9,14 @@ type Props = {
 export const Balloon: React.FC<Props> = ({
   children,
   pointDirection,
-  pointPosition,
   color,
 }) => {
-  const dynamicStyles = getStyles({ pointDirection, pointPosition, color });
+  const dynamicStyles = getStyles({ pointDirection, color });
 
   return (
     <div css={dynamicStyles.container}>
-      <div css={dynamicStyles.point} />
       <div css={dynamicStyles.content}>{children}</div>
+      <div css={dynamicStyles.point} />
     </div>
   );
 };
