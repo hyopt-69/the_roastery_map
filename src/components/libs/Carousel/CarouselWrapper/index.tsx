@@ -2,7 +2,6 @@ import React, {
   useCallback,
   useRef,
   createRef,
-  useState,
   useImperativeHandle,
 } from 'react';
 
@@ -23,8 +22,6 @@ export type CarouselHandler = {
 export const CarouselWrapper = React.forwardRef<CarouselHandler, Props>(
   ({ children, activeIndex, setActiveIndex, ...styleProps }, ref) => {
     const dynamicStyles = getStyles(styleProps);
-    const [isWheeling, setIsWheeling] = useState(false);
-    const wheelTimerRef = useRef<NodeJS.Timer | null>(null);
     const itemRefList = useRef(
       children.map(() => createRef<React.ElementRef<'div'>>())
     );
@@ -53,24 +50,6 @@ export const CarouselWrapper = React.forwardRef<CarouselHandler, Props>(
       handleScrollTo(activeIndex - 1);
     }, [activeIndex, handleScrollTo]);
 
-    const handleWheel = useCallback(
-      (e: React.WheelEvent<HTMLDivElement>) => {
-        if (wheelTimerRef.current) clearTimeout(wheelTimerRef.current);
-        setIsWheeling(true);
-
-        if (isWheeling) {
-          wheelTimerRef.current = setTimeout(() => {
-            if (wheelTimerRef.current) clearTimeout(wheelTimerRef.current);
-            setIsWheeling(false);
-          }, 50);
-        } else {
-          if (e.deltaX > 0) handleScrollToNext();
-          if (e.deltaX < 0) handleScrollToPrev();
-        }
-      },
-      [handleScrollToNext, handleScrollToPrev, isWheeling]
-    );
-
     useImperativeHandle(ref, () => ({
       scrollTo: handleScrollTo,
       scrollNext: handleScrollToNext,
@@ -78,7 +57,7 @@ export const CarouselWrapper = React.forwardRef<CarouselHandler, Props>(
     }));
 
     return (
-      <div css={dynamicStyles.carouselWrapper} onWheel={handleWheel}>
+      <div css={dynamicStyles.carouselWrapper}>
         {children.map((child, i) => {
           return (
             <div
