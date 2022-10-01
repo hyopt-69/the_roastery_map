@@ -2,12 +2,8 @@ import { css } from '@emotion/react';
 
 import { Color } from '@/app/theme/colors';
 import { FontSize, fontSizes } from '@/app/theme/fontSizes';
-import { mediaQuery } from '@/app/utils/mediaQuery';
-import {
-  getTypography,
-  Typography,
-  getFluidFontSize,
-} from '@/app/utils/typography';
+import { getFluidFontSize, mediaQuery } from '@/app/utils/responsive';
+import { getTypography, Typography } from '@/app/utils/typography';
 
 export type StyleProps = {
   size?: FontSize;
