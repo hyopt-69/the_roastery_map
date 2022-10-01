@@ -1,5 +1,5 @@
-import { Color, colors } from '../../theme/colors';
-import { opacities, Opacity } from '../../theme/opacities';
+import { Color, colors } from '../theme/colors';
+import { opacities, Opacity } from '../theme/opacities';
 
 // 透明度とAlpha値の関係の参照(https://qiita.com/CUTBOSS/items/a96fb369e5d1d8eda0da)
 const ALPHA: Record<typeof opacities[Opacity], string> = {

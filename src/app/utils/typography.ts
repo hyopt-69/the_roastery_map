@@ -17,17 +17,22 @@ export type Typography = {
   weight: keyof typeof fontWeights;
 };
 
-type Props = {
+type GetTypographyInput = {
   color: Color;
   size?: FontSize;
 } & Partial<Typography>;
 
+/**
+ * デフォルトのタイポグラフィーのスタイルを設定するための関数
+ *
+ * @returns デフォルトのタイポグラフィーのスタイル
+ */
 export const getTypography = ({
   color,
   size = 'm',
   family = 'normal',
   weight = 'normal',
-}: Props): CSSObject => {
+}: GetTypographyInput): CSSObject => {
   return {
     color: colors[color],
     fontSize: fontSizes[size],

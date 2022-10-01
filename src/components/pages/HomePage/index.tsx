@@ -2,6 +2,7 @@ import { css } from '@emotion/react';
 import React, { useRef, useState } from 'react';
 
 import { colors } from '@/app/theme/colors';
+import { getDateDistance } from '@/app/utils/date';
 import { CarouselIndicator } from '@/components/libs/Carousel/CarouselIndicator';
 import {
   CarouselHandler,
@@ -50,6 +51,7 @@ export const HomePage: React.FC = () => {
         activeIndex={activeIndex}
         handleClickItem={(i) => carouselRef.current?.scrollTo(i)}
       />
+      <p>{getDateDistance({ targetDate: new Date('2022.10.02') })}</p>
       <div css={css({ position: 'relative' })}>
         <div css={css({ position: 'absolute', top: 300 })}>
           <TooltipWrapper targetRef={buttonRef} revealFrom="bottom">

@@ -3,7 +3,7 @@ import { css } from '@emotion/react';
 import { durations } from '@/app/theme/durations';
 import { opacities } from '@/app/theme/opacities';
 import { zIndexes } from '@/app/theme/zIndexes';
-import { getOpacifyColor } from '@/app/utils/styles/getOpacifyColor';
+import { getOpacifyColor } from '@/app/utils/colors';
 
 export const getStyles = (isVisible: boolean) => ({
   background: css({
