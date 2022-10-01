@@ -1,26 +1,20 @@
 import { format as libFormat, formatDistance } from 'date-fns';
 import { ja } from 'date-fns/locale';
 
-type Format = 'YYYY.MM.DD';
-
-/**
- * "今"のDateオブジェクトを生成する。
- * @returns "今"のDateオブジェクト
- */
-export const getNow = () => new Date();
+type Format = 'yyyy.MM.dd' | 'yyyy年MM月dd日';
 
 /**
  * Dateオブジェクトをフォーマットする。
  * @returns フォーマットされた日付の文字列
  */
-export const formatDate = ({
-  date = getNow(),
-  format = 'YYYY.MM.DD',
+export const getFormatDate = ({
+  date,
+  format = 'yyyy.MM.dd',
 }: {
   date?: Date;
   format?: Format;
 }) => {
-  const formattedDate = libFormat(date, format, { locale: ja });
+  const formattedDate = libFormat(date || new Date(), format, { locale: ja });
 
   return formattedDate;
 };
@@ -30,13 +24,13 @@ export const formatDate = ({
  * @returns 経過期間を示す文字列
  */
 export const getDateDistance = ({
-  startDate = getNow(),
   baseDate,
+  targetDate,
 }: {
-  startDate?: Date;
-  baseDate: Date;
+  baseDate?: Date;
+  targetDate: Date;
 }) => {
-  const dateDistance = formatDistance(startDate, baseDate, {
+  const dateDistance = formatDistance(targetDate, baseDate || new Date(), {
     locale: ja,
     addSuffix: true,
   });
