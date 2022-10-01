@@ -5,7 +5,7 @@ import { colors } from '@/app/theme/colors';
 import { durations } from '@/app/theme/durations';
 import { opacities } from '@/app/theme/opacities';
 import { spaces } from '@/app/theme/spaces';
-import { mediaQuery } from '@/app/utils/styles/mediaQuery';
+import { mediaQuery } from '@/app/utils/mediaQuery';
 
 export const getBalloonStyle = (isVisible: boolean) =>
   css({

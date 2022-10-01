@@ -2,9 +2,8 @@ import { css } from '@emotion/react';
 
 import { Color } from '@/app/theme/colors';
 import { FontSize, fontSizes } from '@/app/theme/fontSizes';
-import { getFluidFontSize } from '@/app/utils/styles/getFluidFontSize';
-import { getTypography } from '@/app/utils/styles/getTypography';
-import { mediaQuery } from '@/app/utils/styles/mediaQuery';
+import { mediaQuery } from '@/app/utils/mediaQuery';
+import { getTypography, getFluidFontSize } from '@/app/utils/typography';
 
 type BodySize = Extract<FontSize, 'l' | 'm' | 's' | 'xs' | 'xxs'>;
 

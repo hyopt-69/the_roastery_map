@@ -4,7 +4,7 @@ import { BorderWidth, borderWidths } from '@/app/theme/borderWidths';
 import { Color, colors } from '@/app/theme/colors';
 import { FontSize } from '@/app/theme/fontSizes';
 import { spaces } from '@/app/theme/spaces';
-import { getTypography } from '@/app/utils/styles/getTypography';
+import { getTypography } from '@/app/utils/typography';
 
 export type StyleProps = {
   borderWidth?: BorderWidth;
