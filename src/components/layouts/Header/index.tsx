@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { Path } from '@/app/constants/path';
+import { Path } from '@/app/constants/paths';
 import { useResponsive } from '@/app/hooks/useResponsive';
 
 import { DesktopLayout } from './DesktopLayout';

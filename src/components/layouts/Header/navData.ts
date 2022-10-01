@@ -1,5 +1,5 @@
 import { IconPattern } from '@/app/assets/icons';
-import { Path } from '@/app/constants/path';
+import { Path } from '@/app/constants/paths';
 
 type HeaderPath = Extract<Path, 'HOME' | 'NEWS' | 'ABOUT'>;
 

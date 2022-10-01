@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 
-import { Path } from '@/app/constants/path';
+import { Path } from '@/app/constants/paths';
 import { Container } from '@/components/layouts/Container';
 import { Icon } from '@/components/parts/Image/Icon';
 import { InternalLink } from '@/components/parts/Text/InternalLink';
