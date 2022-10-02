@@ -1,5 +1,7 @@
 import BOOK from '@public/svg/book.svg';
 import CALENDAR from '@public/svg/calendar.svg';
+import CHEVRON_LEFT from '@public/svg/chevronLeft.svg';
+import CHEVRON_RIGHT from '@public/svg/chevronRight.svg';
 import DOTS from '@public/svg/dots.svg';
 import HELP_CIRCLE from '@public/svg/helpCircle.svg';
 import HOME from '@public/svg/home.svg';
@@ -18,6 +20,8 @@ import X from '@public/svg/x.svg';
 
 export const ICONS = {
   X,
+  CHEVRON_LEFT,
+  CHEVRON_RIGHT,
   BOOK,
   CALENDAR,
   DOTS,
