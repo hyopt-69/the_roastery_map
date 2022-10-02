@@ -61,6 +61,8 @@ module.exports = {
     'react/jsx-props-no-spreading': 'off',
     // indexしかkeyになるものがない場合が往々にしてあるのでoff
     'react/no-array-index-key': 'off',
+    // emotionでcssを使用するので無効
+    'react/no-unknown-property': ['error', { ignore: ['css'] }],
     // importのorderを強制
     'import/order': [
       'error',
@@ -86,7 +88,6 @@ module.exports = {
         'newlines-between': 'always',
       },
     ],
-    // TODO: 一旦エラーを消しているが、調査が必要なエラーを打ち消し中
     // airbnb-typescriptのバージョンをあげた時に発生
     '@typescript-eslint/no-loop-func': 'off',
     '@typescript-eslint/no-redeclare': 'off',
