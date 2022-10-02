@@ -10,7 +10,7 @@
     },
     {
       "matchUpdateTypes": ["pin"],
-      "autoMerge": true
+      "automerge": true
     }
   ],
   "reviewers": ["@kana-chan"]
