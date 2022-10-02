@@ -63,6 +63,14 @@ module.exports = {
     'react/no-array-index-key': 'off',
     // emotionでcssを使用するので無効
     'react/no-unknown-property': ['error', { ignore: ['css'] }],
+    // アロー関数でのコンポーネント定義を許可する。
+    'react/function-component-definition': [
+      'error',
+      {
+        namedComponents: 'arrow-function',
+        unnamedComponents: 'arrow-function',
+      },
+    ],
     // importのorderを強制
     'import/order': [
       'error',
