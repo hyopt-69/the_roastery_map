@@ -1,9 +1,7 @@
 import { css } from '@emotion/react';
 
 import { borderWidths } from '@/app/theme/borderWidths';
-import { colors } from '@/app/theme/colors';
 import { durations } from '@/app/theme/durations';
-import { opacities } from '@/app/theme/opacities';
 import { scales } from '@/app/theme/scales';
 import { shadows } from '@/app/theme/shadows';
 import { getOpacifyColor } from '@/app/utils/colors';
