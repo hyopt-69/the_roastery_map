@@ -1,1 +1,1 @@
-export const DUMMY_PNG = '/png/defaultAvatar.png';
+export const DUMMY_PNG = '/png/dummy.png';

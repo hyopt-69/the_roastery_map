@@ -27,7 +27,7 @@ export const ActionButton: React.FC<Props> = ({
 
   return (
     <button type="button" css={styles.container} onClick={onClick}>
-      <Icon pattern={ICON[pattern]} size={size} stroke="mirage" />
+      <Icon pattern={ICON[pattern]} size="s" stroke="white" />
     </button>
   );
 };

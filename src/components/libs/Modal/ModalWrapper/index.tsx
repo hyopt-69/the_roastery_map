@@ -1,17 +1,21 @@
 import React, { useRef } from 'react';
 
-import { getStyles } from './styles';
+import { Icon } from '@/components/parts/Image/Icon';
+
+import { getStyles, StyleProps } from './styles';
 
 type Props = {
   children: React.ReactNode;
-  isVisible: boolean;
+  headerElement?: React.ReactNode;
   handleClose: () => void;
-};
+} & StyleProps;
 
 export const ModalWrapper: React.FC<Props> = ({
   children,
+  headerElement,
   isVisible,
   handleClose,
+  backgroundMode,
 }) => {
   const backgroundRef = useRef<React.ElementRef<'div'>>(null);
 
@@ -19,7 +23,7 @@ export const ModalWrapper: React.FC<Props> = ({
     if (e.target === e.currentTarget) handleClose();
   };
 
-  const dynamicStyles = getStyles(isVisible);
+  const dynamicStyles = getStyles({ isVisible, backgroundMode });
 
   return (
     <div
@@ -28,6 +32,7 @@ export const ModalWrapper: React.FC<Props> = ({
       onClick={handleClick}
       role="none"
     >
+      {headerElement && <div css={dynamicStyles.header}>{headerElement}</div>}
       <div css={dynamicStyles.content}>{children}</div>
     </div>
   );
