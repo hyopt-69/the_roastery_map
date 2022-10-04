@@ -1,7 +1,5 @@
 import React, { useRef } from 'react';
 
-import { Icon } from '@/components/parts/Image/Icon';
-
 import { getStyles, StyleProps } from './styles';
 
 type Props = {
