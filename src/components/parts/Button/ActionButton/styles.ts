@@ -1,8 +1,8 @@
 import { css } from '@emotion/react';
 
 import { borderWidths } from '@/app/theme/borderWidths';
-import { colors } from '@/app/theme/colors';
 import { durations } from '@/app/theme/durations';
+import { scales } from '@/app/theme/scales';
 import { shadows } from '@/app/theme/shadows';
 import { getOpacifyColor } from '@/app/utils/colors';
 
@@ -23,19 +23,22 @@ export const getStyles = ({ size = 'm' }: StyleProps) => {
   return {
     container: css({
       all: 'unset',
-      backgroundColor: getOpacifyColor('white', 'm'),
       display: 'flex',
       justifyContent: 'center',
       alignItems: 'center',
       height: BUTTON_HEIGHT[size],
       borderRadius: '50%',
       aspectRatio: '1/1',
-      border: `solid ${borderWidths.l}px ${colors.pumice}`,
+      border: `solid ${borderWidths.l}px ${getOpacifyColor('white', 's')}`,
       cursor: 'pointer',
       transitionDuration: durations.s,
       ':hover': {
-        backgroundColor: getOpacifyColor('white', 'l'),
-        boxShadow: shadows.m,
+        backgroundColor: getOpacifyColor('white', 's'),
+        border: `solid ${borderWidths.l}px ${getOpacifyColor('white', 'm')}`,
+        boxShadow: shadows.l,
+      },
+      ':active': {
+        transform: scales.smaller,
       },
     }),
   };
