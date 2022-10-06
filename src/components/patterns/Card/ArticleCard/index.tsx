@@ -6,7 +6,6 @@ import { Tag } from '@/components/parts/Tag';
 import { Body } from '@/components/parts/Text/Body';
 import { Label } from '@/components/parts/Text/Label';
 import { Title } from '@/components/parts/Text/Title';
-
 import { styles } from './styles';
 
 type AuthorInfo = {
@@ -32,13 +31,15 @@ export const ArticleCard: React.FC<Props> = ({
   authorInfo,
 }) => {
   return (
-    <Card shadow="s">
+    <Card shadow="m">
       <img src={src} />
       <Title size="m">{title}</Title>
       <Body size="m">{body}</Body>
+
       {tags.map((tag) => (
         <Tag pattern="default" label={`#${tag}`} key={tag} />
       ))}
+
       <Avatar src={authorInfo.src} />
       <Label>{authorInfo.name}</Label>
       <Label>{createdAt}</Label>
