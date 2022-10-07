@@ -16,7 +16,6 @@ export const styles = {
   contents: css({
     textAlign: 'left',
     overfloWrap: 'breakWord',
-    fontSize: fontSizes.xxxs,
     color: colors.valencia,
   }),
   tags: css({
