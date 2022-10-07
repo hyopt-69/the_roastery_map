@@ -32,17 +32,23 @@ export const ArticleCard: React.FC<Props> = ({
 }) => {
   return (
     <Card shadow="m">
-      <img src={src} />
-      <Title size="m">{title}</Title>
-      <Body size="m">{body}</Body>
-
-      {tags.map((tag) => (
-        <Tag pattern="default" label={`#${tag}`} key={tag} />
-      ))}
-
-      <Avatar src={authorInfo.src} />
-      <Label>{authorInfo.name}</Label>
-      <Label>{createdAt}</Label>
+      <img css={styles.image} src={src} />
+      <div css={styles.container}>
+        <div css={styles.contents}>
+          <Title size="l">{title}</Title>
+          <Body size="s">{body}</Body>
+        </div>
+        <div css={styles.tags}>
+          {tags.map((tag) => (
+            <Tag pattern="default" label={`#${tag}`} key={tag} />
+          ))}
+        </div>
+        <div css={styles.authorInfo}>
+          <Avatar size="s" src={authorInfo.src} />
+          <Label>{authorInfo.name}</Label>
+        </div>
+        <Label css={styles.createAt}>{createdAt}</Label>
+      </div>
     </Card>
   );
 };
