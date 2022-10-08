@@ -2,9 +2,8 @@ import { css } from '@emotion/react';
 
 import { Color } from '@/app/theme/colors';
 import { FontSize, fontSizes } from '@/app/theme/fontSizes';
-import { getFluidFontSize } from '@/app/utils/styles/getFluidFontSize';
-import { getTypography } from '@/app/utils/styles/getTypography';
-import { mediaQuery } from '@/app/utils/styles/mediaQuery';
+import { getFluidFontSize, mediaQuery } from '@/app/utils/responsive';
+import { getTypography } from '@/app/utils/typography';
 
 type TitleSize = Extract<FontSize, 'xxl' | 'xl' | 'l' | 'm' | 's'>;
 

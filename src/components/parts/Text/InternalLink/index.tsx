@@ -1,7 +1,7 @@
 import NextLink from 'next/link';
 import React from 'react';
 
-import { Path, PATHS } from '@/app/constants/path';
+import { Path, PATHS } from '@/app/constants/paths';
 
 import { getStyles, StyleProps } from './styles';
 

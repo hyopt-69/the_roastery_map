@@ -33,7 +33,7 @@ export const getButtonStyle = ({ size = 'auto' }: StyleProps) =>
     all: 'unset',
     overflow: 'hidden',
     whiteSpace: 'nowrap',
-    height: DEFAULT_BUTTON_HEIGHT,
+    height: DEFAULT_BUTTON_HEIGHT.MEDIUM,
     width: BUTTON_WIDTH[size],
     borderRadius: borderRadiuses.m,
     paddingLeft: spaces.s,

@@ -1,4 +1,4 @@
-import { Path } from '@/app/constants/path';
+import { Path } from '@/app/constants/paths';
 
 export const NAV_LIST: Path[] = ['HOME', 'NEWS', 'ABOUT', 'PRIVACY', 'LICENSE'];
 

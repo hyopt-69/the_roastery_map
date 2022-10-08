@@ -5,7 +5,7 @@ import { borderWidths } from '@/app/theme/borderWidths';
 import { colors } from '@/app/theme/colors';
 import { durations } from '@/app/theme/durations';
 import { spaces } from '@/app/theme/spaces';
-import { getTypography } from '@/app/utils/styles/getTypography';
+import { getTypography } from '@/app/utils/typography';
 
 export const styles = {
   formContainer: css({

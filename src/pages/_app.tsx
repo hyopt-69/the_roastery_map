@@ -4,7 +4,7 @@ import React from 'react';
 
 import 'modern-css-reset';
 
-function MyApp({ Component, pageProps }: AppProps) {
+const MyApp = ({ Component, pageProps }: AppProps) => {
   return (
     <>
       <NextHead>
@@ -28,6 +28,6 @@ function MyApp({ Component, pageProps }: AppProps) {
       <Component {...pageProps} />
     </>
   );
-}
+};
 
 export default MyApp;

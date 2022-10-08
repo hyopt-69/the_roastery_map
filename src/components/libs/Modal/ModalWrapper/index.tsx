@@ -1,17 +1,19 @@
 import React, { useRef } from 'react';
 
-import { getStyles } from './styles';
+import { getStyles, StyleProps } from './styles';
 
 type Props = {
   children: React.ReactNode;
-  isVisible: boolean;
+  headerElement?: React.ReactNode;
   handleClose: () => void;
-};
+} & StyleProps;
 
 export const ModalWrapper: React.FC<Props> = ({
   children,
+  headerElement,
   isVisible,
   handleClose,
+  backgroundMode,
 }) => {
   const backgroundRef = useRef<React.ElementRef<'div'>>(null);
 
@@ -19,16 +21,17 @@ export const ModalWrapper: React.FC<Props> = ({
     if (e.target === e.currentTarget) handleClose();
   };
 
-  const dynamicStyles = getStyles(isVisible);
+  const styles = getStyles({ isVisible, backgroundMode });
 
   return (
     <div
-      css={dynamicStyles.background}
+      css={styles.background}
       ref={backgroundRef}
       onClick={handleClick}
       role="none"
     >
-      <div css={dynamicStyles.content}>{children}</div>
+      {headerElement && <div css={styles.header}>{headerElement}</div>}
+      <div css={styles.content}>{children}</div>
     </div>
   );
 };

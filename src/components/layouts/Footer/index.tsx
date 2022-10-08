@@ -1,6 +1,6 @@
 import React, { useCallback, useState } from 'react';
 
-import { Path } from '@/app/constants/path';
+import { Path } from '@/app/constants/paths';
 import { URLS } from '@/app/constants/urls';
 import { useResponsive } from '@/app/hooks/useResponsive';
 import { SecondaryButton } from '@/components/parts/Button/SecondaryButton';
