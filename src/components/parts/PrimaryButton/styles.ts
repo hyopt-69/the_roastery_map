@@ -1,13 +1,15 @@
 import { css, CSSObject } from '@emotion/react';
 
+import {
+  DEFAULT_BUTTON_HEIGHT,
+  DEFAULT_BUTTON_WIDTH,
+} from '@/app/constants/sizes';
 import { borderRadiuses } from '@/app/theme/borderRadius';
 import { colors } from '@/app/theme/colors';
 import { durations } from '@/app/theme/durations';
 import { opacities } from '@/app/theme/opacities';
 import { scales } from '@/app/theme/scales';
 import { spaces } from '@/app/theme/spaces';
-
-import { DEFAULT_BUTTON_HEIGHT, DEFAULT_BUTTON_WIDTH } from '../constants';
 
 export type ButtonSize = 'm' | 'l' | 'auto';
 export type PointerPosition = {

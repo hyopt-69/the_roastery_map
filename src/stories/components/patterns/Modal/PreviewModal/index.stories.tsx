@@ -1,7 +1,7 @@
 import { ComponentMeta, ComponentStoryObj } from '@storybook/react';
 import React, { useState } from 'react';
 
-import { SecondaryButton } from '@/components/parts/Button/SecondaryButton';
+import { SecondaryButton } from '@/components/parts/SecondaryButton';
 import { PreviewModal } from '@/components/patterns/Modal/PreviewModal';
 import { DUMMY_PNG } from '@/stories/dummy/asset';
 

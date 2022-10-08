@@ -3,9 +3,9 @@ import React, { useCallback, useState } from 'react';
 import { Path } from '@/app/constants/paths';
 import { URLS } from '@/app/constants/urls';
 import { useResponsive } from '@/app/hooks/useResponsive';
-import { SecondaryButton } from '@/components/parts/Button/SecondaryButton';
 import { InternalLink } from '@/components/parts/InternalLink';
 import { Label } from '@/components/parts/Label';
+import { SecondaryButton } from '@/components/parts/SecondaryButton';
 import { QRBalloon } from '@/components/patterns/Balloon/QRBalloon';
 
 import { NAV_LABELS, NAV_LIST } from './navData';

@@ -1,12 +1,11 @@
 import { css } from '@emotion/react';
 
+import { DEFAULT_BUTTON_HEIGHT } from '@/app/constants/sizes';
 import { borderWidths } from '@/app/theme/borderWidths';
 import { durations } from '@/app/theme/durations';
 import { scales } from '@/app/theme/scales';
 import { shadows } from '@/app/theme/shadows';
 import { getOpacifyColor } from '@/app/utils/colors';
-
-import { DEFAULT_BUTTON_HEIGHT } from '../constants';
 
 type ButtonSize = 's' | 'm';
 

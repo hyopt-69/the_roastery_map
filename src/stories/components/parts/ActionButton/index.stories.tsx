@@ -1,6 +1,6 @@
 import { ComponentMeta, ComponentStoryObj } from '@storybook/react';
 
-import { ActionButton } from '@/components/parts/Button/ActionButton';
+import { ActionButton } from '@/components/parts/ActionButton';
 
 export default {
   component: ActionButton,

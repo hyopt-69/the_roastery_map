@@ -1,7 +1,7 @@
 import React, { SetStateAction, useCallback, useMemo } from 'react';
 
 import { ModalWrapper } from '@/components/libs/Modal/ModalWrapper';
-import { ActionButton } from '@/components/parts/Button/ActionButton';
+import { ActionButton } from '@/components/parts/ActionButton';
 import { Icon } from '@/components/parts/Icon';
 import { Label } from '@/components/parts/Label';
 

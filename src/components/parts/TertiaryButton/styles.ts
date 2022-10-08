@@ -1,16 +1,21 @@
 import { css, CSSObject } from '@emotion/react';
 
+import {
+  DEFAULT_BUTTON_HEIGHT,
+  DEFAULT_BUTTON_WIDTH,
+} from '@/app/constants/sizes';
 import { borderRadiuses } from '@/app/theme/borderRadius';
+import { borderWidths } from '@/app/theme/borderWidths';
 import { colors } from '@/app/theme/colors';
+import { durations } from '@/app/theme/durations';
 import { scales } from '@/app/theme/scales';
 import { spaces } from '@/app/theme/spaces';
-
-import { DEFAULT_BUTTON_HEIGHT, DEFAULT_BUTTON_WIDTH } from '../constants';
 
 type ButtonSize = 'm' | 'l' | 'auto';
 
 export type StyleProps = {
   size?: ButtonSize;
+  isOutlined?: boolean;
 };
 
 const BUTTON_WIDTH: Record<ButtonSize, CSSObject['width']> = {
@@ -28,22 +33,28 @@ export const styles = {
   }),
 };
 
-export const getButtonStyle = ({ size = 'auto' }: StyleProps) =>
-  css({
+export const getStyles = ({ size = 'auto', isOutlined }: StyleProps) => {
+  return css({
     all: 'unset',
     overflow: 'hidden',
     whiteSpace: 'nowrap',
     height: DEFAULT_BUTTON_HEIGHT.MEDIUM,
     width: BUTTON_WIDTH[size],
-    borderRadius: borderRadiuses.m,
+
     paddingLeft: spaces.s,
     paddingRight: spaces.s,
 
+    borderRadius: borderRadiuses.m,
+    borderWidth: borderWidths.m,
+    borderColor: colors.tapa,
+    borderStyle: isOutlined ? 'solid' : 'none',
+
     ':enabled': {
-      backgroundColor: colors.mirage,
       cursor: 'pointer',
       ':hover': {
-        backgroundColor: colors.black,
+        transitionDuration: durations.s,
+        borderColor: colors.black,
+        backgroundColor: colors.blackHaze,
       },
       ':active': {
         transform: scales.smaller,
@@ -51,7 +62,7 @@ export const getButtonStyle = ({ size = 'auto' }: StyleProps) =>
     },
 
     ':disabled': {
-      backgroundColor: colors.blackHaze,
       cursor: 'not-allowed',
     },
   });
+};
