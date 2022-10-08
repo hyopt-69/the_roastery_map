@@ -2,10 +2,16 @@ import { css } from '@emotion/react';
 
 import { durations } from '@/app/theme/durations';
 import { opacities } from '@/app/theme/opacities';
+import { spaces } from '@/app/theme/spaces';
 import { zIndexes } from '@/app/theme/zIndexes';
 import { getOpacifyColor } from '@/app/utils/colors';
 
 type BackgroundMode = 'dark' | 'light';
+
+const BACKGROUND_STYLE: Record<BackgroundMode, string> = {
+  dark: getOpacifyColor('black', 'l'),
+  light: getOpacifyColor('black', 's'),
+};
 export type StyleProps = {
   isVisible: boolean;
   backgroundMode?: BackgroundMode;
@@ -20,10 +26,7 @@ export const getStyles = ({
     zIndex: zIndexes.modal,
     width: '100%',
     height: '100%',
-    backgroundColor: getOpacifyColor(
-      'black',
-      backgroundMode === 'dark' ? 'l' : 's'
-    ),
+    backgroundColor: BACKGROUND_STYLE[backgroundMode],
     backdropFilter: 'blur(1.5px)',
 
     transitionDuration: durations.s,
@@ -34,7 +37,7 @@ export const getStyles = ({
   header: css({
     position: 'absolute',
     width: '100%',
-    top: 0,
+    top: spaces.xl,
 
     transitionDuration: durations.s,
     opacity: isVisible ? opacities.full : opacities.none,

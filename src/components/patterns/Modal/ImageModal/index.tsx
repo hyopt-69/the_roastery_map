@@ -5,7 +5,7 @@ import { ActionButton } from '@/components/parts/Button/ActionButton';
 import { Icon } from '@/components/parts/Image/Icon';
 import { Label } from '@/components/parts/Text/Label';
 
-import { styles, getButtonWrapperStyle } from './styles';
+import { styles, getButtonWrapperStyle, imageStyle } from './styles';
 
 type ModalProps = Omit<React.ComponentProps<typeof ModalWrapper>, 'children'>;
 type Props = {
@@ -46,8 +46,8 @@ export const ImageModal: React.FC<Props> = ({
       backgroundMode="dark"
       headerElement={
         <div css={styles.header} onClick={handleClose} role="none">
-          <Icon pattern="X" stroke="white" />
-          <Label color="white" size="s">
+          <Icon pattern="X" stroke="white" size="s" />
+          <Label color="white" size="xs">
             {`${activeIndex + 1} / ${imageSrcList.length}`}
           </Label>
         </div>
@@ -58,7 +58,9 @@ export const ImageModal: React.FC<Props> = ({
           <ActionButton pattern="back" onClick={handleBack} />
         </div>
         <div css={styles.imageWrapper}>
-          <img src={imageSrcList[activeIndex]} />
+          {imageSrcList.map((src, i) => (
+            <img css={imageStyle(i === activeIndex)} src={src} />
+          ))}
         </div>
         <div css={getButtonWrapperStyle(!isLastImage)}>
           <ActionButton pattern="next" onClick={handleNext} />

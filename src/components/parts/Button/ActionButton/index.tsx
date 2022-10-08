@@ -6,14 +6,13 @@ import { Icon } from '@/components/parts/Image/Icon';
 import { getStyles, StyleProps } from './styles';
 
 type ButtonProps = Pick<React.ComponentProps<'button'>, 'onClick'>;
-type ActionPattern = 'close' | 'next' | 'back';
+type ActionPattern = 'next' | 'back';
 type Props = {
   pattern: ActionPattern;
 } & StyleProps &
   ButtonProps;
 
 const ICON: Record<ActionPattern, IconPattern> = {
-  close: 'X',
   next: 'CHEVRON_RIGHT',
   back: 'CHEVRON_LEFT',
 };
