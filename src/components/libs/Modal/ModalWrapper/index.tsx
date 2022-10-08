@@ -21,17 +21,17 @@ export const ModalWrapper: React.FC<Props> = ({
     if (e.target === e.currentTarget) handleClose();
   };
 
-  const dynamicStyles = getStyles({ isVisible, backgroundMode });
+  const styles = getStyles({ isVisible, backgroundMode });
 
   return (
     <div
-      css={dynamicStyles.background}
+      css={styles.background}
       ref={backgroundRef}
       onClick={handleClick}
       role="none"
     >
-      {headerElement && <div css={dynamicStyles.header}>{headerElement}</div>}
-      <div css={dynamicStyles.content}>{children}</div>
+      {headerElement && <div css={styles.header}>{headerElement}</div>}
+      <div css={styles.content}>{children}</div>
     </div>
   );
 };

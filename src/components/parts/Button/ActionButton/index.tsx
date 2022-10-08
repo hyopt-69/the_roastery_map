@@ -5,15 +5,18 @@ import { Icon } from '@/components/parts/Image/Icon';
 
 import { getStyles, StyleProps } from './styles';
 
+// FIXME: そのうちactionPatternごとにanimationとか入れたい。
+// このコンポーネントはswitchして出し分けるハブになるだけ。基本的なStyleは統一しつつそれぞれに適したanimationを入れたい。
+// nextは右に矢印がanimationするし、backは左にanimationする。的な。
+
 type ButtonProps = Pick<React.ComponentProps<'button'>, 'onClick'>;
-type ActionPattern = 'close' | 'next' | 'back';
+type ActionPattern = 'next' | 'back';
 type Props = {
   pattern: ActionPattern;
 } & StyleProps &
   ButtonProps;
 
 const ICON: Record<ActionPattern, IconPattern> = {
-  close: 'X',
   next: 'CHEVRON_RIGHT',
   back: 'CHEVRON_LEFT',
 };
