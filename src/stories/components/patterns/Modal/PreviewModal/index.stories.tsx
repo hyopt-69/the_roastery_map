@@ -1,9 +1,9 @@
 import { ComponentMeta, ComponentStoryObj } from '@storybook/react';
 import React, { useState } from 'react';
 
-import { SecondaryButton } from '@/components/parts/Button/SecondaryButton';
 import { PreviewModal } from '@/components/patterns/Modal/PreviewModal';
 import { DUMMY_PNG } from '@/stories/dummy/asset';
+import { DummyButton } from '@/stories/dummy/element';
 
 export default {
   component: PreviewModal,
@@ -15,9 +15,7 @@ const Story: React.FC = () => {
 
   return (
     <>
-      <SecondaryButton size="l" onClick={() => setIsVisible(true)}>
-        Modalを表示
-      </SecondaryButton>
+      <DummyButton onClick={() => setIsVisible(true)} />
       <PreviewModal
         isVisible={isVisible}
         handleClose={() => setIsVisible(false)}

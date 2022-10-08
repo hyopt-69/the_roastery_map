@@ -1,8 +1,8 @@
 import { ComponentMeta, ComponentStoryObj } from '@storybook/react';
 import React, { useState } from 'react';
 
-import { SecondaryButton } from '@/components/parts/Button/SecondaryButton';
 import { BasicModal } from '@/components/patterns/Modal/BasicModal';
+import { DummyButton } from '@/stories/dummy/element';
 
 export default {
   component: BasicModal,
@@ -12,9 +12,7 @@ const Story: React.FC = () => {
   const [isVisible, setIsVisible] = useState(false);
   return (
     <>
-      <SecondaryButton size="l" onClick={() => setIsVisible(true)}>
-        Modalを表示
-      </SecondaryButton>
+      <DummyButton onClick={() => setIsVisible(true)} />
       <BasicModal
         isVisible={isVisible}
         handleClose={() => setIsVisible(false)}
