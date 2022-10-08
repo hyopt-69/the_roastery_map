@@ -2,7 +2,7 @@ import { css } from '@emotion/react';
 import { ComponentMeta, ComponentStoryObj } from '@storybook/react';
 import React from 'react';
 
-import { QRcode } from '@/components/parts/Image/QRcode';
+import { QRcode } from '@/components/parts/QRcode';
 import { DUMMY_URL } from '@/stories/dummy/url';
 
 export default {

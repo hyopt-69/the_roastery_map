@@ -1,6 +1,6 @@
 import React, { useCallback, useRef } from 'react';
 
-import { Icon } from '@/components/parts/Image/Icon';
+import { Icon } from '@/components/parts/Icon';
 
 import { styles } from './styles';
 
@@ -11,7 +11,7 @@ type InputProps = Pick<
 
 type Props = InputProps;
 
-export const InputField: React.FC<Props> = ({
+export const TextInput: React.FC<Props> = ({
   placeholder = 'search',
   onSubmit,
 }) => {

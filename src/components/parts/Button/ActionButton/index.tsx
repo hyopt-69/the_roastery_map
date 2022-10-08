@@ -1,7 +1,7 @@
 import React from 'react';
 
 import { IconPattern } from '@/app/assets/icons';
-import { Icon } from '@/components/parts/Image/Icon';
+import { Icon } from '@/components/parts/Icon';
 
 import { getStyles, StyleProps } from './styles';
 
