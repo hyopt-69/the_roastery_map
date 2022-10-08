@@ -1,4 +1,4 @@
-import React, { useLayoutEffect, useRef, useState } from 'react';
+import React, { useEffect, useState } from 'react';
 
 import { getStyles, StyleProps } from './styles';
 
@@ -12,12 +12,10 @@ export const TooltipWrapper: React.FC<Props> = ({
   targetRef,
   revealFrom,
 }) => {
-  const tooltipRef = useRef<React.ElementRef<'div'>>(null);
-
   const [isTargetHovered, setIsTargetHovered] = useState(false);
   const [isTooltipHovered, setIsTooltipHovered] = useState(false);
 
-  useLayoutEffect(() => {
+  useEffect(() => {
     const targetElm = targetRef.current;
     const mouseEnterHandler = () => setIsTargetHovered(true);
     const mouseLeaveHandler = () => setIsTargetHovered(false);
@@ -33,7 +31,6 @@ export const TooltipWrapper: React.FC<Props> = ({
 
   return (
     <div
-      ref={tooltipRef}
       css={getStyles({
         revealFrom,
         isVisible: isTargetHovered || isTooltipHovered,
