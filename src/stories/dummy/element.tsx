@@ -3,7 +3,7 @@ import React from 'react';
 
 export const DummyContent: React.FC<
   Pick<CSSObject, 'width' | 'height' | 'backgroundColor'>
-> = ({ width, height, backgroundColor = 'transparent' }) => {
+> = ({ width = '100%', height = '100%', backgroundColor = 'transparent' }) => {
   return (
     <div
       css={css({
@@ -20,8 +20,8 @@ export const DummyContent: React.FC<
   );
 };
 export const DummyButton: React.FC<
-  Pick<React.ComponentProps<'button'>, 'onClick' | 'children'>
-> = ({ onClick, children }) => {
+  Pick<React.ComponentProps<'button'>, 'onClick'>
+> = ({ onClick }) => {
   return (
     <button
       type="button"
@@ -38,7 +38,7 @@ export const DummyButton: React.FC<
         borderRadius: 5,
       })}
     >
-      {children}
+      Click Me !!
     </button>
   );
 };

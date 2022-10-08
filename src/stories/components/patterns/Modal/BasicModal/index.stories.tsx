@@ -12,7 +12,7 @@ const Story: React.FC = () => {
   const [isVisible, setIsVisible] = useState(false);
   return (
     <>
-      <DummyButton onClick={() => setIsVisible(true)}>Modalを表示</DummyButton>
+      <DummyButton onClick={() => setIsVisible(true)} />
       <BasicModal
         isVisible={isVisible}
         handleClose={() => setIsVisible(false)}
