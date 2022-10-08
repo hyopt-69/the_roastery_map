@@ -1,11 +1,10 @@
 import React from 'react';
 
 import { Path } from '@/app/constants/paths';
+import { Footer } from '@/components/patterns/Footer';
+import { Header } from '@/components/patterns/Header';
 
 import { styles } from './styles';
-
-import { Footer } from '../Footer';
-import { Header } from '../Header';
 
 type Props = {
   children: React.ReactNode;

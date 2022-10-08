@@ -11,7 +11,7 @@ import { QRBalloon } from '@/components/patterns/Balloon/QRBalloon';
 import { NAV_LABELS, NAV_LIST } from './navData';
 import { getBalloonStyle, styles } from './styles';
 
-import { Container } from '../Container';
+import { Container } from '../../layouts/Container';
 
 type Props = {
   currentPath: Path;
