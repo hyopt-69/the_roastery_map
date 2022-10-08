@@ -9,6 +9,6 @@ export default {
 export const Index: ComponentStoryObj<typeof ActionButton> = {
   args: {
     size: 'm',
-    pattern: 'close',
+    pattern: 'next',
   },
 };
