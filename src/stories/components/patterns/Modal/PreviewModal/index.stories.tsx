@@ -2,12 +2,12 @@ import { ComponentMeta, ComponentStoryObj } from '@storybook/react';
 import React, { useState } from 'react';
 
 import { SecondaryButton } from '@/components/parts/Button/SecondaryButton';
-import { ImageModal } from '@/components/patterns/Modal/ImageModal';
+import { PreviewModal } from '@/components/patterns/Modal/PreviewModal';
 import { DUMMY_PNG } from '@/stories/dummy/asset';
 
 export default {
-  component: ImageModal,
-} as ComponentMeta<typeof ImageModal>;
+  component: PreviewModal,
+} as ComponentMeta<typeof PreviewModal>;
 
 const Story: React.FC = () => {
   const [isVisible, setIsVisible] = useState(false);
@@ -18,7 +18,7 @@ const Story: React.FC = () => {
       <SecondaryButton size="l" onClick={() => setIsVisible(true)}>
         Modalを表示
       </SecondaryButton>
-      <ImageModal
+      <PreviewModal
         isVisible={isVisible}
         handleClose={() => setIsVisible(false)}
         activeIndex={activeIndex}
@@ -29,6 +29,6 @@ const Story: React.FC = () => {
   );
 };
 
-export const Index: ComponentStoryObj<typeof ImageModal> = {
+export const Index: ComponentStoryObj<typeof PreviewModal> = {
   render: () => <Story />,
 };

@@ -14,7 +14,7 @@ type Props = {
   setActiveIndex: React.Dispatch<SetStateAction<number>>;
 } & ModalProps;
 
-export const ImageModal: React.FC<Props> = ({
+export const PreviewModal: React.FC<Props> = ({
   isVisible,
   imageSrcList,
   activeIndex,
