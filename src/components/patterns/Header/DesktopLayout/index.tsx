@@ -2,8 +2,8 @@ import React from 'react';
 
 import { Path } from '@/app/constants/paths';
 import { Container } from '@/components/layouts/Container';
-import { InternalLink } from '@/components/parts/Text/InternalLink';
-import { Label } from '@/components/parts/Text/Label';
+import { InternalLink } from '@/components/parts/InternalLink';
+import { Label } from '@/components/parts/Label';
 
 import { styles } from './styles';
 

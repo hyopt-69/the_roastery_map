@@ -9,7 +9,7 @@ import {
   CarouselWrapper,
 } from '@/components/libs/Carousel/CarouselWrapper';
 import { TooltipWrapper } from '@/components/libs/Toolttip/TooltipWrapper';
-import { Title } from '@/components/parts/Text/Title';
+import { Title } from '@/components/parts/Title';
 
 export const HomePage: React.FC = () => {
   const buttonRef = useRef<React.ElementRef<'button'>>(null);

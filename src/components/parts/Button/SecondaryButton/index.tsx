@@ -3,7 +3,7 @@ import React, { useMemo } from 'react';
 import { IconPattern } from '@/app/assets/icons';
 import { Color } from '@/app/theme/colors';
 import { Icon } from '@/components/parts/Image/Icon';
-import { Label } from '@/components/parts/Text/Label';
+import { Label } from '@/components/parts/Label';
 
 import { getButtonStyle, StyleProps, styles } from './styles';
 

@@ -1,14 +1,16 @@
 import { ComponentMeta, ComponentStoryObj } from '@storybook/react';
 
-import { Body } from '@/components/parts/Text/Body';
+import { InternalLink } from '@/components/parts/InternalLink';
 
 export default {
-  component: Body,
-} as ComponentMeta<typeof Body>;
+  component: InternalLink,
+} as ComponentMeta<typeof InternalLink>;
 
-const Index: ComponentStoryObj<typeof Body> = {
+const Index: ComponentStoryObj<typeof InternalLink> = {
   args: {
     children: 'Example',
+    path: 'HOME',
+    weight: 'normal',
     color: 'mirage',
   },
 };
@@ -23,6 +25,6 @@ export const Fixed = {
 export const Fluid = {
   args: {
     ...Index.args,
-    mqSizes: ['s', 'xl'],
+    mqSizes: ['m', 'xxl'],
   },
 };

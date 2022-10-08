@@ -1,15 +1,15 @@
 import { ComponentMeta, ComponentStoryObj } from '@storybook/react';
 
-import { Title } from '@/components/parts/Text/Title';
+import { Label } from '@/components/parts/Label';
 
 export default {
-  component: Title,
-} as ComponentMeta<typeof Title>;
+  component: Label,
+} as ComponentMeta<typeof Label>;
 
-const Index: ComponentStoryObj<typeof Title> = {
+const Index: ComponentStoryObj<typeof Label> = {
   args: {
     children: 'Example',
-    Tag: 'h1',
+    weight: 'normal',
     color: 'mirage',
   },
 };
@@ -24,6 +24,6 @@ export const Fixed = {
 export const Fluid = {
   args: {
     ...Index.args,
-    mqSizes: ['s', 'xxl'],
+    mqSizes: ['m', 'xxl'],
   },
 };

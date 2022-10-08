@@ -1,6 +1,6 @@
 import { ComponentMeta, ComponentStoryObj } from '@storybook/react';
 
-import { ExternalLink } from '@/components/parts/Text/ExternalLink';
+import { ExternalLink } from '@/components/parts/ExternalLink';
 import { DUMMY_URL } from '@/stories/dummy/url';
 
 export default {

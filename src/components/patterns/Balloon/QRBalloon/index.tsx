@@ -3,7 +3,7 @@ import React from 'react';
 import { Balloon } from '@/components/parts/Balloon';
 import { Divider } from '@/components/parts/Divider';
 import { QRcode } from '@/components/parts/Image/QRcode';
-import { ExternalLink } from '@/components/parts/Text/ExternalLink';
+import { ExternalLink } from '@/components/parts/ExternalLink';
 
 import { styles } from './styles';
 

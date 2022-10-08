@@ -4,7 +4,7 @@ import { Color } from '@/app/theme/colors';
 
 import { getStyles } from './styles';
 
-import { Label } from '../Text/Label';
+import { Label } from '../Label';
 
 type ButtonProps = Pick<React.ComponentProps<'button'>, 'onClick'>;
 
