@@ -1,3 +1,4 @@
+import { action } from '@storybook/addon-actions';
 import { ComponentMeta, ComponentStoryObj } from '@storybook/react';
 import React from 'react';
 
@@ -16,6 +17,7 @@ export const Index: ComponentStoryObj<typeof Tab> = {
         width={100}
         height={100}
         backgroundColor={colors.blackHaze}
+        onClick={action('onClick')}
       />
     )),
   },
