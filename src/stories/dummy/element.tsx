@@ -2,7 +2,7 @@ import { css, CSSObject } from '@emotion/react';
 import React from 'react';
 
 type Content = {
-  onClick: () => void;
+  onClick?: () => void;
 } & Pick<CSSObject, 'width' | 'height' | 'backgroundColor'>;
 export const DummyContent: React.FC<Content> = ({
   width = '100%',
