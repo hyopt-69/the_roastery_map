@@ -38,7 +38,7 @@ export const getStyles = ({ size = 'auto', isOutlined }: StyleProps) => {
     all: 'unset',
     overflow: 'hidden',
     whiteSpace: 'nowrap',
-    height: DEFAULT_BUTTON_HEIGHT.MEDIUM,
+    height: DEFAULT_BUTTON_HEIGHT.LARGE,
     width: BUTTON_WIDTH[size],
 
     paddingLeft: spaces.s,

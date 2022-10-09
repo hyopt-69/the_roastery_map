@@ -1,6 +1,7 @@
 export const DEFAULT_BUTTON_HEIGHT = {
   SMALL: 24,
-  MEDIUM: 48,
+  MEDIUM: 36,
+  LARGE: 48,
 };
 export const DEFAULT_BUTTON_WIDTH = {
   MEDIUM: 100,

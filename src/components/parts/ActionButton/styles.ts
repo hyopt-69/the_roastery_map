@@ -15,7 +15,7 @@ export type StyleProps = {
 
 const BUTTON_HEIGHT: Record<ButtonSize, number> = {
   s: DEFAULT_BUTTON_HEIGHT.SMALL,
-  m: DEFAULT_BUTTON_HEIGHT.MEDIUM,
+  m: DEFAULT_BUTTON_HEIGHT.LARGE,
 };
 
 export const getStyles = ({ size = 'm' }: StyleProps) => {
