@@ -29,6 +29,7 @@ export const getStyles = ({
       overflow: 'hidden',
       textOverflow: 'ellipsis',
       verticalAlign: 'middle',
+      cursor: 'inherit',
     },
     mediaQuery({
       fontSize: mqSizes && [
