@@ -8,12 +8,12 @@ export default {
   component: RadioForm,
 } as ComponentMeta<typeof RadioForm>;
 
-type Roast = 'dark' | 'medium' | 'light';
+type Test = 'test1' | 'test2' | 'test3';
 
-const radioItems: RadioItemType<Roast>[] = [
-  { label: '深煎り', value: 'dark' },
-  { label: '中煎り', value: 'medium' },
-  { label: '浅煎り', value: 'light' },
+const radioItems: RadioItemType<Test>[] = [
+  { label: 'TEST 1', value: 'test1' },
+  { label: 'TEST 2', value: 'test2' },
+  { label: 'TEST 3', value: 'test3' },
 ];
 
 type StoryProps = Omit<
@@ -22,9 +22,9 @@ type StoryProps = Omit<
 >;
 
 const Story: React.FC<StoryProps> = ({ ...args }) => {
-  const [value, setValue] = useState<Roast>('light');
+  const [value, setValue] = useState<Test>('test1');
   return (
-    <RadioForm<Roast>
+    <RadioForm<Test>
       {...args}
       items={radioItems}
       selectedValue={value}
