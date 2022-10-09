@@ -35,19 +35,25 @@ export const SearchForm: React.FC<Props> = ({
   }, []);
 
   return (
-    <form css={styles.formContainer}>
+    <fieldset css={styles.formContainer} name="search">
       <div css={styles.inputWrapper}>
         <Icon pattern="SEARCH" size="s" stroke="pumice" />
         <input
           ref={inputRef}
+          name="search"
           type="text"
           placeholder={placeholder}
           onKeyDown={handleKeyDown}
         />
       </div>
-      <button css={styles.deleteBtn} type="button" onClick={handleClear}>
+      <button
+        css={styles.deleteBtn}
+        name="search"
+        type="button"
+        onClick={handleClear}
+      >
         <Icon pattern="X" size="s" stroke="pumice" />
       </button>
-    </form>
+    </fieldset>
   );
 };
