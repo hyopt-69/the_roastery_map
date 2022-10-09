@@ -11,7 +11,7 @@ type InputProps = Pick<
 
 type Props = InputProps;
 
-export const TextInput: React.FC<Props> = ({
+export const SearchForm: React.FC<Props> = ({
   placeholder = 'search',
   onSubmit,
 }) => {
