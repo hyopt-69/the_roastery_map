@@ -9,7 +9,7 @@
     "new-component": "npx hygen new component",
     "new-page": "npx hygen new page",
     "lint": "eslint --ext .ts,.tsx,.json,.js,.jsx src/",
-    "tsc": " tsc --noEmit",
+    "tsc": " tsc --noEmit --incremental",
     "sb": "start-storybook -s ./public -p 6006",
     "build-sb": "build-storybook -s ./public"
   },
