@@ -1,6 +1,7 @@
 import React from 'react';
 
 import { IconPattern } from '@/app/assets/icons';
+import { Color } from '@/app/theme/colors';
 import { Icon } from '@/components/parts/Icon';
 
 import { getStyles, StyleProps } from './styles';
@@ -23,14 +24,16 @@ const ICON: Record<ActionPattern, IconPattern> = {
 
 export const ActionButton: React.FC<Props> = ({
   pattern,
+  isTransparent,
   size = 'm',
   onClick,
 }) => {
-  const styles = getStyles({ size });
+  const styles = getStyles({ size, isTransparent });
+  const iconColor: Color = isTransparent ? 'white' : 'mirage';
 
   return (
     <button type="button" css={styles.container} onClick={onClick}>
-      <Icon pattern={ICON[pattern]} size="s" stroke="white" />
+      <Icon pattern={ICON[pattern]} size="s" stroke={iconColor} />
     </button>
   );
 };

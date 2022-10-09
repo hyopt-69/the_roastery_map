@@ -2,6 +2,7 @@ import { css } from '@emotion/react';
 
 import { DEFAULT_BUTTON_HEIGHT } from '@/app/constants/sizes';
 import { borderWidths } from '@/app/theme/borderWidths';
+import { colors } from '@/app/theme/colors';
 import { durations } from '@/app/theme/durations';
 import { scales } from '@/app/theme/scales';
 import { shadows } from '@/app/theme/shadows';
@@ -11,6 +12,7 @@ type ButtonSize = 's' | 'm';
 
 export type StyleProps = {
   size?: ButtonSize;
+  isTransparent?: boolean;
 };
 
 const BUTTON_HEIGHT: Record<ButtonSize, number> = {
@@ -18,7 +20,18 @@ const BUTTON_HEIGHT: Record<ButtonSize, number> = {
   m: DEFAULT_BUTTON_HEIGHT.LARGE,
 };
 
-export const getStyles = ({ size = 'm' }: StyleProps) => {
+const getBackgroundColor = (isTransparent: StyleProps['isTransparent']) => {
+  if (isTransparent) {
+    return {
+      default: colors.transparent,
+      hovered: getOpacifyColor('white', 's'),
+    };
+  }
+  return { default: colors.white, hovered: colors.white };
+};
+export const getStyles = ({ size = 'm', isTransparent }: StyleProps) => {
+  const bgColor = getBackgroundColor(isTransparent);
+
   return {
     container: css({
       all: 'unset',
@@ -28,12 +41,15 @@ export const getStyles = ({ size = 'm' }: StyleProps) => {
       height: BUTTON_HEIGHT[size],
       borderRadius: '50%',
       aspectRatio: '1/1',
-      border: `solid ${borderWidths.l}px ${getOpacifyColor('white', 's')}`,
+      borderStyle: 'solid',
+      borderWidth: `${borderWidths.m}px`,
+      borderColor: colors.tapa,
       cursor: 'pointer',
       transitionDuration: durations.s,
+      backgroundColor: bgColor.default,
       ':hover': {
-        backgroundColor: getOpacifyColor('white', 's'),
-        border: `solid ${borderWidths.l}px ${getOpacifyColor('white', 'm')}`,
+        backgroundColor: bgColor.hovered,
+        borderColor: colors.pumice,
         boxShadow: shadows.l,
       },
       ':active': {

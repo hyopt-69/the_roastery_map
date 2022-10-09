@@ -55,7 +55,7 @@ export const PreviewModal: React.FC<Props> = ({
     >
       <section css={styles.imageSection}>
         <div css={getButtonWrapperStyle(!isFirstImage)}>
-          <ActionButton pattern="back" onClick={handleBack} />
+          <ActionButton pattern="back" isTransparent onClick={handleBack} />
         </div>
         <div css={styles.imageWrapper}>
           {imageSrcList.map((src, i) => (
@@ -63,7 +63,7 @@ export const PreviewModal: React.FC<Props> = ({
           ))}
         </div>
         <div css={getButtonWrapperStyle(!isLastImage)}>
-          <ActionButton pattern="next" onClick={handleNext} />
+          <ActionButton pattern="next" isTransparent onClick={handleNext} />
         </div>
       </section>
     </ModalWrapper>

@@ -6,6 +6,9 @@ export const DummyContent: React.FC<
 > = ({ width = '100%', height = '100%', backgroundColor = 'transparent' }) => {
   return (
     <div
+      // eslint-disable-next-line no-console
+      onClick={() => console.log('click')}
+      role="none"
       css={css({
         display: 'flex',
         justifyContent: 'center',
