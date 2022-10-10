@@ -7,5 +7,9 @@ type Props = {
 } & StyleProps;
 
 export const Card: React.FC<Props> = ({ children, ...styleProps }) => {
-  return <div css={getStyles(styleProps)}>{children}</div>;
+  return (
+    <article role="none" css={getStyles(styleProps)}>
+      {children}
+    </article>
+  );
 };

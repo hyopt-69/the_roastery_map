@@ -2,33 +2,35 @@ import { css } from '@emotion/react';
 
 import { Color } from '@/app/theme/colors';
 import { FontSize, fontSizes } from '@/app/theme/fontSizes';
-import { getFluidFontSize, mediaQuery } from '@/app/utils/responsive';
+import {
+  getBreakStyle,
+  getFluidFontSize,
+  mediaQuery,
+} from '@/app/utils/responsive';
 import { getTypography, Typography } from '@/app/utils/typography';
 
 export type StyleProps = {
   size?: FontSize;
   mqSizes?: [FontSize, FontSize];
   color?: Color;
+  maxLine?: number;
 } & Partial<Typography>;
 
 export const getStyles = ({
   size,
   mqSizes,
+  maxLine,
   color = 'mirage',
   weight,
 }: StyleProps) => {
   return css(
     {
+      ...getBreakStyle(maxLine),
       ...getTypography({
         size,
         color,
         weight,
       }),
-      display: 'inline-block',
-      whiteSpace: 'nowrap',
-      overflow: 'hidden',
-      textOverflow: 'ellipsis',
-      verticalAlign: 'middle',
       cursor: 'inherit',
     },
     mediaQuery({

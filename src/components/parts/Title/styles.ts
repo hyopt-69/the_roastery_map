@@ -2,7 +2,11 @@ import { css } from '@emotion/react';
 
 import { Color } from '@/app/theme/colors';
 import { FontSize, fontSizes } from '@/app/theme/fontSizes';
-import { getFluidFontSize, mediaQuery } from '@/app/utils/responsive';
+import {
+  getBreakStyle,
+  getFluidFontSize,
+  mediaQuery,
+} from '@/app/utils/responsive';
 import { getTypography } from '@/app/utils/typography';
 
 type TitleSize = Extract<FontSize, 'xxl' | 'xl' | 'l' | 'm' | 's'>;
@@ -11,17 +15,23 @@ export type StyleProps = {
   size: TitleSize;
   mqSizes?: [TitleSize, TitleSize];
   color?: Color;
+  maxLine?: number;
 };
 
-export const getStyles = ({ size, mqSizes, color = 'mirage' }: StyleProps) =>
+export const getStyles = ({
+  size,
+  mqSizes,
+  maxLine,
+  color = 'mirage',
+}: StyleProps) =>
   css(
     {
+      ...getBreakStyle(maxLine),
       ...getTypography({
         size,
         color,
         weight: 'bold',
       }),
-      whiteSpace: 'nowrap',
     },
     mediaQuery({
       fontSize: mqSizes && [
