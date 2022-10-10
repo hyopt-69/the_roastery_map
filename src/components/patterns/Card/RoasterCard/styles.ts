@@ -34,7 +34,7 @@ export const styles = {
   }),
 };
 
-export const getButtonWrapperStyle = (isVisible: boolean) => {
+export const getCarouselWrapperStyle = (isVisible: boolean) => {
   const baseStyle: CSSObject = {
     position: 'absolute',
     zIndex: 1,
@@ -52,6 +52,12 @@ export const getButtonWrapperStyle = (isVisible: boolean) => {
     next: css({
       ...baseStyle,
       right: spaces.xs,
+    }),
+    indicator: css({
+      ...baseStyle,
+      left: '50%',
+      translate: `-50% 0`,
+      bottom: spaces.xs,
     }),
   };
 };

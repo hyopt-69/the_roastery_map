@@ -1,6 +1,7 @@
 import React, { useMemo, useRef, useState } from 'react';
 
 import { Roaster } from '@/app/domains/roaster';
+import { CarouselIndicator } from '@/components/libs/Carousel/CarouselIndicator';
 import {
   CarouselHandler,
   CarouselWrapper,
@@ -10,7 +11,7 @@ import { Card } from '@/components/parts/Card';
 import { Label } from '@/components/parts/Label';
 import { Title } from '@/components/parts/Title';
 
-import { styles, getButtonWrapperStyle } from './styles';
+import { styles, getCarouselWrapperStyle } from './styles';
 
 type Props = {
   onClick: () => void;
@@ -45,7 +46,7 @@ export const RoasterCard: React.FC<Props> = ({
         onMouseLeave={() => setIsHovered(false)}
       >
         <section css={styles.carouselSection}>
-          <div css={getButtonWrapperStyle(isVisibleBackButton).back}>
+          <div css={getCarouselWrapperStyle(isVisibleBackButton).back}>
             <ActionButton
               pattern="back"
               size="s"
@@ -62,7 +63,14 @@ export const RoasterCard: React.FC<Props> = ({
               return <img src={image} key={i} />;
             })}
           </CarouselWrapper>
-          <div css={getButtonWrapperStyle(isVisibleNextButton).next}>
+          <div css={getCarouselWrapperStyle(isHovered).indicator}>
+            <CarouselIndicator
+              itemLength={images.length}
+              activeIndex={activeIndex}
+              indicatorSize={5}
+            />
+          </div>
+          <div css={getCarouselWrapperStyle(isVisibleNextButton).next}>
             <ActionButton
               pattern="next"
               size="s"

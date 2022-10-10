@@ -17,17 +17,16 @@ export const getStyles = ({ indicatorSize = 8 }: StyleProps) =>
     input: {
       all: 'unset',
 
+      width: indicatorSize,
       height: indicatorSize,
       borderRadius: indicatorSize / 2,
       transitionDuration: durations.s,
 
       ':checked': {
-        width: indicatorSize * 2,
         backgroundColor: colors.white,
         cursor: 'default',
       },
       ':not(:checked)': {
-        width: indicatorSize,
         backgroundColor: colors.pumice,
 
         ':enabled': {
