@@ -1,3 +1,4 @@
+import { CSSObject } from '@emotion/react';
 import facepaint from 'facepaint';
 
 import { breakPoints, MAX_WINDOW_WIDTH } from '@/app/theme/breakPoints';
@@ -37,4 +38,25 @@ export const getFluidFontSize = ({
     ${round(minFont - minViewPort * slope)}px + ${round(slope * 100)}vw`;
 
   return `clamp(${minFont}px, ${preferredValue}, ${maxFont}px)`;
+};
+
+/**
+ * 改行の行数を指定するための関数
+ *
+ * @returns 改行用Style
+ */
+export const getBreakStyle = (maxLine?: number): CSSObject => {
+  if (maxLine) {
+    return {
+      overflow: 'hidden',
+      wordBreak: 'break-all',
+
+      display: '-webkit-box',
+      WebkitLineClamp: maxLine,
+      WebkitBoxOrient: 'vertical',
+    };
+  }
+  return {
+    wordBreak: 'break-all',
+  };
 };

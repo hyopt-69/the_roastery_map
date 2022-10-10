@@ -9,10 +9,8 @@ type Props = {
 
 export const Title: React.FC<Props> = ({
   children,
-  size,
-  mqSizes,
   Tag = 'h1',
-  color = 'mirage',
+  ...styleProps
 }) => {
-  return <Tag css={getStyles({ size, mqSizes, color })}>{children}</Tag>;
+  return <Tag css={getStyles(styleProps)}>{children}</Tag>;
 };

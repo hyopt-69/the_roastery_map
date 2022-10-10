@@ -6,16 +6,6 @@ type Props = {
   children: string;
 } & StyleProps;
 
-export const Label: React.FC<Props> = ({
-  children,
-  size,
-  mqSizes,
-  color,
-  ...typographyProps
-}) => {
-  return (
-    <p css={getStyles({ size, color, mqSizes, ...typographyProps })}>
-      {children}
-    </p>
-  );
+export const Label: React.FC<Props> = ({ children, ...styleProps }) => {
+  return <p css={getStyles(styleProps)}>{children}</p>;
 };

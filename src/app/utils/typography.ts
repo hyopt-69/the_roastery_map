@@ -38,5 +38,6 @@ export const getTypography = ({
     fontSize: fontSizes[size],
     fontFamily: fontFamilies[family],
     fontWeight: fontWeights[weight],
+    lineHeight: 1.2,
   };
 };
