@@ -39,7 +39,7 @@ export const MobileLayout: React.FC<Props> = ({ currentPath }) => {
                 <Icon
                   pattern={NAV_ICONS[nav]}
                   size="s"
-                  stroke={isCurrentPage ? 'mirage' : 'tapa'}
+                  fill={isCurrentPage ? 'mirage' : 'tapa'}
                 />
               </InternalLink>
             );
@@ -49,11 +49,7 @@ export const MobileLayout: React.FC<Props> = ({ currentPath }) => {
             type="button"
             onClick={() => setIsVisibleNav((prev) => !prev)}
           >
-            <Icon
-              pattern={isVisibleNav ? 'X' : 'MENU'}
-              size="s"
-              stroke="tapa"
-            />
+            <Icon pattern={isVisibleNav ? 'X' : 'MENU'} size="s" fill="tapa" />
           </button>
         </nav>
       </Container>

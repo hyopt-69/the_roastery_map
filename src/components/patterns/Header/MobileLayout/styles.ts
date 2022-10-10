@@ -28,7 +28,7 @@ export const styles = {
     cursor: 'pointer',
 
     'svg:hover': {
-      stroke: colors.mirage,
+      fill: colors.mirage,
     },
   }),
 };
@@ -53,7 +53,7 @@ export const getStyles = (isVisible: boolean) => {
         opacity: isVisible ? opacities.full : opacities.none,
         ':hover': {
           svg: {
-            stroke: colors.mirage,
+            fill: colors.mirage,
           },
         },
       },

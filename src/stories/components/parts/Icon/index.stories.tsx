@@ -10,7 +10,7 @@ export const Index: ComponentStoryObj<typeof Icon> = {
   args: {
     pattern: 'X',
     size: 'm',
-    stroke: 'mirage',
-    fill: 'transparent',
+    stroke: 'transparent',
+    fill: 'mirage',
   },
 };

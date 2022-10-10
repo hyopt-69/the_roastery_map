@@ -1,41 +1,60 @@
-import BOOK from '@public/svg/book.svg';
+import ARROW_LEFT from '@public/svg/arrow_left.svg';
+import ARROW_RIGHT from '@public/svg/arrow_right.svg';
+import BOOKMARK from '@public/svg/bookmark.svg';
 import CALENDAR from '@public/svg/calendar.svg';
-import CHEVRON_LEFT from '@public/svg/chevronLeft.svg';
-import CHEVRON_RIGHT from '@public/svg/chevronRight.svg';
+import CART from '@public/svg/cart.svg';
+import CHECK from '@public/svg/check.svg';
+import CIRCLE_CHECK from '@public/svg/circle_check.svg';
+import CIRCLE_ERROR from '@public/svg/circle_error.svg';
+import CIRCLE_INFORMATION from '@public/svg/circle_information.svg';
+import CIRCLE_QUESTION from '@public/svg/circle_question.svg';
+import CLOCK from '@public/svg/clock.svg';
+import COMPUTER from '@public/svg/computer.svg';
 import DOTS from '@public/svg/dots.svg';
-import HELP_CIRCLE from '@public/svg/helpCircle.svg';
+import EQUALIZER from '@public/svg/equalizer.svg';
+import HEART from '@public/svg/heart.svg';
 import HOME from '@public/svg/home.svg';
 import INSTAGRAM from '@public/svg/instagram.svg';
-import MAP from '@public/svg/map.svg';
 import MENU from '@public/svg/menu.svg';
-import MONITOR from '@public/svg/monitor.svg';
 import MOON from '@public/svg/moon.svg';
+import NEWSPAPER from '@public/svg/newspaper.svg';
+import PIN from '@public/svg/pin.svg';
+import PROFILE from '@public/svg/profile.svg';
 import SEARCH from '@public/svg/search.svg';
-import SHOPPING_CART from '@public/svg/shoppingCart.svg';
-import SLIDERS from '@public/svg/sliders.svg';
 import SUN from '@public/svg/sun.svg';
+import TWITTER from '@public/svg/twitter.svg';
 import X from '@public/svg/x.svg';
 
-// NOTE: https://feathericons.com/ から取得
+// NOTE: 以下から拝借
+// - https://remixicon.com/
 
 export const ICONS = {
-  X,
-  CHEVRON_LEFT,
-  CHEVRON_RIGHT,
-  BOOK,
+  ARROW_LEFT,
+  ARROW_RIGHT,
+  BOOKMARK,
   CALENDAR,
+  CART,
+  CHECK,
+  CIRCLE_CHECK,
+  CIRCLE_ERROR,
+  CIRCLE_INFORMATION,
+  CIRCLE_QUESTION,
+  CLOCK,
+  COMPUTER,
   DOTS,
-  INSTAGRAM,
-  MAP,
-  MONITOR,
-  MOON,
-  SUN,
-  SHOPPING_CART,
-  SLIDERS,
-  SEARCH,
-  HELP_CIRCLE,
+  EQUALIZER,
+  HEART,
   HOME,
+  INSTAGRAM,
   MENU,
+  MOON,
+  NEWSPAPER,
+  PIN,
+  PROFILE,
+  SEARCH,
+  SUN,
+  TWITTER,
+  X,
 } as const;
 
 export type IconPattern = keyof typeof ICONS;

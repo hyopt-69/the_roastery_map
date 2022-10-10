@@ -37,7 +37,7 @@ export const SearchForm: React.FC<Props> = ({
   return (
     <fieldset css={styles.formContainer} name="search">
       <div css={styles.inputWrapper}>
-        <Icon pattern="SEARCH" size="s" stroke="pumice" />
+        <Icon pattern="SEARCH" size="s" fill="pumice" />
         <input
           ref={inputRef}
           name="search"
@@ -52,7 +52,7 @@ export const SearchForm: React.FC<Props> = ({
         type="button"
         onClick={handleClear}
       >
-        <Icon pattern="X" size="s" stroke="pumice" />
+        <Icon pattern="X" size="s" fill="pumice" />
       </button>
     </fieldset>
   );

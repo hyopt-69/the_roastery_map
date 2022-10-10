@@ -7,8 +7,8 @@ export const NAV_LIST: HeaderPath[] = ['HOME', 'NEWS', 'ABOUT'];
 
 export const NAV_ICONS: Record<HeaderPath, IconPattern> = {
   HOME: 'HOME',
-  NEWS: 'BOOK',
-  ABOUT: 'HELP_CIRCLE',
+  NEWS: 'NEWSPAPER',
+  ABOUT: 'PROFILE',
 };
 
 export const NAV_LABELS: Record<HeaderPath, string> = {

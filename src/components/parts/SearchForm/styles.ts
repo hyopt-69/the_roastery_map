@@ -49,7 +49,7 @@ export const styles = {
     svg: {
       transitionDuration: durations.s,
       ':hover': {
-        stroke: colors.mirage,
+        fill: colors.mirage,
       },
     },
   }),
