@@ -18,8 +18,8 @@ type Props = {
   ButtonProps;
 
 const ICON: Record<ActionPattern, IconPattern> = {
-  next: 'CHEVRON_RIGHT',
-  back: 'CHEVRON_LEFT',
+  next: 'ARROW_RIGHT',
+  back: 'ARROW_LEFT',
 };
 
 export const ActionButton: React.FC<Props> = ({
