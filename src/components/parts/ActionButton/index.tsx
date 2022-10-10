@@ -33,7 +33,7 @@ export const ActionButton: React.FC<Props> = ({
 
   return (
     <button type="button" css={styles.container} onClick={onClick}>
-      <Icon pattern={ICON[pattern]} size="s" stroke={iconColor} />
+      <Icon pattern={ICON[pattern]} size="s" fill={iconColor} />
     </button>
   );
 };

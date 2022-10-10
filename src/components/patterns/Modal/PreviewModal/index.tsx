@@ -46,7 +46,7 @@ export const PreviewModal: React.FC<Props> = ({
       backgroundMode="dark"
       headerElement={
         <div css={styles.header} onClick={handleClose} role="none">
-          <Icon pattern="X" stroke="white" size="s" />
+          <Icon pattern="X" fill="white" size="s" />
           <Label color="white" size="xs">
             {`${activeIndex + 1} / ${imageSrcList.length}`}
           </Label>

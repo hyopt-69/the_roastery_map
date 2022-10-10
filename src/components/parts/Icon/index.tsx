@@ -1,4 +1,3 @@
-import { css } from '@emotion/react';
 import React from 'react';
 
 import { IconPattern, ICONS } from '@/app/assets/icons';
@@ -22,8 +21,8 @@ const ICON_SIZE: Record<IconSize, number> = {
 export const Icon: React.FC<Props> = ({
   pattern,
   size = 'm',
-  fill = 'transparent',
-  stroke = 'mirage',
+  fill = 'mirage',
+  stroke = 'transparent',
 }) => {
   const iconSize = ICON_SIZE[size];
   const IconElement = ICONS[pattern];
