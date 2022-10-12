@@ -1,5 +1,3 @@
-import React from 'react';
-
 import { Card } from '@/components/parts/Card';
 import { Avatar } from '@/components/parts/Image/Avatar';
 import { Tag } from '@/components/parts/Tag';
@@ -32,22 +30,30 @@ export const ArticleCard: React.FC<Props> = ({
 }) => {
   return (
     <Card shadow="m">
-      <img css={styles.image} src={src} />
       <div css={styles.container}>
-        <div css={styles.contents}>
-          <Title size="l">{title}</Title>
-          <Body size="s">{body}</Body>
+        <div css={styles.imgContents}>
+          <img css={styles.img} src={src} />
         </div>
-        <div css={styles.tags}>
-          {tags.map((tag) => (
-            <Tag pattern="default" label={`#${tag}`} key={tag} />
-          ))}
+        <div css={styles.textContents}>
+          <div css={styles.title}>
+            <Title size="l">{title}</Title>
+          </div>
+          <div css={styles.body}>
+            <Body size="m">{body}</Body>
+          </div>
+          <div css={styles.tags}>
+            {tags.map((tag) => (
+              <Tag pattern="default" label={`#${tag}`} key={tag} />
+            ))}
+          </div>
+          <div css={styles.label}>
+            <Avatar size="s" src={authorInfo.src} />
+            <Label>{authorInfo.name}</Label>
+            <div css={styles.createdAt}>
+              <Label size="s">{createdAt}</Label>
+            </div>
+          </div>
         </div>
-        <div css={styles.authorInfo}>
-          <Avatar size="s" src={authorInfo.src} />
-          <Label>{authorInfo.name}</Label>
-        </div>
-        <Label css={styles.createAt}>{createdAt}</Label>
       </div>
     </Card>
   );

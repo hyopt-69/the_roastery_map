@@ -1,32 +1,48 @@
+import { BorderRadius, borderRadiuses } from '@/app/theme/borderRadius';
+import { spaces } from '@/app/theme/spaces';
 import { css } from '@emotion/react';
-import { colors } from '@/app/theme/colors';
-import { fontSizes } from '@/app/theme/fontSizes';
 
 export const styles = {
-  image: css({
-    float: 'left',
-    width: '50%',
-    height: '100%',
-  }),
   container: css({
-    float: 'right',
-    width: '50%',
-    height: '100%',
+    display: 'flex',
+    padding: spaces.l,
+    columnGap: spaces.l,
   }),
-  contents: css({
-    textAlign: 'left',
-    overfloWrap: 'breakWord',
-    color: colors.valencia,
+  imgContents: css({
+    width: '40%',
+  }),
+  img: css({
+    width: '350px',
+    height: '250px',
+    borderRadius: borderRadiuses.xl,
+  }),
+  textContents: css({
+    width: '60%',
+    display: 'flex',
+    flexDirection: 'column',
+  }),
+  title: css({
+    width: '530px',
+    whiteSpace: 'nowrap',
+    overflow: 'hidden',
+    textOverflow: 'ellipsis',
+  }),
+  body: css({
+    display: '-webkit-box',
+    '-webkit-box-orient': 'vertical',
+    WebkitLineClamp: 3,
+    overflow: 'hidden',
   }),
   tags: css({
     display: 'flex',
+    columnGap: spaces.xs,
   }),
-  authorInfo: css({
+  label: css({
+    columnGap: spaces.s,
     display: 'flex',
-    justifyContent: 'left',
-    alignItems: 'center',
+    marginTop: 'auto',
   }),
-  createAt: css({
-    textAlign: 'right',
+  createdAt: css({
+    marginLeft: 'auto',
   }),
 };
