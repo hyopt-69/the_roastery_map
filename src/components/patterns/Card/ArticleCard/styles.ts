@@ -9,20 +9,21 @@ export const styles = {
     columnGap: spaces.l,
   }),
   imgContents: css({
-    width: '40%',
+    width: '35%',
   }),
   img: css({
     width: '350px',
     height: '250px',
     borderRadius: borderRadiuses.xl,
+    margin: '0 auto',
   }),
   textContents: css({
-    width: '60%',
+    width: '65%',
     display: 'flex',
     flexDirection: 'column',
   }),
   title: css({
-    width: '530px',
+    width: '700px',
     whiteSpace: 'nowrap',
     overflow: 'hidden',
     textOverflow: 'ellipsis',
