@@ -9,7 +9,9 @@ import {
   CarouselWrapper,
 } from '@/components/libs/Carousel/CarouselWrapper';
 import { TooltipWrapper } from '@/components/libs/Toolttip/TooltipWrapper';
-import { Title } from '@/components/parts/Text/Title';
+import { Title } from '@/components/parts/Title';
+import { RoasterCard } from '@/components/patterns/Card/RoasterCard';
+import { DUMMY_ROASTER_DATA } from '@/stories/dummy/roaster';
 
 export const HomePage: React.FC = () => {
   const buttonRef = useRef<React.ElementRef<'button'>>(null);
@@ -65,6 +67,10 @@ export const HomePage: React.FC = () => {
         >
           {`next: ${activeIndex}`}
         </button>
+      </div>
+      <div css={css({ display: 'flex', gap: 10 })}>
+        <RoasterCard onClick={() => {}} {...DUMMY_ROASTER_DATA} />
+        <RoasterCard onClick={() => {}} {...DUMMY_ROASTER_DATA} />
       </div>
     </div>
   );

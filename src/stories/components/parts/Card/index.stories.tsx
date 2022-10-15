@@ -1,8 +1,9 @@
-import { css } from '@emotion/react';
+import { action } from '@storybook/addon-actions';
 import { ComponentMeta, ComponentStoryObj } from '@storybook/react';
 import React from 'react';
 
 import { Card } from '@/components/parts/Card';
+import { DummyContent } from '@/stories/dummy/element';
 
 export default {
   component: Card,
@@ -15,17 +16,7 @@ export const Index: ComponentStoryObj<typeof Card> = {
   },
   render: (args) => (
     <Card {...args}>
-      <div
-        css={css({
-          display: 'flex',
-          justifyContent: 'center',
-          alignItems: 'center',
-          width: 200,
-          height: 200,
-        })}
-      >
-        Dummy
-      </div>
+      <DummyContent width={200} height={200} onClick={action('click')} />
     </Card>
   ),
 };

@@ -1,9 +1,9 @@
-import { css } from '@emotion/react';
 import { ComponentMeta, ComponentStoryObj } from '@storybook/react';
 import React from 'react';
 
 import { colors } from '@/app/theme/colors';
 import { DefaultLayout } from '@/components/layouts/DefaultLayout';
+import { DummyContent } from '@/stories/dummy/element';
 
 export default {
   component: DefaultLayout,
@@ -11,20 +11,6 @@ export default {
 
 export const Index: ComponentStoryObj<typeof DefaultLayout> = {
   args: {
-    children: (
-      <div
-        css={css({
-          width: '100%',
-          height: 1200,
-          display: 'flex',
-          justifyContent: 'center',
-          alignItems: 'center',
-          backgroundColor: colors.blackHaze,
-          color: colors.mirage,
-        })}
-      >
-        DUMMY
-      </div>
-    ),
+    children: <DummyContent height={1200} backgroundColor={colors.blackHaze} />,
   },
 };

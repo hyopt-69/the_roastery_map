@@ -35,7 +35,7 @@ export const getStyles = ({
     ...(hasTransition && {
       transitionDuration: durations.s,
       ':hover': {
-        transitionDuration: durations.l,
+        transitionDuration: durations.m,
         transform: scales.bigger,
         boxShadow: shadows[HOVERED_SHADOW[shadow]],
       },

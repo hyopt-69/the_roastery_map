@@ -1,8 +1,8 @@
-import { css } from '@emotion/react';
 import { ComponentMeta, ComponentStoryObj } from '@storybook/react';
 import React from 'react';
 
 import { Balloon } from '@/components/parts/Balloon';
+import { DummyContent } from '@/stories/dummy/element';
 
 export default {
   component: Balloon,
@@ -15,17 +15,7 @@ export const Index: ComponentStoryObj<typeof Balloon> = {
   },
   render: (args) => (
     <Balloon {...args}>
-      <div
-        css={css({
-          display: 'flex',
-          justifyContent: 'center',
-          alignItems: 'center',
-          width: 700,
-          height: 100,
-        })}
-      >
-        Dummy
-      </div>
+      <DummyContent width={700} height={100} />
     </Balloon>
   ),
 };
