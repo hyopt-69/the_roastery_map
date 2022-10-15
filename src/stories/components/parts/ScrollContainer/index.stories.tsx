@@ -3,14 +3,14 @@ import { ComponentMeta, ComponentStoryObj } from '@storybook/react';
 import React from 'react';
 
 import { colors } from '@/app/theme/colors';
-import { Tab } from '@/components/parts/Tab';
+import { ScrollContainer } from '@/components/parts/ScrollContainer';
 import { DummyContent } from '@/stories/dummy/element';
 
 export default {
-  component: Tab,
-} as ComponentMeta<typeof Tab>;
+  component: ScrollContainer,
+} as ComponentMeta<typeof ScrollContainer>;
 
-export const Index: ComponentStoryObj<typeof Tab> = {
+export const Index: ComponentStoryObj<typeof ScrollContainer> = {
   args: {
     children: [...new Array(15)].map(() => (
       <DummyContent

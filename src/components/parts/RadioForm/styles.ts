@@ -51,7 +51,7 @@ export const styles = {
       cursor: 'not-allowed',
     },
     input: {
-      // FIXME: Tabで移動できるようにする。
+      // FIXME: Tabキーで移動できるようにする。
       position: 'absolute',
       zIndex: -1,
       opacity: opacities.none,

@@ -1,14 +1,14 @@
 import React, { useRef, useCallback, useState, useEffect } from 'react';
 
-import { styles, getButtonWrapperStyle } from './styles';
+import { ActionButton } from '@/components/parts/ActionButton';
 
-import { ActionButton } from '../ActionButton';
+import { styles, getButtonWrapperStyle } from './styles';
 
 type Props = {
   children: React.ReactNode[];
 };
 
-export const Tab: React.FC<Props> = ({ children }) => {
+export const ScrollContainer: React.FC<Props> = ({ children }) => {
   const wrapperRef = useRef<React.ElementRef<'ul'>>(null);
   const firstItemRef = useRef<React.ElementRef<'li'>>(null);
   const lastItemRef = useRef<React.ElementRef<'li'>>(null);
