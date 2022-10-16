@@ -1,9 +1,9 @@
 import { Card } from '@/components/parts/Card';
-import { Avatar } from '@/components/parts/Image/Avatar';
+import { Avatar } from '@/components/parts/Avatar';
 import { Tag } from '@/components/parts/Tag';
-import { Body } from '@/components/parts/Text/Body';
-import { Label } from '@/components/parts/Text/Label';
-import { Title } from '@/components/parts/Text/Title';
+import { Body } from '@/components/parts/Body';
+import { Label } from '@/components/parts/Label';
+import { Title } from '@/components/parts/Title';
 import { styles } from './styles';
 
 type AuthorInfo = {

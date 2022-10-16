@@ -10,12 +10,15 @@ export const styles = {
   }),
   imgContents: css({
     width: '35%',
+    display: 'flex',
+    alignItems: 'center',
   }),
   img: css({
-    width: '350px',
+    width: '100%',
     height: '250px',
     borderRadius: borderRadiuses.xl,
     margin: '0 auto',
+    objectFit: 'cover',
   }),
   textContents: css({
     width: '65%',
@@ -23,10 +26,10 @@ export const styles = {
     flexDirection: 'column',
   }),
   title: css({
-    width: '700px',
+    /*width: '700px',
     whiteSpace: 'nowrap',
     overflow: 'hidden',
-    textOverflow: 'ellipsis',
+    textOverflow: 'ellipsis',*/
   }),
   body: css({
     display: '-webkit-box',
@@ -39,9 +42,10 @@ export const styles = {
     columnGap: spaces.xs,
   }),
   label: css({
-    columnGap: spaces.s,
+    columnGap: spaces.xs,
     display: 'flex',
     marginTop: 'auto',
+    alignItems: 'center',
   }),
   createdAt: css({
     marginLeft: 'auto',
