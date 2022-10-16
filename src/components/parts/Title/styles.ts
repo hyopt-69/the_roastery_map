@@ -9,7 +9,7 @@ import {
 } from '@/app/utils/responsive';
 import { getTypography } from '@/app/utils/typography';
 
-type TitleSize = Extract<FontSize, 'xxl' | 'xl' | 'l' | 'm' | 's'>;
+type TitleSize = Extract<FontSize, 'xxl' | 'xl' | 'l' | 'm' | 's' | 'xs'>;
 
 export type StyleProps = {
   size: TitleSize;

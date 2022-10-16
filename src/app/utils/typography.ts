@@ -12,6 +12,22 @@ const fontFamilies = {
   normal: 'Source Sans Pro, sans-serif',
 } as const;
 
+const lineHeight = {
+  small: 1.2,
+  big: 1.5,
+} as const;
+
+const getLineHeight = (size: FontSize) => {
+  switch (size) {
+    case 'xxxl':
+    case 'xxl':
+    case 'xl':
+    case 'l':
+      return lineHeight.small;
+    default:
+      return lineHeight.big;
+  }
+};
 export type Typography = {
   family: keyof typeof fontFamilies;
   weight: keyof typeof fontWeights;
@@ -38,6 +54,6 @@ export const getTypography = ({
     fontSize: fontSizes[size],
     fontFamily: fontFamilies[family],
     fontWeight: fontWeights[weight],
-    lineHeight: 1.2,
+    lineHeight: getLineHeight(size),
   };
 };
