@@ -1,49 +1,62 @@
-import { BorderRadius, borderRadiuses } from '@/app/theme/borderRadius';
-import { spaces } from '@/app/theme/spaces';
 import { css } from '@emotion/react';
 
+import { borderRadiuses } from '@/app/theme/borderRadius';
+import { spaces } from '@/app/theme/spaces';
+import { mediaQuery } from '@/app/utils/responsive';
+
 export const styles = {
-  container: css({
-    display: 'flex',
-    padding: spaces.l,
-    columnGap: spaces.l,
-  }),
-  imgContents: css({
-    width: '35%',
-  }),
-  img: css({
-    width: '350px',
-    height: '250px',
-    borderRadius: borderRadiuses.xl,
-    margin: '0 auto',
-  }),
-  textContents: css({
-    width: '65%',
+  container: css(
+    {
+      display: 'flex',
+      width: '100%',
+      padding: spaces.s,
+      cursor: 'pointer',
+    },
+    mediaQuery({
+      gap: [spaces.s, spaces.m],
+    })
+  ),
+  image: css(
+    {
+      height: '100%',
+      maxWidth: '50%',
+      borderRadius: borderRadiuses.s,
+      objectFit: 'cover',
+    },
+    mediaQuery({
+      aspectRatio: ['1/1', '3/2'],
+      height: [150, 350],
+    })
+  ),
+
+  contentWrapper: css({
     display: 'flex',
     flexDirection: 'column',
+    justifyContent: 'space-between',
   }),
-  title: css({
-    width: '700px',
-    whiteSpace: 'nowrap',
-    overflow: 'hidden',
-    textOverflow: 'ellipsis',
-  }),
-  body: css({
-    display: '-webkit-box',
-    '-webkit-box-orient': 'vertical',
-    WebkitLineClamp: 3,
-    overflow: 'hidden',
-  }),
-  tags: css({
+
+  textsWrapper: css(
+    {
+      display: 'flex',
+      flexDirection: 'column',
+    },
+    mediaQuery({
+      gap: [spaces.xs, spaces.s],
+    })
+  ),
+
+  informationWrapper: css({
     display: 'flex',
-    columnGap: spaces.xs,
+    flexDirection: 'column',
+    gap: spaces.xs,
   }),
-  label: css({
-    columnGap: spaces.s,
+  tagWrapper: css({
     display: 'flex',
-    marginTop: 'auto',
+    gap: spaces.xs,
   }),
-  createdAt: css({
-    marginLeft: 'auto',
+  authorInformation: css({
+    display: 'flex',
+    alignItems: 'center',
+    gap: spaces.s,
   }),
 };

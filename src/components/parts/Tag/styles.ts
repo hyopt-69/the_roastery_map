@@ -18,6 +18,7 @@ export const getStyles = ({ bgColor }: StyleProps) => {
       height: HEIGHT,
       borderRadius: HEIGHT / 2,
       backgroundColor: colors[bgColor],
+      whiteSpace: 'nowrap',
       ':enabled': {
         cursor: 'pointer',
         ':active': {

@@ -1,11 +1,17 @@
+import React from 'react';
+
+import { useResponsive } from '@/app/hooks/useResponsive';
+import { getFormatDate } from '@/app/utils/date';
+import { Avatar } from '@/components/parts/Avatar';
+import { Body } from '@/components/parts/Body';
 import { Card } from '@/components/parts/Card';
-import { Avatar } from '@/components/parts/Image/Avatar';
+import { Label } from '@/components/parts/Label';
 import { Tag } from '@/components/parts/Tag';
-import { Body } from '@/components/parts/Text/Body';
-import { Label } from '@/components/parts/Text/Label';
-import { Title } from '@/components/parts/Text/Title';
+import { Title } from '@/components/parts/Title';
+
 import { styles } from './styles';
 
+type TagProps = Pick<React.ComponentProps<typeof Tag>, 'label'>;
 type AuthorInfo = {
   src: string;
   name: string;
@@ -15,9 +21,10 @@ type Props = {
   title: string;
   body: string;
   createdAt: string;
-  tags: string[];
+  tags: TagProps[];
   // FIXME: AdminInfoコンポーネントから取ってくる。
   authorInfo: AuthorInfo;
+  onClick: () => void;
 };
 
 export const ArticleCard: React.FC<Props> = ({
@@ -27,32 +34,53 @@ export const ArticleCard: React.FC<Props> = ({
   tags,
   createdAt,
   authorInfo,
+  onClick,
 }) => {
+  const { isMobile } = useResponsive();
+
   return (
-    <Card shadow="m">
-      <div css={styles.container}>
-        <div css={styles.imgContents}>
-          <img css={styles.img} src={src} />
-        </div>
-        <div css={styles.textContents}>
-          <div css={styles.title}>
-            <Title size="l">{title}</Title>
+    <Card>
+      <div css={styles.container} onClick={onClick} role="none">
+        <img css={styles.image} src={src} />
+
+        <div css={styles.contentWrapper}>
+          <div css={styles.textsWrapper}>
+            <Label size="xxs" color="tapa">
+              {getFormatDate({
+                format: 'yyyy.MM.dd',
+                date: new Date(createdAt),
+              })}
+            </Label>
+            <Title size={isMobile ? 'xs' : 'l'} maxLine={3}>
+              {title}
+            </Title>
+            <Body
+              size={isMobile ? 'xxs' : 'xs'}
+              color="tapa"
+              maxLine={isMobile ? 2 : 4}
+            >
+              {body}
+            </Body>
           </div>
-          <div css={styles.body}>
-            <Body size="m">{body}</Body>
-          </div>
-          <div css={styles.tags}>
-            {tags.map((tag) => (
-              <Tag pattern="default" label={`#${tag}`} key={tag} />
-            ))}
-          </div>
-          <div css={styles.label}>
-            <Avatar size="s" src={authorInfo.src} />
-            <Label>{authorInfo.name}</Label>
-            <div css={styles.createdAt}>
-              <Label size="s">{createdAt}</Label>
+
+          {!isMobile && (
+            <div css={styles.informationWrapper}>
+              <div css={styles.tagWrapper}>
+                {tags.map(({ label }) => (
+                  <Tag
+                    pattern="default"
+                    label={`# ${label}`}
+                    onClick={onClick}
+                    key={label}
+                  />
+                ))}
+              </div>
+              <div css={styles.authorInformation}>
+                <Avatar size="s" src={authorInfo.src} />
+                <Label size="xxs">{authorInfo.name}</Label>
+              </div>
             </div>
-          </div>
+          )}
         </div>
       </div>
     </Card>
