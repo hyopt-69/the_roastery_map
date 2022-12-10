@@ -10,15 +10,15 @@ module.exports = {
         type: 'input',
       },
       {
-        message: `What's the section name if you wanna section component? (ex. TopSection)`,
-        name: 'section',
+        message: `What's the page group?`,
+        name: 'pageGroup',
         type: 'input',
       },
     ];
 
-    return inquirer.prompt(questions).then(({ page, section }) => ({
-      directory: path.join(page, section),
-      name: section || page,
+    return inquirer.prompt(questions).then(({ page, pageGroup }) => ({
+      directory: path.join(page, pageGroup),
+      name: page,
     }));
   },
 };

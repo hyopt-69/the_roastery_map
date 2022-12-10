@@ -10,7 +10,7 @@ module.exports = {
         type: 'input',
       },
       {
-        choices: ['parts', 'patterns', 'layouts'],
+        choices: ['atoms', 'molecules', 'organisms', 'templates'],
         message: `What's the atomic group ?`,
         name: 'atomicGroup',
         type: 'select',

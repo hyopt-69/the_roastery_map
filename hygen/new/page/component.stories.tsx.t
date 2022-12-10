@@ -1,11 +1,11 @@
 ---
-to: src/stories/components/pages/<%= directory %>/index.stories.tsx
+to: src/components/pages/<%= directory %>/index.stories.tsx
 unless_exists: true
 ---
 
 import { ComponentMeta, ComponentStoryObj } from '@storybook/react';
 
-import { <%= name %> } from '@/components/pages/<%= directory %>';
+import { <%= name %> } from '.';
 
 export default {
   component: <%= name %>,
