@@ -1,13 +1,13 @@
 import React, { useCallback, useState } from 'react';
 
-import { Path } from '@/constants/paths';
-import { URLS } from '@/constants/urls';
-import { useResponsive } from '@/hooks/useResponsive';
 import { InternalLink } from '@/components/atoms/InternalLink';
 import { Label } from '@/components/atoms/Label';
 import { SecondaryButton } from '@/components/atoms/SecondaryButton';
 import { QRBalloon } from '@/components/molecules/Balloon/QRBalloon';
 import { Container } from '@/components/templates/Container';
+import { Path } from '@/constants/paths';
+import { URLS } from '@/constants/urls';
+import { useResponsive } from '@/hooks/useResponsive';
 
 import { NAV_LABELS, NAV_LIST } from './navData';
 import { getBalloonStyle, styles } from './styles';

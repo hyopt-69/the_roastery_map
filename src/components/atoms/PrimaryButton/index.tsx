@@ -1,9 +1,9 @@
 import React, { useRef, useState, useCallback, useMemo } from 'react';
 
 import { IconPattern } from '@/assets/icons';
-import { Color } from '@/theme/colors';
 import { Icon } from '@/components/atoms/Icon';
 import { Label } from '@/components/atoms/Label';
+import { Color } from '@/theme/colors';
 
 import { getButtonStyle, ButtonSize, PointerPosition, styles } from './styles';
 

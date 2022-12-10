@@ -1,6 +1,5 @@
 import React, { useMemo, useRef, useState } from 'react';
 
-import { Roaster } from '@/domains/roaster/types';
 import { ActionButton } from '@/components/atoms/ActionButton';
 import { Label } from '@/components/atoms/Label';
 import { Title } from '@/components/atoms/Title';
@@ -9,6 +8,7 @@ import {
   CarouselHandler,
   CarouselWrapper,
 } from '@/components/templates/CarouselWrapper';
+import { Roaster } from '@/domains/roaster/types';
 
 import { styles, getCarouselWrapperStyle } from './styles';
 

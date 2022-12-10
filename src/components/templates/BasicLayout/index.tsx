@@ -1,8 +1,8 @@
 import React from 'react';
 
-import { Path } from '@/constants/paths';
 import { Footer } from '@/components/molecules/Footer';
 import { Header } from '@/components/molecules/Header';
+import { Path } from '@/constants/paths';
 
 import { styles } from './styles';
 

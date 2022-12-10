@@ -1,8 +1,6 @@
 import { css } from '@emotion/react';
 import React, { useRef, useState } from 'react';
 
-import { colors } from '@/theme/colors';
-import { getDateDistance } from '@/utils/date';
 import { Title } from '@/components/atoms/Title';
 import { RoasterCard } from '@/components/organisms/roaster/RoasterCard';
 import {
@@ -11,6 +9,8 @@ import {
 } from '@/components/templates/CarouselWrapper';
 import { TooltipWrapper } from '@/components/templates/TooltipWrapper';
 import { DUMMY_ROASTER_DATA } from '@/dummy/data/roaster';
+import { colors } from '@/theme/colors';
+import { getDateDistance } from '@/utils/date';
 
 export const HomeMainPage: React.FC = () => {
   const buttonRef = useRef<React.ElementRef<'button'>>(null);

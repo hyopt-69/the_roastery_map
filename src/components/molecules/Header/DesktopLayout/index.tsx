@@ -1,9 +1,9 @@
 import React from 'react';
 
-import { Path } from '@/constants/paths';
 import { InternalLink } from '@/components/atoms/InternalLink';
 import { Label } from '@/components/atoms/Label';
 import { Container } from '@/components/templates/Container';
+import { Path } from '@/constants/paths';
 
 import { styles } from './styles';
 
