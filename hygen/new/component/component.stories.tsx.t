@@ -5,7 +5,7 @@ unless_exists: true
 
 import { ComponentMeta, ComponentStoryObj } from '@storybook/react';
 
-import { <%= name %> } from '@/components/<%= directory %>/<%= name %>';
+import { <%= name %> } from '.';
 
 export default {
   component: <%= name %>,
