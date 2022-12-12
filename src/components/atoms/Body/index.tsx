@@ -7,5 +7,7 @@ type Props = {
 } & StyleProps;
 
 export const Body: React.FC<Props> = ({ children, ...styleProps }) => {
-  return <p css={getStyles(styleProps)}>{children}</p>;
+  const { container } = getStyles(styleProps);
+
+  return <p css={container}>{children}</p>;
 };

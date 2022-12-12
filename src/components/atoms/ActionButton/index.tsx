@@ -17,10 +17,10 @@ type Props = {
 } & StyleProps &
   ButtonProps;
 
-const ICON = {
+const ICON: Record<ActionPattern, IconPattern> = {
   next: 'ARROW_RIGHT',
   back: 'ARROW_LEFT',
-} as const satisfies Record<ActionPattern, IconPattern>;
+};
 
 export const ActionButton: React.FC<Props> = ({
   pattern,

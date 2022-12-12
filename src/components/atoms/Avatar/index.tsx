@@ -9,10 +9,10 @@ type Props = {
 } & StyleProps;
 
 export const Avatar: React.FC<Props> = ({ src = AVATARS.DEFAULT, size }) => {
-  const styles = getStyles({ size });
+  const { container } = getStyles({ size });
 
   return (
-    <div css={styles.container}>
+    <div css={container}>
       <img src={src} />
     </div>
   );

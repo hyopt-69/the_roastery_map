@@ -60,12 +60,7 @@ export const CarouselWrapper = React.forwardRef<CarouselHandler, Props>(
       <div css={dynamicStyles.carouselWrapper}>
         {children.map((child, i) => {
           return (
-            <div
-              key={i}
-              ref={itemRefList.current[i]}
-              role="none"
-              onClick={() => handleScrollTo(i)}
-            >
+            <div key={i} ref={itemRefList.current[i]} role="none">
               {child}
             </div>
           );

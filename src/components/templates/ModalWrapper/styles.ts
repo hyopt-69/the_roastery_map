@@ -19,8 +19,8 @@ export type StyleProps = {
 export const getStyles = ({
   isVisible,
   backgroundMode = 'light',
-}: StyleProps) => ({
-  background: css({
+}: StyleProps) => {
+  const background = css({
     position: 'absolute',
     inset: 0,
     zIndex: zIndexes.modal,
@@ -33,16 +33,18 @@ export const getStyles = ({
     transitionProperty: 'opacity, visibility',
     visibility: isVisible ? 'visible' : 'hidden',
     opacity: isVisible ? opacities.full : opacities.none,
-  }),
-  header: css({
+  });
+
+  const header = css({
     position: 'absolute',
     width: '100%',
     top: spaces.xl,
 
     transitionDuration: durations.s,
     opacity: isVisible ? opacities.full : opacities.none,
-  }),
-  content: css({
+  });
+
+  const content = css({
     position: 'absolute',
     transform: 'translate(-50%, -50%)',
     left: '50%',
@@ -50,5 +52,11 @@ export const getStyles = ({
     transitionDuration: durations.s,
     top: isVisible ? '50%' : '100%',
     opacity: isVisible ? opacities.full : opacities.none,
-  }),
-});
+  });
+
+  return {
+    background,
+    header,
+    content,
+  };
+};

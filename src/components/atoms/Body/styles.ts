@@ -23,8 +23,8 @@ export const getStyles = ({
   mqSizes,
   maxLine,
   color = 'mirage',
-}: StyleProps) =>
-  css(
+}: StyleProps) => {
+  const container = css(
     {
       ...getBreakStyle(maxLine),
       ...getTypography({ size, color }),
@@ -36,3 +36,6 @@ export const getStyles = ({
       ],
     })
   );
+
+  return { container };
+};

@@ -1,11 +1,11 @@
-import React, { useRef, useState, useCallback, useMemo } from 'react';
+import React from 'react';
 
 import { IconPattern } from '@/assets/icons';
 import { Icon } from '@/components/atoms/Icon';
 import { Label } from '@/components/atoms/Label';
-import { Color } from '@/theme/colors';
 
-import { getButtonStyle, ButtonSize, PointerPosition, styles } from './styles';
+import { getContentColor, usePrimaryButton } from './hooks';
+import { ButtonSize, getStyles } from './styles';
 
 type ButtonProps = Pick<React.ComponentProps<'button'>, 'onClick' | 'disabled'>;
 
@@ -22,37 +22,19 @@ export const PrimaryButton: React.FC<Props> = ({
   iconPattern,
   onClick,
 }) => {
-  const [pointerPosition, setPointerPosition] = useState<PointerPosition>();
-  const buttonRef = useRef<React.ElementRef<'button'>>(null);
-
-  const contentColor: Color = useMemo(() => {
-    return disabled ? 'pumice' : 'white';
-  }, [disabled]);
-
-  const handleMouseMove: React.MouseEventHandler = useCallback((e) => {
-    const buttonRect = buttonRef.current?.getBoundingClientRect();
-
-    if (buttonRect) {
-      setPointerPosition({
-        x: e.clientX - buttonRect.x,
-        y: e.pageY - buttonRect.y,
-      });
-    }
-  }, []);
-
-  const handleMouseLeave = useCallback(() => setPointerPosition(undefined), []);
+  const { buttonRef, pointerPosition } = usePrimaryButton();
+  const { container, innerContainer } = getStyles({ size, pointerPosition });
+  const contentColor = getContentColor(!!disabled);
 
   return (
     <button
-      type="button"
+      css={container}
       ref={buttonRef}
+      type="button"
       disabled={disabled}
       onClick={onClick}
-      onMouseMove={handleMouseMove}
-      onMouseLeave={handleMouseLeave}
-      css={getButtonStyle({ size, pointerPosition })}
     >
-      <div css={styles.innerWrapper}>
+      <div css={innerContainer}>
         {!!iconPattern && (
           <Icon pattern={iconPattern} fill={contentColor} size="s" />
         )}

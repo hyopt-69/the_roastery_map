@@ -6,13 +6,44 @@ import { opacities } from '@/theme/opacities';
 import { spaces } from '@/theme/spaces';
 import { getOpacifyColor } from '@/utils/colors';
 
-export const styles = {
-  container: css({
+export const getStyles = () => {
+  const buttonWrapperBaseStyle: CSSObject = {
+    position: 'absolute',
+    display: 'flex',
+    alignItems: 'center',
+    height: '100%',
+    transitionDuration: durations.s,
+  };
+
+  const getNextButtonWrapperStyle = (isVisible: boolean) =>
+    css({
+      ...buttonWrapperBaseStyle,
+      visibility: isVisible ? 'visible' : 'hidden',
+      opacity: isVisible ? opacities.full : opacities.none,
+
+      background: `linear-gradient(to right,
+        ${getOpacifyColor('white', 'l')}, ${colors.transparent})`,
+      left: 0,
+    });
+
+  const getBackButtonWrapperStyle = (isVisible: boolean) =>
+    css({
+      ...buttonWrapperBaseStyle,
+      visibility: isVisible ? 'visible' : 'hidden',
+      opacity: isVisible ? opacities.full : opacities.none,
+
+      background: `linear-gradient(to left,
+        ${getOpacifyColor('white', 'l')}, ${colors.transparent})`,
+      right: 0,
+    });
+
+  const container = css({
     position: 'relative',
     display: 'flex',
     height: 'fit-content',
-  }),
-  listWrapper: css({
+  });
+
+  const listWrapper = css({
     all: 'unset',
     display: 'flex',
     overflowX: 'scroll',
@@ -26,32 +57,12 @@ export const styles = {
     li: {
       all: 'unset',
     },
-  }),
-};
-
-export const getButtonWrapperStyle = (isVisible: boolean) => {
-  const baseStyle: CSSObject = {
-    position: 'absolute',
-    display: 'flex',
-    alignItems: 'center',
-    height: '100%',
-    transitionDuration: durations.s,
-    visibility: isVisible ? 'visible' : 'hidden',
-    opacity: isVisible ? opacities.full : opacities.none,
-  };
+  });
 
   return {
-    backButtonWrapper: css({
-      ...baseStyle,
-      background: `linear-gradient(to right,
-        ${getOpacifyColor('white', 'l')}, ${colors.transparent})`,
-      left: 0,
-    }),
-    nextButtonWrapper: css({
-      ...baseStyle,
-      background: `linear-gradient(to left,
-        ${getOpacifyColor('white', 'l')}, ${colors.transparent})`,
-      right: 0,
-    }),
+    container,
+    listWrapper,
+    getNextButtonWrapperStyle,
+    getBackButtonWrapperStyle,
   };
 };

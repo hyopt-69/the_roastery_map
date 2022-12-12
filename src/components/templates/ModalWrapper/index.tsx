@@ -1,5 +1,6 @@
-import React, { useRef } from 'react';
+import React from 'react';
 
+import { useModalWrapper } from './hooks';
 import { getStyles, StyleProps } from './styles';
 
 type Props = {
@@ -15,23 +16,21 @@ export const ModalWrapper: React.FC<Props> = ({
   handleClose,
   backgroundMode,
 }) => {
-  const backgroundRef = useRef<React.ElementRef<'div'>>(null);
-
-  const handleClick: React.MouseEventHandler<HTMLDivElement> = (e) => {
-    if (e.target === e.currentTarget) handleClose();
-  };
-
-  const styles = getStyles({ isVisible, backgroundMode });
+  const { backgroundRef, onClickBackground } = useModalWrapper({ handleClose });
+  const { background, header, content } = getStyles({
+    isVisible,
+    backgroundMode,
+  });
 
   return (
     <div
-      css={styles.background}
+      css={background}
       ref={backgroundRef}
-      onClick={handleClick}
+      onClick={onClickBackground}
       role="none"
     >
-      {headerElement && <div css={styles.header}>{headerElement}</div>}
-      <div css={styles.content}>{children}</div>
+      {headerElement && <div css={header}>{headerElement}</div>}
+      <div css={content}>{children}</div>
     </div>
   );
 };

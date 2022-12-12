@@ -29,7 +29,7 @@ export const getStyles = ({
     backgroundColor: colors[borderColor],
   };
 
-  return css({
+  const container = css({
     display: 'flex',
     alignItems: 'center',
     width: '100%',
@@ -48,4 +48,6 @@ export const getStyles = ({
       }),
     },
   });
+
+  return { container };
 };

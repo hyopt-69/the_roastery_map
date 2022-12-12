@@ -8,11 +8,9 @@ import { opacities } from '@/theme/opacities';
 import { scales } from '@/theme/scales';
 import { spaces } from '@/theme/spaces';
 
+import { PointerPosition } from './hooks';
+
 export type ButtonSize = 'm' | 'l' | 'auto';
-export type PointerPosition = {
-  x: number;
-  y: number;
-};
 
 type StyleProps = {
   size?: ButtonSize;
@@ -30,21 +28,8 @@ const DEFAULT_OVERLAY_SIZE = BUTTON_HEIGHT * 4;
 const ACTIVE_OVERLAY_SIZE = BUTTON_HEIGHT * 2.5;
 const LONG_DURATION = '1.6s';
 
-export const styles = {
-  innerWrapper: css({
-    display: 'flex',
-    position: 'relative',
-    alignItems: 'center',
-    justifyContent: 'center',
-    gap: spaces.xs,
-  }),
-};
-
-export const getButtonStyle = ({
-  size = 'auto',
-  pointerPosition,
-}: StyleProps) =>
-  css({
+export const getStyles = ({ size = 'auto', pointerPosition }: StyleProps) => {
+  const container = css({
     all: 'unset',
     overflow: 'hidden',
     position: 'relative',
@@ -95,3 +80,17 @@ export const getButtonStyle = ({
       cursor: 'not-allowed',
     },
   });
+
+  const innerContainer = css({
+    display: 'flex',
+    position: 'relative',
+    alignItems: 'center',
+    justifyContent: 'center',
+    gap: spaces.xs,
+  });
+
+  return {
+    container,
+    innerContainer,
+  };
+};

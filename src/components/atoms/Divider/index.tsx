@@ -7,5 +7,7 @@ type Props = {
 } & Omit<StyleProps, 'hasLabel'>;
 
 export const Divider: React.FC<Props> = ({ label, ...styleProps }) => {
-  return <p css={getStyles({ ...styleProps, hasLabel: !!label })}>{label}</p>;
+  const { container } = getStyles({ ...styleProps, hasLabel: !!label });
+
+  return <p css={container}>{label}</p>;
 };

@@ -17,7 +17,7 @@ const REVEAL_OFFSET: Record<RevealFrom, number> = {
 };
 
 export const getStyles = ({ isVisible, revealFrom = 'center' }: StyleProps) => {
-  return css({
+  const container = css({
     width: 'fit-content',
     height: 'fit-content',
 
@@ -28,4 +28,8 @@ export const getStyles = ({ isVisible, revealFrom = 'center' }: StyleProps) => {
     opacity: isVisible ? opacities.full : opacities.none,
     visibility: isVisible ? 'visible' : 'hidden',
   });
+
+  return {
+    container,
+  };
 };

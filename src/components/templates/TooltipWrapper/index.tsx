@@ -1,5 +1,6 @@
-import React, { useEffect, useState } from 'react';
+import React from 'react';
 
+import { useTooltipWrapper } from './hooks';
 import { getStyles, StyleProps } from './styles';
 
 type Props = {
@@ -12,29 +13,17 @@ export const TooltipWrapper: React.FC<Props> = ({
   targetRef,
   revealFrom,
 }) => {
-  const [isTargetHovered, setIsTargetHovered] = useState(false);
-  const [isTooltipHovered, setIsTooltipHovered] = useState(false);
-
-  useEffect(() => {
-    const targetElm = targetRef.current;
-    const mouseEnterHandler = () => setIsTargetHovered(true);
-    const mouseLeaveHandler = () => setIsTargetHovered(false);
-
-    targetElm?.addEventListener('mouseenter', mouseEnterHandler);
-    targetElm?.addEventListener('mouseleave', mouseLeaveHandler);
-
-    return () => {
-      targetElm?.removeEventListener('mouseover', mouseEnterHandler);
-      targetElm?.removeEventListener('mouseleave', mouseLeaveHandler);
-    };
-  }, [targetRef]);
+  const { isVisibleTooltip, setIsTooltipHovered } = useTooltipWrapper({
+    targetRef,
+  });
+  const { container } = getStyles({
+    revealFrom,
+    isVisible: isVisibleTooltip,
+  });
 
   return (
     <div
-      css={getStyles({
-        revealFrom,
-        isVisible: isTargetHovered || isTooltipHovered,
-      })}
+      css={container}
       onMouseEnter={() => setIsTooltipHovered(true)}
       onMouseLeave={() => setIsTooltipHovered(false)}
     >
