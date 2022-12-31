@@ -18,6 +18,7 @@ export const getStyles = ({
   color = 'mirage',
   hasUnderLine = false,
   weight,
+  lineHeight,
 }: StyleProps) => {
   return css(
     {
@@ -25,6 +26,7 @@ export const getStyles = ({
         color,
         size,
         weight,
+        lineHeight,
       }),
       cursor: 'pointer',
       display: 'inline-flex',

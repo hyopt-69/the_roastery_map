@@ -5,6 +5,8 @@ export type Roaster = {
   name: string;
   // 店名(カタカナ)
   nameKatakana: string;
+  // サムネイル写真
+  thumbImage: string;
   // 店舗の写真
   images: [string, ...string[]];
   // 住所

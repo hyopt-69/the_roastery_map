@@ -1,57 +1,53 @@
-import { css, CSSObject } from '@emotion/react';
+import { css } from '@emotion/react';
 
-import { durations } from '@/theme/durations';
-import { opacities } from '@/theme/opacities';
+import { borderRadiuses } from '@/theme/borderRadius';
+import { scales } from '@/theme/scales';
 import { spaces } from '@/theme/spaces';
+import { mediaQuery } from '@/utils/responsive';
 
 export const styles = {
-  container: css({
+  container: css(
+    {
+      display: 'flex',
+      flexDirection: 'column',
+      gap: spaces.xs,
+      cursor: 'pointer',
+    },
+    mediaQuery({
+      padding: [spaces.xs, spaces.s],
+    })
+  ),
+  thumbSection: css({
     display: 'flex',
-    flexDirection: 'column',
-  }),
-  carouselSection: css({
-    position: 'relative',
-    display: 'flex',
-    alignItems: 'center',
-    aspectRatio: '3/2',
+    aspectRatio: '1',
+    overflow: 'hidden',
+    borderRadius: borderRadiuses.m,
     img: {
       objectFit: 'cover',
-      width: '100%',
-      height: '100%',
     },
   }),
   informationSection: css({
     display: 'flex',
     flexDirection: 'column',
-
-    padding: `${spaces.xs}px ${spaces.s}px ${spaces.s}px`,
-    gap: spaces.s,
+    gap: spaces.xs,
+  }),
+  upperInfoWrapper: css({
+    display: 'flex',
+  }),
+  favoriteButtonWrapper: css({
+    all: 'unset',
+    display: 'flex',
+    height: 'fit-content',
+    paddingLeft: spaces.xs,
+    paddingBottom: spaces.xs,
+    cursor: 'pointer',
+    ':active': {
+      transform: scales.smaller,
+    },
   }),
   namesWrapper: css({
     display: 'flex',
     flexDirection: 'column',
-    gap: spaces.xxs,
+    flexGrow: 1,
   }),
-};
-
-export const getCarouselWrapperStyle = (isVisible: boolean) => {
-  const baseStyle: CSSObject = {
-    position: 'absolute',
-    zIndex: 1,
-
-    transitionDuration: durations.s,
-    visibility: isVisible ? 'visible' : 'hidden',
-    opacity: isVisible ? opacities.full : opacities.none,
-  };
-
-  return {
-    back: css({
-      ...baseStyle,
-      left: spaces.xs,
-    }),
-    next: css({
-      ...baseStyle,
-      right: spaces.xs,
-    }),
-  };
 };
