@@ -77,9 +77,7 @@ export const NewsCard: React.FC<Props> = ({
               </div>
               <div css={styles.authorInformation}>
                 <Avatar size="m" src={authorInfo.src} />
-                <Label size="xxs" color="tapa">
-                  {authorInfo.name}
-                </Label>
+                <Label size="xxs">{authorInfo.name}</Label>
               </div>
             </div>
           )}
