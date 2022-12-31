@@ -6,7 +6,6 @@ import { ScrollWrapper } from '@/components/templates/ScrollWrapper';
 import { NEWS_CATEGORY_LABEL } from '@/domains/news/constants';
 import { NewsCategory } from '@/domains/news/types';
 
-import { NewsHeaderItem } from './NewsHeaderItem';
 import { styles } from './styles';
 
 const CATEGORIES: NewsCategory[] = [
@@ -19,7 +18,7 @@ const CATEGORIES: NewsCategory[] = [
 
 type Props = {
   activeCategory: NewsCategory;
-  onClickItem: React.ComponentProps<typeof NewsHeaderItem>['onClick'];
+  onClickItem: (arg: NewsCategory) => void;
 };
 
 export const NewsHeader: React.FC<Props> = ({
