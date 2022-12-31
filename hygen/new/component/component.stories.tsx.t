@@ -1,5 +1,5 @@
 ---
-to: src/stories/components/<%= directory %>/<%= name %>/index.stories.tsx
+to: src/components/<%= directory %>/<%= name %>/index.stories.tsx
 unless_exists: true
 ---
 

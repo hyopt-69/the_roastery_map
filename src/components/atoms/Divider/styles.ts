@@ -35,18 +35,19 @@ export const getStyles = ({
     width: '100%',
     ...getTypography({ size: labelSize, color: labelColor }),
 
-    '::before': {
-      ...dividerStyle,
-      ...(hasLabel && {
+    ...(hasLabel && {
+      '::before': {
+        ...dividerStyle,
         marginRight: spaces.xxs,
-      }),
-    },
-    '::after': {
-      ...dividerStyle,
-      ...(hasLabel && {
+      },
+      '::after': {
+        ...dividerStyle,
         marginLeft: spaces.xxs,
-      }),
-    },
+      },
+    }),
+    ...(!hasLabel && {
+      ...dividerStyle,
+    }),
   });
 
   return { container };

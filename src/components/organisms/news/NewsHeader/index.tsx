@@ -1,0 +1,46 @@
+import React from 'react';
+
+import { Divider } from '@/components/atoms/Divider';
+import { TertiaryButton } from '@/components/atoms/TertiaryButton';
+import { ScrollWrapper } from '@/components/templates/ScrollWrapper';
+import { NEWS_CATEGORY_LABEL } from '@/domains/news/constants';
+import { NewsCategory } from '@/domains/news/types';
+
+import { NewsHeaderItem } from './NewsHeaderItem';
+import { styles } from './styles';
+
+const CATEGORIES: NewsCategory[] = [
+  'All',
+  'Event',
+  'Other',
+  'Recipe',
+  'Report',
+];
+
+type Props = {
+  activeCategory: NewsCategory;
+  onClickItem: React.ComponentProps<typeof NewsHeaderItem>['onClick'];
+};
+
+export const NewsHeader: React.FC<Props> = ({
+  activeCategory,
+  onClickItem,
+}) => {
+  return (
+    <nav css={styles.container}>
+      <ScrollWrapper>
+        {CATEGORIES.map((category) => (
+          <>
+            <TertiaryButton onClick={() => onClickItem(category)}>
+              {NEWS_CATEGORY_LABEL[category]}
+            </TertiaryButton>
+            {activeCategory === category && (
+              <Divider borderColor="mirage" borderWidth="l" />
+            )}
+          </>
+        ))}
+      </ScrollWrapper>
+      <Divider />
+    </nav>
+  );
+};
