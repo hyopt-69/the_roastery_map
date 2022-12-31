@@ -3,12 +3,12 @@ import { ComponentMeta, ComponentStoryObj } from '@storybook/react';
 import { AVATARS } from '@/assets/images';
 import { DUMMY_ARTICLE_DATA } from '@/dummy/data/article';
 
-import { ArticleCard } from '.';
+import { NewsCard } from '.';
 
 export default {
-  component: ArticleCard,
-} as ComponentMeta<typeof ArticleCard>;
-export const Index: ComponentStoryObj<typeof ArticleCard> = {
+  component: NewsCard,
+} as ComponentMeta<typeof NewsCard>;
+export const Index: ComponentStoryObj<typeof NewsCard> = {
   args: {
     ...DUMMY_ARTICLE_DATA,
     authorInfo: {

@@ -27,7 +27,7 @@ type Props = {
   onClick: () => void;
 };
 
-export const ArticleCard: React.FC<Props> = ({
+export const NewsCard: React.FC<Props> = ({
   src,
   title,
   body,
@@ -51,13 +51,13 @@ export const ArticleCard: React.FC<Props> = ({
                 date: new Date(createdAt),
               })}
             </Label>
-            <Title size={isMobile ? 'xs' : 'l'} maxLine={3}>
+            <Title Tag="h2" size={isMobile ? 'xs' : 'm'} maxLine={3}>
               {title}
             </Title>
             <Body
               size={isMobile ? 'xxs' : 'xs'}
               color="tapa"
-              maxLine={isMobile ? 2 : 4}
+              maxLine={isMobile ? 3 : 4}
             >
               {body}
             </Body>
@@ -76,7 +76,7 @@ export const ArticleCard: React.FC<Props> = ({
                 ))}
               </div>
               <div css={styles.authorInformation}>
-                <Avatar size="s" src={authorInfo.src} />
+                <Avatar size="m" src={authorInfo.src} />
                 <Label size="xxs">{authorInfo.name}</Label>
               </div>
             </div>

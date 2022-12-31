@@ -9,11 +9,11 @@ export const styles = {
     {
       display: 'flex',
       width: '100%',
-      padding: spaces.s,
       cursor: 'pointer',
     },
     mediaQuery({
-      gap: [spaces.s, spaces.m],
+      gap: [spaces.xs, spaces.s],
+      padding: [spaces.xs, spaces.s],
     })
   ),
   image: css(
@@ -25,7 +25,7 @@ export const styles = {
     },
     mediaQuery({
       aspectRatio: ['1/1', '3/2'],
-      height: [150, 350],
+      height: [160, 280],
     })
   ),
 
@@ -35,15 +35,11 @@ export const styles = {
     justifyContent: 'space-between',
   }),
 
-  textsWrapper: css(
-    {
-      display: 'flex',
-      flexDirection: 'column',
-    },
-    mediaQuery({
-      gap: [spaces.xs, spaces.s],
-    })
-  ),
+  textsWrapper: css({
+    display: 'flex',
+    flexDirection: 'column',
+    gap: spaces.xs,
+  }),
 
   informationWrapper: css({
     display: 'flex',
@@ -57,6 +53,6 @@ export const styles = {
   authorInformation: css({
     display: 'flex',
     alignItems: 'center',
-    gap: spaces.s,
+    gap: spaces.xs,
   }),
 };
