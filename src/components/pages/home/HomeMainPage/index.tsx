@@ -63,8 +63,16 @@ export const HomeMainPage: React.FC = () => {
         </button>
       </div>
       <div css={css({ display: 'flex', gap: 10 })}>
-        <RoasterCard onClick={() => {}} {...DUMMY_ROASTER_DATA} />
-        <RoasterCard onClick={() => {}} {...DUMMY_ROASTER_DATA} />
+        <RoasterCard
+          onClick={() => {}}
+          onClickFavorite={() => {}}
+          {...DUMMY_ROASTER_DATA}
+        />
+        <RoasterCard
+          onClick={() => {}}
+          onClickFavorite={() => {}}
+          {...DUMMY_ROASTER_DATA}
+        />
       </div>
     </div>
   );

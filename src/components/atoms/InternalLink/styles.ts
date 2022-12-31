@@ -16,6 +16,7 @@ export const getStyles = ({
   mqSizes,
   color = 'mirage',
   weight,
+  lineHeight,
 }: StyleProps) => {
   return css(
     {
@@ -23,6 +24,7 @@ export const getStyles = ({
         color,
         size,
         weight,
+        lineHeight,
       }),
       cursor: 'pointer',
       display: 'inline-flex',

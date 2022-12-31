@@ -12,25 +12,15 @@ const fontFamilies = {
   normal: 'Source Sans Pro, sans-serif',
 } as const;
 
-const lineHeight = {
+const lineHeights = {
   small: 1.2,
   big: 1.5,
 } as const;
 
-const getLineHeight = (size: FontSize) => {
-  switch (size) {
-    case 'xxxl':
-    case 'xxl':
-    case 'xl':
-    case 'l':
-      return lineHeight.small;
-    default:
-      return lineHeight.big;
-  }
-};
 export type Typography = {
   family: keyof typeof fontFamilies;
   weight: keyof typeof fontWeights;
+  lineHeight: keyof typeof lineHeights;
 };
 
 type GetTypographyInput = {
@@ -48,12 +38,13 @@ export const getTypography = ({
   size = 'm',
   family = 'normal',
   weight = 'normal',
+  lineHeight = 'small',
 }: GetTypographyInput): CSSObject => {
   return {
     color: colors[color],
     fontSize: fontSizes[size],
     fontFamily: fontFamilies[family],
     fontWeight: fontWeights[weight],
-    lineHeight: getLineHeight(size),
+    lineHeight: lineHeights[lineHeight],
   };
 };

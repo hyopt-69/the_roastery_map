@@ -7,7 +7,7 @@ import {
   getFluidFontSize,
   mediaQuery,
 } from '@/utils/responsive';
-import { getTypography } from '@/utils/typography';
+import { getTypography, Typography } from '@/utils/typography';
 
 type BodySize = Extract<FontSize, 'l' | 'm' | 's' | 'xs' | 'xxs'>;
 
@@ -16,18 +16,19 @@ export type StyleProps = {
   mqSizes?: [BodySize, BodySize];
   color?: Color;
   maxLine?: number;
-};
+} & Partial<Typography>;
 
 export const getStyles = ({
   size,
   mqSizes,
   maxLine,
   color = 'mirage',
+  lineHeight,
 }: StyleProps) => {
   const container = css(
     {
       ...getBreakStyle(maxLine),
-      ...getTypography({ size, color }),
+      ...getTypography({ size, color, lineHeight }),
     },
     mediaQuery({
       fontSize: mqSizes && [

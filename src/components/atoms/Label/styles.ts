@@ -22,6 +22,7 @@ export const getStyles = ({
   maxLine,
   color = 'mirage',
   weight,
+  lineHeight,
 }: StyleProps) => {
   return css(
     {
@@ -30,6 +31,7 @@ export const getStyles = ({
         size,
         color,
         weight,
+        lineHeight,
       }),
       cursor: 'inherit',
     },

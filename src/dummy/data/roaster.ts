@@ -7,5 +7,6 @@ export const DUMMY_ROASTER_DATA: Roaster = {
   nameKatakana: 'ダミーコーヒー',
   address: '東京都千代田区千代田1-1',
   prefecture: 'TOKYO',
+  thumbImage: DUMMY_PNG,
   images: [DUMMY_PNG, DUMMY_PNG, DUMMY_PNG, DUMMY_PNG, DUMMY_PNG],
 };
