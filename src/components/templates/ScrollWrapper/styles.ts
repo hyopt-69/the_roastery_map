@@ -23,7 +23,7 @@ export const getStyles = () => {
 
       background: `linear-gradient(to right,
         ${getOpacifyColor('white', 'l')}, ${colors.transparent})`,
-      left: 0,
+      right: 0,
     });
 
   const getBackButtonWrapperStyle = (isVisible: boolean) =>
@@ -34,7 +34,7 @@ export const getStyles = () => {
 
       background: `linear-gradient(to left,
         ${getOpacifyColor('white', 'l')}, ${colors.transparent})`,
-      right: 0,
+      left: 0,
     });
 
   const container = css({
