@@ -5,9 +5,9 @@ import { colors } from '@/theme/colors';
 type AvatarSize = 's' | 'm' | 'l';
 
 const AVATAR_SIZE: Record<AvatarSize, number> = {
-  s: 40,
-  m: 80,
-  l: 120,
+  s: 24,
+  m: 32,
+  l: 48,
 } as const;
 
 export type StyleProps = {
