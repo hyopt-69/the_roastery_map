@@ -11,6 +11,5 @@ export default {
 export const Index: ComponentStoryObj<typeof RoasterCard> = {
   args: {
     ...DUMMY_ROASTER_DATA,
-    image: DUMMY_ROASTER_DATA.images[0],
   },
 };
