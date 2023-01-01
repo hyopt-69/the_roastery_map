@@ -20,15 +20,9 @@ export const DesktopLayout: React.FC<Props> = ({
         onClickItem={onClickItem}
       />
       <main css={styles.container}>
-        <section css={styles.a}>
+        <section css={styles.contentWrapper}>
           {getDummyArticleList(10).map((item) => {
-            return (
-              <NewsCard
-                {...item}
-                authorInfo={{ name: 'okayama', src: '' }}
-                onClick={() => {}}
-              />
-            );
+            return <NewsCard {...item} onClick={() => {}} />;
           })}
         </section>
       </main>

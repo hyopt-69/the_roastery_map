@@ -24,13 +24,7 @@ export const MobileLayout: React.FC<Props> = ({
       <main css={styles.container}>
         <section css={styles.contentWrapper}>
           {getDummyArticleList(10).map((item) => {
-            return (
-              <NewsCard
-                {...item}
-                authorInfo={{ name: 'okayama', src: '' }}
-                onClick={() => {}}
-              />
-            );
+            return <NewsCard {...item} onClick={() => {}} />;
           })}
         </section>
       </main>

@@ -1,39 +1,28 @@
 import React from 'react';
 
 import { Avatar } from '@/components/atoms/Avatar';
-import { Body } from '@/components/atoms/Body';
 import { Label } from '@/components/atoms/Label';
 import { Tag } from '@/components/atoms/Tag';
 import { Title } from '@/components/atoms/Title';
 import { CardWrapper } from '@/components/templates/CardWrapper';
+import { ADMIN_INFO } from '@/domains/admin/constants';
+import { NEWS_CATEGORY_LABEL } from '@/domains/news/constants';
+import { News } from '@/domains/news/types';
 import { useResponsive } from '@/hooks/useResponsive';
 import { getFormatDate } from '@/utils/date';
 
 import { styles } from './styles';
 
-type TagProps = Pick<React.ComponentProps<typeof Tag>, 'label'>;
-type AuthorInfo = {
-  src: string;
-  name: string;
-};
 type Props = {
-  src: string;
-  title: string;
-  body: string;
-  createdAt: string;
-  tags: TagProps[];
-  // FIXME: AdminInfoコンポーネントから取ってくる。
-  authorInfo: AuthorInfo;
   onClick: () => void;
-};
+} & News;
 
 export const NewsCard: React.FC<Props> = ({
-  src,
+  thumbImage,
   title,
-  body,
-  tags,
+  category,
   createdAt,
-  authorInfo,
+  author,
   onClick,
 }) => {
   const { isMobile } = useResponsive();
@@ -41,10 +30,10 @@ export const NewsCard: React.FC<Props> = ({
   return (
     <CardWrapper>
       <div css={styles.container} onClick={onClick} role="none">
-        <img css={styles.image} src={src} />
+        <img css={styles.image} src={thumbImage} />
 
         <div css={styles.contentWrapper}>
-          <div css={styles.textsWrapper}>
+          <div css={styles.upperContentWrapper}>
             <Label size="xxs" color="tapa">
               {getFormatDate({
                 format: 'yyyy.MM.dd',
@@ -54,31 +43,17 @@ export const NewsCard: React.FC<Props> = ({
             <Title Tag="h2" size={isMobile ? 'xs' : 'm'} maxLine={3}>
               {title}
             </Title>
-            {!isMobile && (
-              <Body size="xs" color="tapa" maxLine={4}>
-                {body}
-              </Body>
-            )}
           </div>
 
-          <div css={styles.informationWrapper}>
-            <div css={styles.tagWrapper}>
-              {tags.map(({ label }) => (
-                <Tag
-                  pattern="default"
-                  label={`${label}`}
-                  onClick={onClick}
-                  key={label}
-                />
-              ))}
-            </div>
-            {!isMobile && (
+          {!isMobile && (
+            <div css={styles.informationWrapper}>
               <div css={styles.authorInformation}>
-                <Avatar size="m" src={authorInfo.src} />
-                <Label size="xxs">{authorInfo.name}</Label>
+                <Avatar size="s" src={ADMIN_INFO[author].image} />
+                <Label size="xxs">{ADMIN_INFO[author].name}</Label>
               </div>
-            )}
-          </div>
+              <Tag pattern="default" label={NEWS_CATEGORY_LABEL[category]} />
+            </div>
+          )}
         </div>
       </div>
     </CardWrapper>
