@@ -1,26 +1,39 @@
 import { css } from '@emotion/react';
 
-import { DEFAULT_HEADER_HEIGHT } from '@/constants/sizes';
-import { MIN_WINDOW_WIDTH } from '@/theme/breakPoints';
+import { MAX_WINDOW_WIDTH, MIN_WINDOW_WIDTH } from '@/theme/breakPoints';
 import { colors } from '@/theme/colors';
 import { spaces } from '@/theme/spaces';
 
 export const styles = {
-  tabWrapper: css({
-    position: 'sticky',
-    zIndex: 1,
-    top: DEFAULT_HEADER_HEIGHT.SMALL,
-  }),
   container: css({
     display: 'flex',
-    flexDirection: 'column',
-    alignItems: 'center',
+    justifyContent: 'center',
     backgroundColor: colors.white,
+  }),
+  innerContainer: css({
+    display: 'flex',
+    maxWidth: MAX_WINDOW_WIDTH,
     minWidth: MIN_WINDOW_WIDTH,
+    paddingInline: spaces.s,
+  }),
+  sideNavigationWrapper: css({
+    display: 'flex',
+    flexShrink: 0,
+    width: 300,
+    borderRight: `1px solid ${colors.blackHaze}`,
+  }),
+  rightContentsWrapper: css({
+    display: 'flex',
+    flexDirection: 'column',
+    flexShrink: 1,
   }),
   contentWrapper: css({
     display: 'flex',
+    width: '100%',
     flexDirection: 'column',
+    paddingInline: spaces.s,
+    paddingBlock: spaces.s,
     gap: spaces.m,
+    backGroundColor: 'red',
   }),
 };

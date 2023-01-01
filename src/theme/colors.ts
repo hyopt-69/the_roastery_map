@@ -15,6 +15,7 @@ export const colors = {
   mountainMeadow: '#1DAA77',
   shamrock: '#27E39E',
   riptide: '#93F1CF',
+  blackSqueeze: '#F2FEF9',
   // その他
   transparent: 'transparent',
 } as const;

@@ -19,15 +19,6 @@ export const styles = {
     zIndex: 1,
     top: DEFAULT_HEADER_HEIGHT.SMALL,
   }),
-  categoryLabelWrapper: css({
-    display: 'flex',
-    width: '100%',
-    flexDirection: 'column',
-    justifyContent: 'center',
-    background: `radial-gradient(circle at bottom left, ${colors.blackHaze} 0, ${colors.white} 30%)`,
-    paddingInline: spaces.s,
-    paddingBlock: spaces.l,
-  }),
   contentWrapper: css({
     display: 'flex',
     flexDirection: 'column',
