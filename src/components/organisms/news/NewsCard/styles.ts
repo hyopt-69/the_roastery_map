@@ -5,27 +5,23 @@ import { spaces } from '@/theme/spaces';
 import { mediaQuery } from '@/utils/responsive';
 
 export const styles = {
-  container: css(
-    {
-      display: 'flex',
-      width: '100%',
-      cursor: 'pointer',
-    },
-    mediaQuery({
-      gap: [spaces.xs, spaces.s],
-      padding: [spaces.xs, spaces.s],
-    })
-  ),
+  container: css({
+    display: 'flex',
+    width: '100%',
+    cursor: 'pointer',
+    gap: spaces.s,
+    padding: spaces.s,
+  }),
   image: css(
     {
       height: '100%',
       maxWidth: '50%',
       borderRadius: borderRadiuses.s,
       objectFit: 'cover',
+      aspectRatio: '3/2',
     },
     mediaQuery({
-      aspectRatio: ['1/1', '3/2'],
-      height: [120, 280],
+      height: [90, 160],
     })
   ),
 
@@ -35,7 +31,7 @@ export const styles = {
     justifyContent: 'space-between',
   }),
 
-  textsWrapper: css({
+  upperContentWrapper: css({
     display: 'flex',
     flexDirection: 'column',
     gap: spaces.xs,
@@ -43,16 +39,12 @@ export const styles = {
 
   informationWrapper: css({
     display: 'flex',
-    flexDirection: 'column',
-    gap: spaces.xs,
-  }),
-  tagWrapper: css({
-    display: 'flex',
-    gap: spaces.xs,
+    alignItems: 'center',
+    justifyContent: 'space-between',
   }),
   authorInformation: css({
     display: 'flex',
     alignItems: 'center',
-    gap: spaces.xs,
+    gap: spaces.s,
   }),
 };

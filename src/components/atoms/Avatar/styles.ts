@@ -5,7 +5,7 @@ import { colors } from '@/theme/colors';
 type AvatarSize = 's' | 'm' | 'l';
 
 const AVATAR_SIZE: Record<AvatarSize, number> = {
-  s: 24,
+  s: 26,
   m: 32,
   l: 48,
 } as const;
