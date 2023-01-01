@@ -11,9 +11,9 @@ import { styles } from './styles';
 const CATEGORIES: NewsCategory[] = [
   'All',
   'Event',
-  'Other',
   'Recipe',
   'Report',
+  'Other',
 ];
 
 type Props = {
@@ -21,7 +21,7 @@ type Props = {
   onClickItem: (arg: NewsCategory) => void;
 };
 
-export const NewsHeader: React.FC<Props> = ({
+export const NewsHeaderTab: React.FC<Props> = ({
   activeCategory,
   onClickItem,
 }) => {
@@ -39,7 +39,7 @@ export const NewsHeader: React.FC<Props> = ({
           </>
         ))}
       </ScrollWrapper>
-      <Divider />
+      <Divider borderColor="blackHaze" />
     </nav>
   );
 };

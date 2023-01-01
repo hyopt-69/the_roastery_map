@@ -17,7 +17,7 @@ module.exports = {
     ];
 
     return inquirer.prompt(questions).then(({ page, pageGroup }) => ({
-      directory: path.join(page, pageGroup),
+      directory: path.join(pageGroup, page),
       name: page,
     }));
   },

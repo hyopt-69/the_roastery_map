@@ -54,33 +54,31 @@ export const NewsCard: React.FC<Props> = ({
             <Title Tag="h2" size={isMobile ? 'xs' : 'm'} maxLine={3}>
               {title}
             </Title>
-            <Body
-              size={isMobile ? 'xxs' : 'xs'}
-              color="tapa"
-              maxLine={isMobile ? 3 : 4}
-            >
-              {body}
-            </Body>
+            {!isMobile && (
+              <Body size="xs" color="tapa" maxLine={4}>
+                {body}
+              </Body>
+            )}
           </div>
 
-          {!isMobile && (
-            <div css={styles.informationWrapper}>
-              <div css={styles.tagWrapper}>
-                {tags.map(({ label }) => (
-                  <Tag
-                    pattern="default"
-                    label={`# ${label}`}
-                    onClick={onClick}
-                    key={label}
-                  />
-                ))}
-              </div>
+          <div css={styles.informationWrapper}>
+            <div css={styles.tagWrapper}>
+              {tags.map(({ label }) => (
+                <Tag
+                  pattern="default"
+                  label={`${label}`}
+                  onClick={onClick}
+                  key={label}
+                />
+              ))}
+            </div>
+            {!isMobile && (
               <div css={styles.authorInformation}>
                 <Avatar size="m" src={authorInfo.src} />
                 <Label size="xxs">{authorInfo.name}</Label>
               </div>
-            </div>
-          )}
+            )}
+          </div>
         </div>
       </div>
     </CardWrapper>

@@ -25,7 +25,7 @@ export const styles = {
     },
     mediaQuery({
       aspectRatio: ['1/1', '3/2'],
-      height: [160, 280],
+      height: [120, 280],
     })
   ),
 

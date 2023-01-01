@@ -1,7 +1,7 @@
 import { ComponentMeta, ComponentStoryObj } from '@storybook/react';
 
 import { AVATARS } from '@/assets/images';
-import { DUMMY_ARTICLE_DATA } from '@/dummy/data/article';
+import { DUMMY_ARTICLE_DATA } from '@/dummy/data/news';
 
 import { NewsCard } from '.';
 

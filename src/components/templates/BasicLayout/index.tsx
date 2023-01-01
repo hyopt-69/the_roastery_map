@@ -1,5 +1,6 @@
 import React from 'react';
 
+import { Divider } from '@/components/atoms/Divider';
 import { Footer } from '@/components/molecules/Footer';
 import { Header } from '@/components/molecules/Header';
 import { Path } from '@/constants/paths';
@@ -16,6 +17,7 @@ export const BasicLayout: React.FC<Props> = ({ children, currentPath }) => {
     <div css={styles.container}>
       <div css={styles.headerWrapper}>
         <Header currentPath={currentPath} />
+        <Divider borderColor="blackHaze" />
       </div>
       {children}
       <Footer currentPath={currentPath} />

@@ -1,6 +1,6 @@
 import { css } from '@emotion/react';
 
-import { borderWidths } from '@/theme/borderWidths';
+import { DEFAULT_HEADER_HEIGHT } from '@/constants/sizes';
 import { colors } from '@/theme/colors';
 import { spaces } from '@/theme/spaces';
 
@@ -10,14 +10,13 @@ export const styles = {
     width: '100%',
     justifyContent: 'center',
     backgroundColor: colors.white,
-    borderBottom: `solid ${colors.blackHaze} ${borderWidths.m}px`,
   }),
   innerContainer: css({
     display: 'flex',
     justifyContent: 'space-between',
     alignItems: 'center',
-    height: 60,
-    padding: `0 ${spaces.m}px`,
+    height: DEFAULT_HEADER_HEIGHT.MEDIUM,
+    paddingInline: spaces.m,
   }),
   navWrapper: css({
     display: 'flex',

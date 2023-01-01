@@ -15,3 +15,6 @@ export const DUMMY_ARTICLE_DATA = {
   src: DUMMY_PNG,
   createdAt: new Date().toString(),
 };
+
+export const getDummyArticleList = (n: number) =>
+  [...new Array(n)].map((_) => DUMMY_ARTICLE_DATA);

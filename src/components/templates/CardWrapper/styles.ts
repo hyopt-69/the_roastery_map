@@ -36,6 +36,7 @@ export const getStyles = ({
       ':hover': {
         transitionDuration: durations.m,
         transform: scales.bigger,
+        translate: 'translate3d(0, 0, 0)',
         boxShadow: shadows[HOVERED_SHADOW[shadow]],
       },
     }),
