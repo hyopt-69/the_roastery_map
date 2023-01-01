@@ -11,6 +11,7 @@ export const useScrollWrapper = () => {
     firstItemRef.current?.scrollIntoView({
       behavior: 'smooth',
       inline: 'start',
+      block: 'nearest',
     });
   }, []);
 
@@ -18,6 +19,7 @@ export const useScrollWrapper = () => {
     lastItemRef.current?.scrollIntoView({
       behavior: 'smooth',
       inline: 'end',
+      block: 'nearest',
     });
   }, []);
 

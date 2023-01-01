@@ -6,6 +6,7 @@ import { styles } from './styles';
 type Props = {
   children: React.ReactNode;
   cssProp?: SerializedStyles;
+  css?: never;
 };
 
 // FIXME: このコンポーネントいらん。消す
