@@ -1,8 +1,6 @@
 import React from 'react';
 
-import { Body } from '@/components/atoms/Body';
-import { Divider } from '@/components/atoms/Divider';
-import { Title } from '@/components/atoms/Title';
+import { NewsCategoryDescription } from '@/components/organisms/news/NewsCategoryDescription';
 import { NewsHeaderTab } from '@/components/organisms/news/NewsHeaderTab';
 import { NewsList } from '@/components/organisms/news/NewsList';
 import { BasicLayout } from '@/components/templates/BasicLayout';
@@ -27,14 +25,7 @@ export const MobileLayout: React.FC<Props> = ({
             onClickTabItem={onClickTabItem}
           />
         </div>
-        {/* FIXME:この辺ちゃんと実装する。 */}
-        <section css={styles.categoryLabelWrapper}>
-          {/* <Title size="m">{NEWS_CATEGORY_LABEL[activeCategory]}</Title> */}
-          <Title size="m">All Posts</Title>
-          <Body size="xxxs" color="pumice">
-            すべての投稿
-          </Body>
-        </section>
+        <NewsCategoryDescription pattern={activeCategory} />
         <section css={styles.contentWrapper}>
           <NewsList newsList={newsList} onClickCardItem={onClickCardItem} />
         </section>
