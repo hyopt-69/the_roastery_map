@@ -8,19 +8,15 @@ import { useNewsMainPage } from './hooks';
 
 export const NewsMainPage: React.FC = () => {
   const { isMobile } = useResponsive();
-  const {
-    newsList,
-    activeCategory,
-    handleClickHeaderItem,
-    handleClickCardItem,
-  } = useNewsMainPage();
+  const { newsList, activeCategory, handleClickMenuItem, handleClickCardItem } =
+    useNewsMainPage();
 
   if (isMobile) {
     return (
       <MobileLayout
         newsList={newsList}
         activeCategory={activeCategory}
-        onClickTabItem={handleClickHeaderItem}
+        onClickMenuItem={handleClickMenuItem}
         onClickCardItem={handleClickCardItem}
       />
     );
@@ -29,7 +25,7 @@ export const NewsMainPage: React.FC = () => {
     <DesktopLayout
       newsList={newsList}
       activeCategory={activeCategory}
-      onClickTabItem={handleClickHeaderItem}
+      onClickMenuItem={handleClickMenuItem}
       onClickCardItem={handleClickCardItem}
     />
   );

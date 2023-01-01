@@ -17,8 +17,12 @@ export const InternalLink: React.FC<Props> = ({
   ...styleProps
 }) => {
   return (
-    <NextLink href={PATHS[path]} passHref={passHref}>
-      <a css={getStyles(styleProps)}>{children}</a>
+    <NextLink
+      href={PATHS[path]}
+      passHref={passHref}
+      css={getStyles(styleProps)}
+    >
+      {children}
     </NextLink>
   );
 };

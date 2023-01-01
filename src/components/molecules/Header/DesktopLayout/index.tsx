@@ -2,7 +2,6 @@ import React from 'react';
 
 import { InternalLink } from '@/components/atoms/InternalLink';
 import { Label } from '@/components/atoms/Label';
-import { Container } from '@/components/templates/Container';
 import { Path } from '@/constants/paths';
 
 import { styles } from './styles';
@@ -16,7 +15,7 @@ type Props = {
 export const DesktopLayout: React.FC<Props> = ({ currentPath }) => {
   return (
     <header css={styles.container}>
-      <Container cssProp={styles.innerContainer}>
+      <div css={styles.innerContainer}>
         {/* FIXME: Logoコンポーネント埋め込む。テキストとロゴ */}
         <Label size="s">THE ROASTERY MAP</Label>
         <nav css={styles.navWrapper}>
@@ -36,7 +35,7 @@ export const DesktopLayout: React.FC<Props> = ({ currentPath }) => {
             );
           })}
         </nav>
-      </Container>
+      </div>
     </header>
   );
 };

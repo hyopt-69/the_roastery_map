@@ -7,7 +7,7 @@ export const useNewsMainPage = () => {
   const [activeCategory, setActiveCategory] = useState<NewsCategory>('All');
   const [newsList] = useState<News[]>(getDummyArticleList(10));
 
-  const handleClickHeaderItem = useCallback((category: NewsCategory) => {
+  const handleClickMenuItem = useCallback((category: NewsCategory) => {
     setActiveCategory(category);
   }, []);
 
@@ -18,7 +18,7 @@ export const useNewsMainPage = () => {
   return {
     activeCategory,
     newsList,
-    handleClickHeaderItem,
+    handleClickMenuItem,
     handleClickCardItem,
   };
 };

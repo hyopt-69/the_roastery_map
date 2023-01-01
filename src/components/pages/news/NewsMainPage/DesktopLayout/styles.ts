@@ -18,14 +18,14 @@ export const styles = {
   }),
   sideNavigationWrapper: css({
     display: 'flex',
-    flexShrink: 0,
+    flexShrink: 3,
     width: 300,
     borderRight: `1px solid ${colors.blackHaze}`,
   }),
   rightContentsWrapper: css({
     display: 'flex',
     flexDirection: 'column',
-    flexShrink: 1,
+    flexShrink: 5,
   }),
   contentWrapper: css({
     display: 'flex',
