@@ -8,7 +8,6 @@ export default {
 
 export const Index: ComponentStoryObj<typeof NewsHeaderTab> = {
   args: {
-    onClickItem: () => {},
     activeCategory: 'All',
   },
 };
