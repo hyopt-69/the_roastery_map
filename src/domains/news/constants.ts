@@ -10,9 +10,9 @@ export const NEWS_CATEGORY_LIST: Readonly<NewsCategory[]> = [
 ];
 
 export const NEWS_CATEGORY_LABEL: Record<NewsCategory, string> = {
-  All: 'all',
-  Event: 'event',
-  Recipe: 'recipe',
-  Report: 'report',
-  Other: 'other',
+  All: 'All Posts',
+  Event: 'Events',
+  Recipe: 'Brew Recipes',
+  Report: 'Shop Reports',
+  Other: 'Others',
 } as const;

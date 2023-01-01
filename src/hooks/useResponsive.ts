@@ -1,4 +1,4 @@
-import { useState, useEffect, useMemo, useCallback } from 'react';
+import { useState, useMemo, useCallback, useLayoutEffect } from 'react';
 
 import { breakPoints } from '@/theme/breakPoints';
 
@@ -7,6 +7,7 @@ type Dimension = {
   height: number;
 };
 
+// FIXME: リロードでチラつく。cssでのレスポンシブに切り替えた方がよさそうかも....だるい。
 export const useResponsive = () => {
   const [dimension, setDimension] = useState<Dimension>({
     width: 0,
@@ -23,7 +24,7 @@ export const useResponsive = () => {
     [dimension.width]
   );
 
-  useEffect(() => {
+  useLayoutEffect(() => {
     handleUpdateDimension();
 
     window.addEventListener('resize', handleUpdateDimension);

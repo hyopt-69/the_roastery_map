@@ -1,28 +1,28 @@
 import React from 'react';
 
 import { NewsCategoryDescription } from '@/components/organisms/news/NewsCategoryDescription';
-import { NewsHeaderTab } from '@/components/organisms/news/NewsHeaderTab';
+import { NewsHeaderMenu } from '@/components/organisms/news/NewsHeaderMenu';
 import { NewsList } from '@/components/organisms/news/NewsList';
 import { BasicLayout } from '@/components/templates/BasicLayout';
 
 import { styles } from './styles';
 
-type Props = React.ComponentProps<typeof NewsHeaderTab> &
+type Props = React.ComponentProps<typeof NewsHeaderMenu> &
   React.ComponentProps<typeof NewsList>;
 
 export const MobileLayout: React.FC<Props> = ({
   newsList,
   activeCategory,
-  onClickTabItem,
+  onClickMenuItem,
   onClickCardItem,
 }) => {
   return (
     <BasicLayout currentPath="NEWS">
       <main css={styles.container}>
         <div css={styles.tabWrapper}>
-          <NewsHeaderTab
+          <NewsHeaderMenu
             activeCategory={activeCategory}
-            onClickTabItem={onClickTabItem}
+            onClickMenuItem={onClickMenuItem}
           />
         </div>
         <NewsCategoryDescription pattern={activeCategory} />

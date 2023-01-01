@@ -13,19 +13,19 @@ import { styles } from './styles';
 
 type Props = {
   activeCategory: NewsCategory;
-  onClickTabItem: (arg: NewsCategory) => void;
+  onClickMenuItem: (arg: NewsCategory) => void;
 };
 
-export const NewsHeaderTab: React.FC<Props> = ({
+export const NewsHeaderMenu: React.FC<Props> = ({
   activeCategory,
-  onClickTabItem,
+  onClickMenuItem,
 }) => {
   return (
     <nav css={styles.container}>
       <ScrollWrapper>
         {NEWS_CATEGORY_LIST.map((category) => (
           <>
-            <TertiaryButton onClick={() => onClickTabItem(category)}>
+            <TertiaryButton onClick={() => onClickMenuItem(category)}>
               {NEWS_CATEGORY_LABEL[category]}
             </TertiaryButton>
             {activeCategory === category && (

@@ -8,7 +8,7 @@ export const DUMMY_ARTICLE_DATA: News = {
   id: 'dummy_id',
   title:
     '東アフリカエリアのコーヒー好き必見！ポテトフレーバーについて理解しよう',
-  category: 'Event',
+  category: 'Recipe',
   thumbImage: DUMMY_PNG,
   createdAt: new Date().toString(),
   author: 'K.O',

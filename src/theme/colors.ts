@@ -4,6 +4,7 @@ export const colors = {
   mirage: '#1B1F26',
   tapa: '#757575',
   pumice: '#C4C5C6',
+  grayNurse: '#EAEAEA',
   blackHaze: '#F5F6F7',
   white: '#FFFFFF',
   // メインカラー
