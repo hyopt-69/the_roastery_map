@@ -1,7 +1,7 @@
-import { format as libFormat, formatDistance } from 'date-fns';
+import { format as libFormat, formatDistance, isSameMonth } from 'date-fns';
 import { ja } from 'date-fns/locale';
 
-type Format = 'yyyy.MM.dd' | 'yyyy年MM月dd日';
+type Format = 'yyyy.MM.dd' | 'yyyy.MM' | 'yyyy年MM月dd日';
 
 /**
  * Dateオブジェクトをフォーマットする。
@@ -36,4 +36,18 @@ export const getDateDistance = ({
   });
 
   return dateDistance;
+};
+
+/**
+ * 2時点間が同月かどうかを判定する。
+ * @returns 判定結果
+ */
+export const getIsSameMonth = ({
+  baseDate,
+  targetDate,
+}: {
+  baseDate?: Date;
+  targetDate: Date;
+}) => {
+  return isSameMonth(targetDate, baseDate || new Date());
 };

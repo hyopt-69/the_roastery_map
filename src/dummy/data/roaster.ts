@@ -3,6 +3,7 @@ import { Roaster } from '@/domains/roaster/types';
 import { DUMMY_PNG } from '../asset';
 
 export const DUMMY_ROASTER_DATA: Roaster = {
+  id: 'dummy_id',
   name: 'DummyCoffee',
   nameKatakana: 'ダミーコーヒー',
   address: '東京都千代田区千代田1-1',

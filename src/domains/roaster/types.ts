@@ -1,6 +1,7 @@
 import { Prefecture } from '../../constants/prefectures';
 
 export type Roaster = {
+  id: string;
   // 店名
   name: string;
   // 店名(カタカナ)

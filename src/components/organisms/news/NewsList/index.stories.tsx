@@ -1,5 +1,7 @@
 import { ComponentMeta, ComponentStoryObj } from '@storybook/react';
 
+import { getDummyArticleList } from '@/dummy/data/news';
+
 import { NewsList } from '.';
 
 export default {
@@ -8,6 +10,6 @@ export default {
 
 export const Index: ComponentStoryObj<typeof NewsList> = {
   args: {
-    children: 'Example',
+    newsList: getDummyArticleList(10),
   },
 };

@@ -1,29 +1,29 @@
 import React from 'react';
 
-import { NewsCard } from '@/components/organisms/news/NewsCard';
 import { NewsHeaderTab } from '@/components/organisms/news/NewsHeaderTab';
+import { NewsList } from '@/components/organisms/news/NewsList';
 import { BasicLayout } from '@/components/templates/BasicLayout';
-import { getDummyArticleList } from '@/dummy/data/news';
 
 import { styles } from './styles';
 
-type Props = React.ComponentProps<typeof NewsHeaderTab>;
+type Props = React.ComponentProps<typeof NewsHeaderTab> &
+  React.ComponentProps<typeof NewsList>;
 
 export const DesktopLayout: React.FC<Props> = ({
+  newsList,
   activeCategory,
-  onClickItem,
+  onClickTabItem,
+  onClickCardItem,
 }) => {
   return (
     <BasicLayout currentPath="NEWS">
       <NewsHeaderTab
         activeCategory={activeCategory}
-        onClickItem={onClickItem}
+        onClickTabItem={onClickTabItem}
       />
       <main css={styles.container}>
         <section css={styles.contentWrapper}>
-          {getDummyArticleList(10).map((item) => {
-            return <NewsCard {...item} onClick={() => {}} />;
-          })}
+          <NewsList newsList={newsList} onClickCardItem={onClickCardItem} />
         </section>
       </main>
     </BasicLayout>

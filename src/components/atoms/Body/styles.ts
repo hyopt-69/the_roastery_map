@@ -9,7 +9,7 @@ import {
 } from '@/utils/responsive';
 import { getTypography, Typography } from '@/utils/typography';
 
-type BodySize = Extract<FontSize, 'l' | 'm' | 's' | 'xs' | 'xxs'>;
+type BodySize = Extract<FontSize, 'l' | 'm' | 's' | 'xs' | 'xxs' | 'xxxs'>;
 
 export type StyleProps = {
   size: BodySize;

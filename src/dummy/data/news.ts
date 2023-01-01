@@ -1,8 +1,11 @@
+import { addDays } from 'date-fns';
+
 import { News } from '@/domains/news/types';
 
 import { DUMMY_PNG } from '../asset';
 
 export const DUMMY_ARTICLE_DATA: News = {
+  id: 'dummy_id',
   title:
     '東アフリカエリアのコーヒー好き必見！ポテトフレーバーについて理解しよう',
   category: 'Event',
@@ -11,5 +14,14 @@ export const DUMMY_ARTICLE_DATA: News = {
   author: 'K.O',
 };
 
-export const getDummyArticleList = (n: number) =>
-  [...new Array(n)].map((_) => DUMMY_ARTICLE_DATA);
+export const getDummyArticleList = (n: number) => {
+  const arr = [...new Array(n).fill(DUMMY_ARTICLE_DATA)].map((d, i) => {
+    const targetDate = new Date(d.createdAt);
+    return {
+      ...d,
+      createdAt: addDays(targetDate, -i * 15).toString(),
+    };
+  });
+
+  return arr;
+};

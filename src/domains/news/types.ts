@@ -13,6 +13,7 @@ export type NewsCategory =
   | 'Other';
 
 export type News = {
+  id: string;
   // タイトル
   title: string;
   // サムネイル写真

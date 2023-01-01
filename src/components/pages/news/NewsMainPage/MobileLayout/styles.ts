@@ -6,11 +6,6 @@ import { colors } from '@/theme/colors';
 import { spaces } from '@/theme/spaces';
 
 export const styles = {
-  tabWrapper: css({
-    position: 'sticky',
-    zIndex: 1,
-    top: DEFAULT_HEADER_HEIGHT.SMALL,
-  }),
   container: css({
     display: 'flex',
     flexDirection: 'column',
@@ -18,9 +13,26 @@ export const styles = {
     backgroundColor: colors.white,
     minWidth: MIN_WINDOW_WIDTH,
   }),
+  tabWrapper: css({
+    position: 'sticky',
+    width: '100%',
+    zIndex: 1,
+    top: DEFAULT_HEADER_HEIGHT.SMALL,
+  }),
+  categoryLabelWrapper: css({
+    display: 'flex',
+    width: '100%',
+    flexDirection: 'column',
+    justifyContent: 'center',
+    background: `radial-gradient(circle at bottom left, ${colors.blackHaze} 0, ${colors.white} 30%)`,
+    paddingInline: spaces.s,
+    paddingBlock: spaces.l,
+  }),
   contentWrapper: css({
     display: 'flex',
     flexDirection: 'column',
+    paddingInline: spaces.s,
+    paddingBlock: spaces.s,
     gap: spaces.m,
   }),
 };
