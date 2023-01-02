@@ -75,6 +75,8 @@ export type Roaster = {
   address: string;
   // 住所(都道府県)
   prefecture: Prefecture;
+  // 電話番号
+  phoneNumber: Nullable<string>;
   // ウェブサイトURL
   websiteUrl: Nullable<string>;
   // インスタグラムURL
@@ -87,8 +89,8 @@ export type Roaster = {
   closedDate: Nullable<Date>;
   // 週間の営業日程
   weeklySchedule: Record<WeekDay, Nullable<DailySchedule>>;
-  // 定休日(隔週などの週単位以外)
-  holiday: string;
+  // 定休日(隔週などの週単位以外)をフリーなテキストで記述
+  holidayInformation: Nullable<string>;
   // メインの焙煎度合い
   roastingDepth: RoastingDepth;
   // 抽出方法

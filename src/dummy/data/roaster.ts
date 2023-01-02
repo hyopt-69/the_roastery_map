@@ -11,6 +11,7 @@ export const DUMMY_ROASTER_DATA: Roaster = {
   prefecture: 'TOKYO',
   thumbImage: DUMMY_PNG,
   images: [DUMMY_PNG, DUMMY_PNG, DUMMY_PNG, DUMMY_PNG, DUMMY_PNG],
+  phoneNumber: '000-0000-0000',
   websiteUrl: DUMMY_URL,
   instagramUrl: DUMMY_URL,
   introduction:
@@ -26,7 +27,7 @@ export const DUMMY_ROASTER_DATA: Roaster = {
     sat: null,
     sun: null,
   },
-  holiday: '毎月第2・第3月曜日',
+  holidayInformation: '毎月第2・第3月曜日',
   roastingDepth: 'dark',
   brewingMethods: ['paperDrip'],
   wholeSalers: [{ name: 'oroshisaki Cafe', websiteURL: DUMMY_URL }],
