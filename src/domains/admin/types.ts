@@ -1,1 +1,1 @@
-export type Admin = 'K.O' | 'T.K';
+export type Admin = 'Admin_1' | 'Admin_2';

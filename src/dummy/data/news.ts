@@ -11,7 +11,10 @@ export const DUMMY_ARTICLE_DATA: News = {
   category: 'Recipe',
   thumbImage: DUMMY_PNG,
   createdAt: new Date().toString(),
-  author: 'K.O',
+  availablePeriod: null,
+  author: 'Admin_1',
+  contents: `#ここにはMDファイルを入れる`,
+  participateRoasters: [],
 };
 
 export const getDummyArticleList = (n: number) => {
