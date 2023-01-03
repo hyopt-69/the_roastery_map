@@ -4,13 +4,10 @@ type Storage = {
   favoriteRoasters: Roaster['id'][];
 };
 
-export const setLocalStorage = <Key extends keyof Storage>(
-  key: Key,
-  value: Storage[Key]
-) => {
-  localStorage.setItem(key, JSON.stringify(value));
-};
-
+/**
+ * localStorageから値を取得するための関数
+ * @returns storage内のvalue
+ */
 export const getLocalStorage = <Key extends keyof Storage>(
   key: Key
 ): Nullable<Storage[Key]> => {
@@ -20,4 +17,14 @@ export const getLocalStorage = <Key extends keyof Storage>(
     return JSON.parse(value) as Storage[Key];
   }
   return null;
+};
+
+/**
+ * localStorageに値を上書き保存するための関数
+ */
+export const setLocalStorage = <Key extends keyof Storage>(
+  key: Key,
+  value: Storage[Key]
+) => {
+  localStorage.setItem(key, JSON.stringify(value));
 };
