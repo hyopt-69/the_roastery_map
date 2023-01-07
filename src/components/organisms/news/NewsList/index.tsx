@@ -11,7 +11,7 @@ import { NewsCard } from '../NewsCard';
 
 type Props = {
   newsList: News[];
-  onClickCardItem: (id: News['id']) => void;
+  onClickCardItem: (id: News['newsID']) => void;
 };
 
 export const NewsList: React.FC<Props> = ({ newsList, onClickCardItem }) => {
@@ -31,7 +31,7 @@ export const NewsList: React.FC<Props> = ({ newsList, onClickCardItem }) => {
 
         return (
           <>
-            <NewsCard {...news} onClick={() => onClickCardItem(news.id)} />
+            <NewsCard {...news} onClick={() => onClickCardItem(news.newsID)} />
             {nextNews && !isSameMonth && (
               <Divider
                 labelSize={isMobile ? 'xxxs' : 'xxs'}

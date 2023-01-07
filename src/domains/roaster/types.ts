@@ -1,5 +1,6 @@
-import { Prefecture } from '@/constants/prefectures';
 import { WeekDay } from '@/constants/weekDay';
+
+import { Shop } from '../shop/types';
 
 type RoastingDepth =
   // 浅煎り
@@ -49,11 +50,6 @@ type SeatingAvailability =
   // 席が全く無い
   | 'noSeat';
 
-type WholeSaler = {
-  name: string;
-  websiteURL: Nullable<string>;
-};
-
 type DailySchedule = {
   // オープン時間
   open: string;
@@ -61,26 +57,12 @@ type DailySchedule = {
   close: string;
 };
 
-export type Roaster = {
-  id: string;
-  // 店名
-  name: string;
-  // 店名(カタカナ)
-  nameKatakana: string;
+export type Roaster = Shop & {
+  roasterID: string;
   // サムネイル写真
   thumbImage: string;
   // 店舗の写真
   images: [string, ...string[]];
-  // 住所
-  address: string;
-  // 住所(都道府県)
-  prefecture: Prefecture;
-  // 電話番号
-  phoneNumber: Nullable<string>;
-  // ウェブサイトURL
-  websiteUrl: Nullable<string>;
-  // インスタグラムURL
-  instagramUrl: Nullable<string>;
   // 店舗の紹介文
   introduction: string;
   // 店舗の開業日
@@ -96,7 +78,7 @@ export type Roaster = {
   // 抽出方法
   brewingMethods: BrewingMethods[];
   // 卸先情報
-  wholeSalers: WholeSaler[];
+  wholeSalers: Shop[];
   // 喫煙の可否
   smokingAvailability: SmokingAvailability;
   // 充電できるかどうか
