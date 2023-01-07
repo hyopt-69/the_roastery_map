@@ -1,7 +1,7 @@
 import { Admin } from '../admin/types';
 import { Shop } from '../shop/types';
 
-type NewsCategory =
+type Category =
   // ショップレポート
   | 'Report'
   // イベント告知
@@ -25,7 +25,7 @@ export type News = {
   // サムネイル写真
   thumbImage: string;
   // カテゴリー
-  category: NewsCategory;
+  category: Category;
   // 投稿日
   createdAt: string;
   // 投稿者
