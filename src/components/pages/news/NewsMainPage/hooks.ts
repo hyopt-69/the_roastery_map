@@ -11,7 +11,7 @@ export const useNewsMainPage = () => {
     setActiveCategory(category);
   }, []);
 
-  const handleClickCardItem = useCallback((id: News['id']) => {
+  const handleClickCardItem = useCallback((id: News['newsID']) => {
     console.log(id);
   }, []);
 

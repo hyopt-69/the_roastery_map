@@ -1,7 +1,7 @@
 import { Roaster } from '@/domains/roaster/types';
 
 type Storage = {
-  favoriteRoasters: Roaster['id'][];
+  favoriteRoasters: Roaster['roasterID'][];
 };
 
 /**

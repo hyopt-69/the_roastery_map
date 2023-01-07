@@ -1,6 +1,7 @@
 import { Admin } from '../admin/types';
-import { Roaster } from '../roaster/types';
+import { Shop } from '../shop/types';
 
+// FIXME: "All"を抜く
 export type NewsCategory =
   // すべて
   | 'All'
@@ -13,15 +14,15 @@ export type NewsCategory =
   // その他
   | 'Other';
 
-type AvailablePeriod = {
+type Period = {
   // 開始日
   start: Date;
   // 終了日
-  finish: Date;
+  end: Date;
 };
 
 export type News = {
-  id: string;
+  newsID: string;
   // タイトル
   title: string;
   // サムネイル写真
@@ -35,7 +36,7 @@ export type News = {
   // コンテンツ(MD形式で本文の全て含む)
   contents: string;
   // ニュース内容の期限(イベントの開催日時や、キャンペーンの有効期限など)
-  availablePeriod: Nullable<AvailablePeriod>;
-  // ニュースに関連しているRoasterのid
-  participateRoasters: Roaster['id'][];
+  period: Nullable<Period>;
+  // ニュースに関連しているお店のid
+  participateRoasters: Shop['shopID'][];
 };

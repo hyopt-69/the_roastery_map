@@ -4,16 +4,22 @@ import { DUMMY_PNG } from '../asset';
 import { DUMMY_URL } from '../url';
 
 export const DUMMY_ROASTER_DATA: Roaster = {
-  id: 'dummy_id',
+  roasterID: 'dummy_Roaster_id',
+  shopID: 'dummy_Shop_id',
   name: 'DummyCoffee',
   nameKatakana: 'ダミーコーヒー',
-  address: '東京都千代田区千代田1-1',
-  prefecture: 'TOKYO',
+  address: {
+    prefecture: 'TOKYO',
+    fullAddress: '東京都千代田区千代田1-1',
+  },
+  phoneNumber: '000-0000-0000',
+  links: {
+    website: DUMMY_URL,
+    instagram: DUMMY_URL,
+  },
+
   thumbImage: DUMMY_PNG,
   images: [DUMMY_PNG, DUMMY_PNG, DUMMY_PNG, DUMMY_PNG, DUMMY_PNG],
-  phoneNumber: '000-0000-0000',
-  websiteUrl: DUMMY_URL,
-  instagramUrl: DUMMY_URL,
   introduction:
     'ダミーのコーヒーショップです。もちろん行ったことはないよ。だって存在しないもの。',
   openingDate: new Date(),
@@ -30,7 +36,7 @@ export const DUMMY_ROASTER_DATA: Roaster = {
   holidayInformation: '毎月第2・第3月曜日',
   roastingDepth: 'dark',
   brewingMethods: ['paperDrip'],
-  wholeSalers: [{ name: 'oroshisaki Cafe', websiteURL: DUMMY_URL }],
+  wholeSalers: [],
   smokingAvailability: 'noSmokable',
   chargingAvailability: 'noChargeable',
   physicalStoreAvailability: 'noPresent',

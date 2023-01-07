@@ -1,10 +1,10 @@
-import React from 'react';
+import React, { useMemo } from 'react';
 
 import { Icon } from '@/components/atoms/Icon';
 import { Label } from '@/components/atoms/Label';
 import { Title } from '@/components/atoms/Title';
 import { CardWrapper } from '@/components/templates/CardWrapper';
-import { PREFECTURES_JA } from '@/constants/prefectures';
+import { PREFECTURES } from '@/constants/prefectures';
 import { Roaster } from '@/domains/roaster/types';
 import { useResponsive } from '@/hooks/useResponsive';
 
@@ -20,13 +20,18 @@ export const RoasterCard: React.FC<Props> = ({
   nameKatakana,
   address,
   thumbImage,
-  prefecture,
   onClick,
   onClickFavorite,
 }) => {
   const { isMobile } = useResponsive();
 
-  const addressText = isMobile ? PREFECTURES_JA[prefecture] : address;
+  const addressText = useMemo(() => {
+    if (address) {
+      return isMobile ? PREFECTURES[address.prefecture] : address.fullAddress;
+    }
+    // 住所未登録時
+    return '-';
+  }, [address, isMobile]);
 
   return (
     <CardWrapper>
