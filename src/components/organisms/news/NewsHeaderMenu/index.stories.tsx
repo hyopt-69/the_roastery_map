@@ -8,6 +8,6 @@ export default {
 
 export const Index: ComponentStoryObj<typeof NewsHeaderMenu> = {
   args: {
-    activeCategory: 'All',
+    activeCategory: 'UnSelect',
   },
 };

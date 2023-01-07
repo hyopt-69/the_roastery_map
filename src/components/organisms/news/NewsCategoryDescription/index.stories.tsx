@@ -8,6 +8,6 @@ export default {
 
 export const Index: ComponentStoryObj<typeof NewsCategoryDescription> = {
   args: {
-    pattern: 'All',
+    pattern: 'UnSelect',
   },
 };
