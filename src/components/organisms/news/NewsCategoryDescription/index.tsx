@@ -2,22 +2,17 @@ import React from 'react';
 
 import { Body } from '@/components/atoms/Body';
 import { Title } from '@/components/atoms/Title';
-import { NEWS_CATEGORY_LABEL } from '@/domains/news/constants';
-import { NewsCategory } from '@/domains/news/types';
+import {
+  NEWS_CATEGORY_DESCRIPTION,
+  NEWS_CATEGORY_LABEL,
+} from '@/domains/news/constants';
+import { News } from '@/domains/news/types';
 import { useResponsive } from '@/hooks/useResponsive';
 
 import { styles } from './styles';
 
-const NEWS_CATEGORY_DESCRIPTION: Record<NewsCategory, string> = {
-  All: 'すべての投稿',
-  Event: 'コーヒーに関するイベントの情報',
-  Other: 'その他のいろいろなお知らせ',
-  Recipe: 'おすすめの抽出レシピの紹介',
-  Report: 'おすすめのコーヒーショップの紹介',
-};
-
 type Props = {
-  pattern: NewsCategory;
+  pattern: SelectableAll<News['category']>;
 };
 
 export const NewsCategoryDescription: React.FC<Props> = ({ pattern }) => {

@@ -1,10 +1,7 @@
 import { Admin } from '../admin/types';
 import { Shop } from '../shop/types';
 
-// FIXME: "All"を抜く
-export type NewsCategory =
-  // すべて
-  | 'All'
+type NewsCategory =
   // ショップレポート
   | 'Report'
   // イベント告知
@@ -28,7 +25,7 @@ export type News = {
   // サムネイル写真
   thumbImage: string;
   // カテゴリー
-  category: Exclude<NewsCategory, 'All'>;
+  category: NewsCategory;
   // 投稿日
   createdAt: string;
   // 投稿者

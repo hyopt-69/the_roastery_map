@@ -5,14 +5,14 @@ import {
   NEWS_CATEGORY_LABEL,
   NEWS_CATEGORY_LIST,
 } from '@/domains/news/constants';
-import { NewsCategory } from '@/domains/news/types';
+import { News } from '@/domains/news/types';
 import { Color } from '@/theme/colors';
 
 import { getStyles } from './styles';
 
 type Props = {
-  activeCategory: NewsCategory;
-  onClickMenuItem: (arg: NewsCategory) => void;
+  activeCategory: SelectableAll<News['category']>;
+  onClickMenuItem: (arg: SelectableAll<News['category']>) => void;
 };
 
 const DEFAULT_COLOR: Color = 'tapa';
