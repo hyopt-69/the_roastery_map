@@ -11,8 +11,8 @@ import { Color } from '@/theme/colors';
 import { getStyles } from './styles';
 
 type Props = {
-  activeCategory: SelectableAll<News['category']>;
-  onClickMenuItem: (arg: SelectableAll<News['category']>) => void;
+  activeCategory: Select<News['category']>;
+  onClickMenuItem: (arg: Select<News['category']>) => void;
 };
 
 const DEFAULT_COLOR: Color = 'tapa';

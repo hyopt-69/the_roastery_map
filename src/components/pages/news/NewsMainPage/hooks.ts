@@ -5,7 +5,7 @@ import { getDummyArticleList } from '@/dummy/data/news';
 
 export const useNewsMainPage = () => {
   const [activeCategory, setActiveCategory] =
-    useState<SelectableAll<News['category']>>('All');
+    useState<Select<News['category']>>('UnSelect');
 
   // FIXME: 裏から取ってこれるようにする。
   const [newsList] = useState<News[]>(getDummyArticleList(10));

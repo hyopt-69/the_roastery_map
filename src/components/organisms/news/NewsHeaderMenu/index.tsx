@@ -12,8 +12,8 @@ import { News } from '@/domains/news/types';
 import { styles } from './styles';
 
 type Props = {
-  activeCategory: SelectableAll<News['category']>;
-  onClickMenuItem: (arg: SelectableAll<News['category']>) => void;
+  activeCategory: Select<News['category']>;
+  onClickMenuItem: (arg: Select<News['category']>) => void;
 };
 
 export const NewsHeaderMenu: React.FC<Props> = ({

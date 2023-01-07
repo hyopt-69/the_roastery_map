@@ -12,7 +12,7 @@ import { useResponsive } from '@/hooks/useResponsive';
 import { styles } from './styles';
 
 type Props = {
-  pattern: SelectableAll<News['category']>;
+  pattern: Select<News['category']>;
 };
 
 export const NewsCategoryDescription: React.FC<Props> = ({ pattern }) => {

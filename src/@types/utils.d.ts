@@ -1,3 +1,3 @@
 declare type Nullable<T> = T | null;
 
-declare type SelectableAll<T extends string> = T | 'All';
+declare type Select<T extends string> = T | 'UnSelect';

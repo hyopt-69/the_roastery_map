@@ -1,19 +1,16 @@
 import { News } from './types';
 
-// 順番固定の配列
-export const NEWS_CATEGORY_LIST: Readonly<SelectableAll<News['category']>[]> = [
-  'All',
+// 順番固定のカテゴリー
+export const NEWS_CATEGORY_LIST: Readonly<Select<News['category']>[]> = [
+  'UnSelect',
   'Event',
   'Recipe',
   'Report',
   'Other',
 ];
 
-export const NEWS_CATEGORY_LABEL: Record<
-  SelectableAll<News['category']>,
-  string
-> = {
-  All: 'All Posts',
+export const NEWS_CATEGORY_LABEL: Record<Select<News['category']>, string> = {
+  UnSelect: 'All Posts',
   Event: 'Events',
   Recipe: 'Brew Recipes',
   Report: 'Shop Reports',
@@ -21,10 +18,10 @@ export const NEWS_CATEGORY_LABEL: Record<
 } as const;
 
 export const NEWS_CATEGORY_DESCRIPTION: Record<
-  SelectableAll<News['category']>,
+  Select<News['category']>,
   string
 > = {
-  All: 'すべての投稿',
+  UnSelect: 'すべての投稿',
   Event: 'コーヒーに関するイベントの情報',
   Other: 'その他のいろいろなお知らせ',
   Recipe: 'おすすめの抽出レシピの紹介',
