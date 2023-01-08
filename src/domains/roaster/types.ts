@@ -34,12 +34,6 @@ type ChargingAvailability =
   // 充電可能
   | 'chargeable';
 
-type StoreAvailability =
-  // 実店舗なし(オンラインショッピングやイベント出店のみ)
-  | 'noPresent'
-  // 実店舗あり
-  | 'present';
-
 type SeatAvailability =
   // テーブル席がメイン
   | 'tableSeats'
@@ -82,7 +76,7 @@ export type Roaster = Shop & {
   // 充電できるかどうか
   chargingAvailability: ChargingAvailability;
   // 実店舗があるかどうか
-  storeAvailability: StoreAvailability;
+  hasPhysicalStore: boolean;
   // 店舗内にどのような座席があるか
   seatAvailability: SeatAvailability;
 };
