@@ -35,5 +35,5 @@ export type News = {
   // ニュース内容の期限(イベントの開催日時や、キャンペーンの有効期限など)
   period: Nullable<Period>;
   // ニュースに関連しているお店のid
-  participateRoasters: Shop['shopID'][];
+  participants: Shop['shopID'][];
 };
