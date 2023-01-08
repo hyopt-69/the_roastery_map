@@ -1,5 +1,3 @@
-import { WeekDay } from '@/constants/weekDay';
-
 import { Shop } from '../shop/types';
 
 type RoastingDepth =
@@ -36,21 +34,23 @@ type ChargingAvailability =
   // 充電可能
   | 'chargeable';
 
-type PhysicalStoreAvailability =
+type StoreAvailability =
   // 実店舗なし(オンラインショッピングやイベント出店のみ)
   | 'noPresent'
   // 実店舗あり
   | 'present';
 
-type SeatingAvailability =
+type SeatAvailability =
   // テーブル席がメイン
-  | 'TableSeats'
+  | 'tableSeats'
   // カウンター・ベンチなどテーブルのない席がメイン
-  | 'OnlySeats'
+  | 'benchSeats'
   // 席が全く無い
   | 'noSeat';
 
 type DailySchedule = {
+  // 曜日
+  day: number;
   // オープン時間
   open: string;
   // クローズ時間
@@ -61,8 +61,6 @@ export type Roaster = Shop & {
   roasterID: string;
   // サムネイル写真
   thumbImage: string;
-  // 店舗の写真
-  images: [string, ...string[]];
   // 店舗の紹介文
   introduction: string;
   // 店舗の開業日
@@ -70,9 +68,9 @@ export type Roaster = Shop & {
   // 店舗の閉業日
   closedDate: Nullable<Date>;
   // 週間の営業日程
-  weeklySchedule: Record<WeekDay, Nullable<DailySchedule>>;
-  // 定休日(隔週などの週単位以外)をフリーなテキストで記述
-  holidayInformation: Nullable<string>;
+  weeklySchedule: Nullable<DailySchedule[]>;
+  // 定休日(隔週など曜日単位以外)をフリーなテキストで記述
+  holidayInfo: Nullable<string>;
   // メインの焙煎度合い
   roastingDepth: RoastingDepth;
   // 抽出方法
@@ -84,7 +82,7 @@ export type Roaster = Shop & {
   // 充電できるかどうか
   chargingAvailability: ChargingAvailability;
   // 実店舗があるかどうか
-  physicalStoreAvailability: PhysicalStoreAvailability;
+  storeAvailability: StoreAvailability;
   // 店舗内にどのような座席があるか
-  seatingAvailability: SeatingAvailability;
+  seatAvailability: SeatAvailability;
 };
