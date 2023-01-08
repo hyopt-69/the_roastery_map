@@ -14,7 +14,7 @@ export const DUMMY_ARTICLE_DATA: News = {
   period: null,
   author: 'Admin_1',
   contents: `#ここにはMDファイルを入れる`,
-  participateRoasters: [],
+  participants: [],
 };
 
 export const getDummyArticleList = (n: number) => {
