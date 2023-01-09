@@ -1,8 +1,10 @@
 import { useCallback, useMemo, useState } from 'react';
 
 import { News } from '@/domains/news/types';
+import { useAppRouter } from '@/hooks/useAppRouter';
 
 export const useNewsMainPage = (newsList: News[]) => {
+  const { goTo } = useAppRouter();
   const [activeCategory, setActiveCategory] =
     useState<Select<News['category']>>('UnSelect');
 
@@ -18,10 +20,12 @@ export const useNewsMainPage = (newsList: News[]) => {
     []
   );
 
-  const handleClickCardItem = useCallback((id: News['newsID']) => {
-    // FIXME: 詳細ページへの遷移を実装する。
-    console.log(id);
-  }, []);
+  const handleClickCardItem = useCallback(
+    (id: News['newsID']) => {
+      goTo('NEWS', id);
+    },
+    [goTo]
+  );
 
   return {
     filteredNewsList,
