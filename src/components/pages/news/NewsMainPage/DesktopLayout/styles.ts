@@ -12,6 +12,7 @@ export const styles = {
   }),
   innerContainer: css({
     display: 'flex',
+    flex: 1,
     maxWidth: MAX_WINDOW_WIDTH,
     minWidth: MIN_WINDOW_WIDTH,
     paddingInline: spaces.s,
@@ -24,16 +25,15 @@ export const styles = {
   }),
   rightContentsWrapper: css({
     display: 'flex',
+    width: '100%',
     flexDirection: 'column',
     flexShrink: 5,
   }),
   contentWrapper: css({
     display: 'flex',
-    width: '100%',
     flexDirection: 'column',
     paddingInline: spaces.s,
     paddingBlock: spaces.s,
     gap: spaces.m,
-    backGroundColor: 'red',
   }),
 };
