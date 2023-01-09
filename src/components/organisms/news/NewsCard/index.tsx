@@ -40,7 +40,7 @@ export const NewsCard: React.FC<Props> = ({
                 date: new Date(createdAt),
               })}
             </Label>
-            <Title Tag="h2" size={isMobile ? 'xs' : 'm'} maxLine={3}>
+            <Title Tag="h2" mqSizes={['xs', 'm']} maxLine={3}>
               {title}
             </Title>
           </div>

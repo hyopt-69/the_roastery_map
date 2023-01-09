@@ -11,12 +11,22 @@ import { getTypography, Typography } from '@/utils/typography';
 
 type BodySize = Extract<FontSize, 'l' | 'm' | 's' | 'xs' | 'xxs' | 'xxxs'>;
 
-export type StyleProps = {
-  size: BodySize;
-  mqSizes?: [BodySize, BodySize];
+type BodyBaseProps = {
   color?: Color;
   maxLine?: number;
 } & Partial<Typography>;
+
+type StaticBodyProps = {
+  size: BodySize;
+  mqSizes?: never;
+} & BodyBaseProps;
+
+type DynamicBodyProps = {
+  size?: never;
+  mqSizes: [BodySize, BodySize];
+} & BodyBaseProps;
+
+export type StyleProps = StaticBodyProps | DynamicBodyProps;
 
 export const getStyles = ({
   size,

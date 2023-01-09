@@ -42,7 +42,7 @@ export const RoasterCard: React.FC<Props> = ({
         <section css={styles.informationSection}>
           <div css={styles.upperInfoWrapper}>
             <div css={styles.namesWrapper}>
-              <Title Tag="h1" size={isMobile ? 's' : 'm'} maxLine={2}>
+              <Title Tag="h1" mqSizes={['s', 'm']} maxLine={2}>
                 {name}
               </Title>
               <Label size="xxxs" color="tapa" maxLine={1}>
@@ -58,7 +58,7 @@ export const RoasterCard: React.FC<Props> = ({
               <Icon pattern="HEART" size="s" fill="tapa" />
             </button>
           </div>
-          <Label size={isMobile ? 'xxxs' : 'xxs'} color="tapa" maxLine={1}>
+          <Label mqSizes={['xxxs', 'xxs']} color="tapa" maxLine={1}>
             {addressText}
           </Label>
         </section>

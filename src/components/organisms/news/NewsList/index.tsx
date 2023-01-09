@@ -2,7 +2,6 @@ import React from 'react';
 
 import { Divider } from '@/components/atoms/Divider';
 import { News } from '@/domains/news/types';
-import { useResponsive } from '@/hooks/useResponsive';
 import { getIsSameMonth, getFormatDate } from '@/utils/date';
 
 import { styles } from './styles';
@@ -15,8 +14,6 @@ type Props = {
 };
 
 export const NewsList: React.FC<Props> = ({ newsList, onClickCardItem }) => {
-  const { isMobile } = useResponsive();
-
   return (
     <div css={styles.container}>
       {newsList.map((news, i) => {
@@ -34,7 +31,7 @@ export const NewsList: React.FC<Props> = ({ newsList, onClickCardItem }) => {
             <NewsCard onClick={() => onClickCardItem(news.newsID)} {...news} />
             {nextNews && !isSameMonth && (
               <Divider
-                labelSize={isMobile ? 'xxxs' : 'xxs'}
+                labelSize="xxxs"
                 label={getFormatDate({
                   date: new Date(nextNews.createdAt),
                   format: 'yyyy.MM',
