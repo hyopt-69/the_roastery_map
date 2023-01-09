@@ -30,6 +30,7 @@ export const NewsSideMenu: React.FC<Props> = ({
 
           return (
             <button
+              key={category}
               type="button"
               css={menuItem(isActive)}
               disabled={isActive}

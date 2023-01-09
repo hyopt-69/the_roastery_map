@@ -31,9 +31,9 @@ export type News = {
   // 投稿者
   author: Admin;
   // コンテンツ(MD形式で本文の全て含む)
-  contents: string;
+  article: string;
   // ニュース内容の期限(イベントの開催日時や、キャンペーンの有効期限など)
   period: Nullable<Period>;
   // ニュースに関連しているお店のid
-  participants: Shop['shopID'][];
+  participants: Shop[];
 };
