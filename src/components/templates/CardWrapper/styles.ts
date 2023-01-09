@@ -24,6 +24,7 @@ export const getStyles = ({
   hasTransition = true,
 }: StyleProps) =>
   css({
+    width: '100%',
     overflow: 'hidden',
     backgroundColor: colors.white,
     borderRadius: borderRadiuses.l,

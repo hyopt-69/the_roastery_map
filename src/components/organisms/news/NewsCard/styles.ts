@@ -27,6 +27,7 @@ export const styles = {
 
   contentWrapper: css({
     display: 'flex',
+    flex: 1,
     flexDirection: 'column',
     justifyContent: 'space-between',
   }),
