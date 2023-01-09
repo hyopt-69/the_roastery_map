@@ -8,6 +8,7 @@ import { spaces } from '@/theme/spaces';
 export const styles = {
   container: css({
     display: 'flex',
+    flex: 1,
     flexDirection: 'column',
     alignItems: 'center',
     backgroundColor: colors.white,
@@ -21,6 +22,7 @@ export const styles = {
   }),
   contentWrapper: css({
     display: 'flex',
+    width: '100%',
     flexDirection: 'column',
     paddingInline: spaces.s,
     paddingBlock: spaces.s,
