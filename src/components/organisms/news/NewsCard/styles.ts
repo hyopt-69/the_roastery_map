@@ -40,6 +40,7 @@ export const styles = {
 
   informationWrapper: css({
     display: 'flex',
+    width: '100%',
     alignItems: 'center',
     justifyContent: 'space-between',
   }),
