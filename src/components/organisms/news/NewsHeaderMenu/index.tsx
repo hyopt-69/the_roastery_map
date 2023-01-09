@@ -24,14 +24,14 @@ export const NewsHeaderMenu: React.FC<Props> = ({
     <nav css={styles.container}>
       <ScrollWrapper>
         {NEWS_CATEGORY_LIST.map((category) => (
-          <>
+          <React.Fragment key={category}>
             <TertiaryButton onClick={() => onClickMenuItem(category)}>
               {NEWS_CATEGORY_LABEL[category]}
             </TertiaryButton>
             {activeCategory === category && (
               <Divider borderColor="mirage" borderWidth="l" />
             )}
-          </>
+          </React.Fragment>
         ))}
       </ScrollWrapper>
       <Divider borderColor="blackHaze" />

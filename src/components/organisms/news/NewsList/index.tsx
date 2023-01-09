@@ -30,8 +30,8 @@ export const NewsList: React.FC<Props> = ({ newsList, onClickCardItem }) => {
           });
 
         return (
-          <>
-            <NewsCard {...news} onClick={() => onClickCardItem(news.newsID)} />
+          <React.Fragment key={news.newsID}>
+            <NewsCard onClick={() => onClickCardItem(news.newsID)} {...news} />
             {nextNews && !isSameMonth && (
               <Divider
                 labelSize={isMobile ? 'xxxs' : 'xxs'}
@@ -41,7 +41,7 @@ export const NewsList: React.FC<Props> = ({ newsList, onClickCardItem }) => {
                 })}
               />
             )}
-          </>
+          </React.Fragment>
         );
       })}
     </div>
