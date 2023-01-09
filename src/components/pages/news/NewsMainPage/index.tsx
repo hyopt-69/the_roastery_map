@@ -1,20 +1,28 @@
 import React from 'react';
 
+import { News } from '@/domains/news/types';
 import { useResponsive } from '@/hooks/useResponsive';
 
 import { DesktopLayout } from './DesktopLayout';
 import { MobileLayout } from './MobileLayout';
 import { useNewsMainPage } from './hooks';
 
-export const NewsMainPage: React.FC = () => {
+type Props = {
+  newsList: News[];
+};
+export const NewsMainPage: React.FC<Props> = ({ newsList }) => {
   const { isMobile } = useResponsive();
-  const { newsList, activeCategory, handleClickMenuItem, handleClickCardItem } =
-    useNewsMainPage();
+  const {
+    filteredNewsList,
+    activeCategory,
+    handleClickMenuItem,
+    handleClickCardItem,
+  } = useNewsMainPage(newsList);
 
   if (isMobile) {
     return (
       <MobileLayout
-        newsList={newsList}
+        newsList={filteredNewsList}
         activeCategory={activeCategory}
         onClickMenuItem={handleClickMenuItem}
         onClickCardItem={handleClickCardItem}
@@ -23,7 +31,7 @@ export const NewsMainPage: React.FC = () => {
   }
   return (
     <DesktopLayout
-      newsList={newsList}
+      newsList={filteredNewsList}
       activeCategory={activeCategory}
       onClickMenuItem={handleClickMenuItem}
       onClickCardItem={handleClickCardItem}

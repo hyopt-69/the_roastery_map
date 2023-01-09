@@ -1,14 +1,15 @@
-import { useCallback, useState } from 'react';
+import { useCallback, useMemo, useState } from 'react';
 
 import { News } from '@/domains/news/types';
-import { getDummyArticleList } from '@/dummy/data/news';
 
-export const useNewsMainPage = () => {
+export const useNewsMainPage = (newsList: News[]) => {
   const [activeCategory, setActiveCategory] =
     useState<Select<News['category']>>('UnSelect');
 
-  // FIXME: 裏から取ってこれるようにする。
-  const [newsList] = useState<News[]>(getDummyArticleList(10));
+  // FIXME: フィルター機能を追加する。
+  const filteredNewsList = useMemo(() => {
+    return newsList;
+  }, [newsList]);
 
   const handleClickMenuItem: typeof setActiveCategory = useCallback(
     (category) => {
@@ -23,8 +24,8 @@ export const useNewsMainPage = () => {
   }, []);
 
   return {
+    filteredNewsList,
     activeCategory,
-    newsList,
     handleClickMenuItem,
     handleClickCardItem,
   };
