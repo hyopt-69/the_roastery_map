@@ -29,6 +29,6 @@ export const DUMMY_ROASTER_DATA: Roaster = {
   wholeSalers: [],
   smokingAvailability: 'noSmokable',
   chargingAvailability: 'noChargeable',
-  storeAvailability: 'noPresent',
   seatAvailability: 'benchSeats',
+  hasPhysicalStore: true,
 };

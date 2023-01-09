@@ -13,11 +13,11 @@ export const DUMMY_ARTICLE_DATA: News = {
   createdAt: new Date().toString(),
   period: null,
   author: 'Admin_1',
-  contents: `#ここにはMDファイルを入れる`,
+  article: `#ここにはMDファイルを入れる`,
   participants: [],
 };
 
-export const getDummyArticleList = (n: number) => {
+export const getDummyNewsList = (n: number) => {
   const arr = [...new Array(n).fill(DUMMY_ARTICLE_DATA)].map((d, i) => {
     const targetDate = new Date(d.createdAt);
     return {
