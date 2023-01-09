@@ -5,10 +5,10 @@ import { Label } from '@/components/atoms/Label';
 import { Tag } from '@/components/atoms/Tag';
 import { Title } from '@/components/atoms/Title';
 import { CardWrapper } from '@/components/templates/CardWrapper';
+import { MediaQueryElement } from '@/components/templates/MediaQueryElement';
 import { ADMIN_INFO } from '@/domains/admin/constants';
 import { NEWS_CATEGORY_LABEL } from '@/domains/news/constants';
 import { News } from '@/domains/news/types';
-import { useResponsive } from '@/hooks/useResponsive';
 import { getFormatDate } from '@/utils/date';
 
 import { styles } from './styles';
@@ -25,8 +25,6 @@ export const NewsCard: React.FC<Props> = ({
   author,
   onClick,
 }) => {
-  const { isMobile } = useResponsive();
-
   return (
     <CardWrapper>
       <div css={styles.container} onClick={onClick} role="none">
@@ -40,20 +38,22 @@ export const NewsCard: React.FC<Props> = ({
                 date: new Date(createdAt),
               })}
             </Label>
-            <Title Tag="h2" size={isMobile ? 'xs' : 'm'} maxLine={3}>
+            <Title Tag="h2" mqSizes={['xs', 'm']} maxLine={3}>
               {title}
             </Title>
           </div>
 
-          {!isMobile && (
-            <div css={styles.informationWrapper}>
-              <div css={styles.authorInformation}>
-                <Avatar size="s" src={ADMIN_INFO[author].image} />
-                <Label size="xxs">{ADMIN_INFO[author].name}</Label>
+          <MediaQueryElement
+            desktop={
+              <div css={styles.informationWrapper}>
+                <div css={styles.authorInformation}>
+                  <Avatar size="s" src={ADMIN_INFO[author].image} />
+                  <Label size="xxs">{ADMIN_INFO[author].name}</Label>
+                </div>
+                <Tag pattern="default" label={NEWS_CATEGORY_LABEL[category]} />
               </div>
-              <Tag pattern="default" label={NEWS_CATEGORY_LABEL[category]} />
-            </div>
-          )}
+            }
+          />
         </div>
       </div>
     </CardWrapper>

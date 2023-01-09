@@ -11,12 +11,21 @@ import { getTypography } from '@/utils/typography';
 
 type TitleSize = Extract<FontSize, 'xxl' | 'xl' | 'l' | 'm' | 's' | 'xs'>;
 
-export type StyleProps = {
-  size: TitleSize;
-  mqSizes?: [TitleSize, TitleSize];
+type BaseProps = {
   color?: Color;
   maxLine?: number;
 };
+
+type StaticTitleProps = {
+  size: TitleSize;
+  mqSizes?: never;
+} & BaseProps;
+
+type DynamicTitleProps = {
+  size?: never;
+  mqSizes: [TitleSize, TitleSize];
+} & BaseProps;
+export type StyleProps = StaticTitleProps | DynamicTitleProps;
 
 export const getStyles = ({
   size,

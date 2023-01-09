@@ -9,12 +9,22 @@ import {
 } from '@/utils/responsive';
 import { getTypography, Typography } from '@/utils/typography';
 
-export type StyleProps = {
-  size?: FontSize;
-  mqSizes?: [FontSize, FontSize];
+type LabelBaseProps = {
   color?: Color;
   maxLine?: number;
 } & Partial<Typography>;
+
+type StaticLabelProps = {
+  size: FontSize;
+  mqSizes?: never;
+} & LabelBaseProps;
+
+type DynamicLabelProps = {
+  size?: never;
+  mqSizes: [FontSize, FontSize];
+} & LabelBaseProps;
+
+export type StyleProps = StaticLabelProps | DynamicLabelProps;
 
 export const getStyles = ({
   size,

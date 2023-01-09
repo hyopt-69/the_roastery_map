@@ -7,7 +7,6 @@ import {
   NEWS_CATEGORY_LABEL,
 } from '@/domains/news/constants';
 import { News } from '@/domains/news/types';
-import { useResponsive } from '@/hooks/useResponsive';
 
 import { styles } from './styles';
 
@@ -16,14 +15,12 @@ type Props = {
 };
 
 export const NewsCategoryDescription: React.FC<Props> = ({ pattern }) => {
-  const { isMobile } = useResponsive();
-
   return (
     <div css={styles.container}>
-      <Title Tag="h1" size={isMobile ? 'm' : 'l'}>
+      <Title Tag="h1" mqSizes={['m', 'l']}>
         {NEWS_CATEGORY_LABEL[pattern]}
       </Title>
-      <Body size={isMobile ? 'xxxs' : 'xxs'} color="pumice">
+      <Body mqSizes={['xxxs', 'xxs']} color="pumice">
         {NEWS_CATEGORY_DESCRIPTION[pattern]}
       </Body>
     </div>

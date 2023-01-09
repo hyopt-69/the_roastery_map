@@ -1,7 +1,7 @@
 import React from 'react';
 
+import { MediaQueryElement } from '@/components/templates/MediaQueryElement';
 import { News } from '@/domains/news/types';
-import { useResponsive } from '@/hooks/useResponsive';
 
 import { DesktopLayout } from './DesktopLayout';
 import { MobileLayout } from './MobileLayout';
@@ -11,7 +11,6 @@ type Props = {
   newsList: News[];
 };
 export const NewsMainPage: React.FC<Props> = ({ newsList }) => {
-  const { isMobile } = useResponsive();
   const {
     filteredNewsList,
     activeCategory,
@@ -19,22 +18,24 @@ export const NewsMainPage: React.FC<Props> = ({ newsList }) => {
     handleClickCardItem,
   } = useNewsMainPage(newsList);
 
-  if (isMobile) {
-    return (
-      <MobileLayout
-        newsList={filteredNewsList}
-        activeCategory={activeCategory}
-        onClickMenuItem={handleClickMenuItem}
-        onClickCardItem={handleClickCardItem}
-      />
-    );
-  }
   return (
-    <DesktopLayout
-      newsList={filteredNewsList}
-      activeCategory={activeCategory}
-      onClickMenuItem={handleClickMenuItem}
-      onClickCardItem={handleClickCardItem}
+    <MediaQueryElement
+      mobile={
+        <MobileLayout
+          newsList={filteredNewsList}
+          activeCategory={activeCategory}
+          onClickMenuItem={handleClickMenuItem}
+          onClickCardItem={handleClickCardItem}
+        />
+      }
+      desktop={
+        <DesktopLayout
+          newsList={filteredNewsList}
+          activeCategory={activeCategory}
+          onClickMenuItem={handleClickMenuItem}
+          onClickCardItem={handleClickCardItem}
+        />
+      }
     />
   );
 };
