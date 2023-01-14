@@ -3,7 +3,7 @@ import React from 'react';
 import { getStyles, StyleProps } from './styles';
 
 type Props = {
-  children: string;
+  children: React.ReactNode;
 } & StyleProps;
 
 export const Label: React.FC<Props> = ({ children, ...styleProps }) => {

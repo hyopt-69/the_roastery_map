@@ -1,8 +1,10 @@
 import React from 'react';
 
+import { MediaQueryElement } from '@/components/templates/MediaQueryElement';
 import { News } from '@/domains/news/types';
 
-import { styles } from './styles';
+import { DesktopLayout } from './DesktopLayout';
+import { MobileLayout } from './MobileLayout';
 
 type Props = {
   news: News;
@@ -10,10 +12,9 @@ type Props = {
 
 export const NewsDetailPage: React.FC<Props> = ({ news }) => {
   return (
-    <div css={styles.container}>
-      <p>{news.newsID}</p>
-      <p>{news.title}</p>
-      <p>{news.article}</p>
-    </div>
+    <MediaQueryElement
+      mobile={<MobileLayout news={news} />}
+      desktop={<DesktopLayout news={news} />}
+    />
   );
 };

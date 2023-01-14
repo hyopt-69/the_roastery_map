@@ -3,6 +3,7 @@ import { addDays } from 'date-fns';
 import { News } from '@/domains/news/types';
 
 import { DUMMY_PNG } from '../asset';
+import { DUMMY_HTML } from '../html';
 
 export const DUMMY_ARTICLE_DATA: News = {
   newsID: 'dummy_news_id',
@@ -13,7 +14,7 @@ export const DUMMY_ARTICLE_DATA: News = {
   createdAt: new Date().toString(),
   period: null,
   author: 'Admin_1',
-  article: `#ここにはMDファイルを入れる`,
+  article: DUMMY_HTML,
   participants: [],
 };
 

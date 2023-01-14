@@ -3,7 +3,7 @@ import React from 'react';
 import { getStyles, StyleProps } from './styles';
 
 type Props = {
-  children: string;
+  children: React.ReactNode;
   Tag?: Extract<React.ElementType, 'h1' | 'h2' | 'h3' | 'h4'>;
 } & StyleProps;
 
