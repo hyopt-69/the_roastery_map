@@ -15,9 +15,11 @@ type Props = React.ComponentProps<typeof NewsSideMenu> &
 export const DesktopLayout: React.FC<Props> = ({
   newsList,
   activeCategory,
+  isVisibleDisplayMoreButton,
   onClickMenuItem,
   onClickCardItem,
   onClickResetButton,
+  onClickDisplayMoreButton,
 }) => {
   return (
     <BasicLayout currentPath="NEWS">
@@ -35,7 +37,9 @@ export const DesktopLayout: React.FC<Props> = ({
               {newsList.length ? (
                 <NewsList
                   newsList={newsList}
+                  isVisibleDisplayMoreButton={isVisibleDisplayMoreButton}
                   onClickCardItem={onClickCardItem}
+                  onClickDisplayMoreButton={onClickDisplayMoreButton}
                 />
               ) : (
                 <NewsListEmptyContent onClickResetButton={onClickResetButton} />
