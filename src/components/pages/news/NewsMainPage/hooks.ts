@@ -3,11 +3,11 @@ import { useCallback, useMemo, useState } from 'react';
 import { News } from '@/domains/news/types';
 import { useAppRouter } from '@/hooks/useAppRouter';
 
-const DISPLAY_LENGTH = 10;
+const INITIAL_DISPLAY_LENGTH = 5;
 
 export const useNewsMainPage = (newsList: News[]) => {
   const { goTo } = useAppRouter();
-  const [displayLength, setDisplayLength] = useState(DISPLAY_LENGTH);
+  const [displayLength, setDisplayLength] = useState(INITIAL_DISPLAY_LENGTH);
   const [activeCategory, setActiveCategory] =
     useState<Select<News['category']>>('UnSelect');
 
@@ -32,6 +32,11 @@ export const useNewsMainPage = (newsList: News[]) => {
     return displayLength < filteredNewsList.length;
   }, [filteredNewsList.length, displayLength]);
 
+  const handleResetFilter = useCallback(() => {
+    setActiveCategory('UnSelect');
+    setDisplayLength(INITIAL_DISPLAY_LENGTH);
+  }, []);
+
   const handleClickMenuItem = useCallback((category: typeof activeCategory) => {
     setActiveCategory(category);
   }, []);
@@ -44,13 +49,14 @@ export const useNewsMainPage = (newsList: News[]) => {
   );
 
   const handleClickDisplayMore = useCallback(() => {
-    setDisplayLength((pre) => pre + DISPLAY_LENGTH);
+    setDisplayLength((pre) => pre + INITIAL_DISPLAY_LENGTH);
   }, []);
 
   return {
     displayNewsList,
     activeCategory,
     isVisibleDisplayMoreButton,
+    handleResetFilter,
     handleClickDisplayMore,
     handleClickMenuItem,
     handleClickCardItem,

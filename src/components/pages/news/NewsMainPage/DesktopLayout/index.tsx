@@ -9,13 +9,15 @@ import { BasicLayout } from '@/components/templates/BasicLayout';
 import { styles } from './styles';
 
 type Props = React.ComponentProps<typeof NewsSideMenu> &
-  React.ComponentProps<typeof NewsList>;
+  React.ComponentProps<typeof NewsList> &
+  React.ComponentProps<typeof NewsListEmptyContent>;
 
 export const DesktopLayout: React.FC<Props> = ({
   newsList,
   activeCategory,
   onClickMenuItem,
   onClickCardItem,
+  onClickResetButton,
 }) => {
   return (
     <BasicLayout currentPath="NEWS">
@@ -36,7 +38,7 @@ export const DesktopLayout: React.FC<Props> = ({
                   onClickCardItem={onClickCardItem}
                 />
               ) : (
-                <NewsListEmptyContent />
+                <NewsListEmptyContent onClickResetButton={onClickResetButton} />
               )}
             </section>
           </div>

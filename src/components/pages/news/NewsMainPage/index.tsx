@@ -16,6 +16,7 @@ export const NewsMainPage: React.FC<Props> = ({ newsList }) => {
     activeCategory,
     isVisibleDisplayMoreButton,
     handleClickDisplayMore,
+    handleResetFilter,
     handleClickMenuItem,
     handleClickCardItem,
   } = useNewsMainPage(newsList);
@@ -28,6 +29,7 @@ export const NewsMainPage: React.FC<Props> = ({ newsList }) => {
           activeCategory={activeCategory}
           onClickMenuItem={handleClickMenuItem}
           onClickCardItem={handleClickCardItem}
+          onClickResetButton={handleResetFilter}
         />
       }
       desktop={
@@ -36,6 +38,7 @@ export const NewsMainPage: React.FC<Props> = ({ newsList }) => {
           activeCategory={activeCategory}
           onClickMenuItem={handleClickMenuItem}
           onClickCardItem={handleClickCardItem}
+          onClickResetButton={handleResetFilter}
         />
       }
     />

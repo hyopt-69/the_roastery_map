@@ -12,6 +12,6 @@ export default {
 
 export const Index: ComponentStoryObj<typeof BasicLayout> = {
   args: {
-    children: <DummyContent height={1200} backgroundColor={colors.blackHaze} />,
+    children: <DummyContent height={120} backgroundColor={colors.blackHaze} />,
   },
 };

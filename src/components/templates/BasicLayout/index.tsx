@@ -19,7 +19,7 @@ export const BasicLayout: React.FC<Props> = ({ children, currentPath }) => {
         <Header currentPath={currentPath} />
         <Divider borderColor="blackHaze" />
       </div>
-      {children}
+      <div css={styles.contentWrapper}>{children}</div>
       <Footer currentPath={currentPath} />
     </div>
   );
