@@ -9,13 +9,15 @@ import { BasicLayout } from '@/components/templates/BasicLayout';
 import { styles } from './styles';
 
 type Props = React.ComponentProps<typeof NewsHeaderMenu> &
-  React.ComponentProps<typeof NewsList>;
+  React.ComponentProps<typeof NewsList> &
+  React.ComponentProps<typeof NewsListEmptyContent>;
 
 export const MobileLayout: React.FC<Props> = ({
   newsList,
   activeCategory,
   onClickMenuItem,
   onClickCardItem,
+  onClickResetButton,
 }) => {
   return (
     <BasicLayout currentPath="NEWS">
@@ -31,7 +33,7 @@ export const MobileLayout: React.FC<Props> = ({
           {newsList.length ? (
             <NewsList newsList={newsList} onClickCardItem={onClickCardItem} />
           ) : (
-            <NewsListEmptyContent />
+            <NewsListEmptyContent onClickResetButton={onClickResetButton} />
           )}
         </section>
       </main>
