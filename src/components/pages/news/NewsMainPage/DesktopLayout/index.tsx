@@ -2,6 +2,7 @@ import React from 'react';
 
 import { NewsCategoryDescription } from '@/components/organisms/news/NewsCategoryDescription';
 import { NewsList } from '@/components/organisms/news/NewsList';
+import { NewsListEmptyContent } from '@/components/organisms/news/NewsListEmptyContent';
 import { NewsSideMenu } from '@/components/organisms/news/NewsSideMenu';
 import { BasicLayout } from '@/components/templates/BasicLayout';
 
@@ -29,7 +30,14 @@ export const DesktopLayout: React.FC<Props> = ({
           <div css={styles.rightContentsWrapper}>
             <NewsCategoryDescription pattern={activeCategory} />
             <section css={styles.contentWrapper}>
-              <NewsList newsList={newsList} onClickCardItem={onClickCardItem} />
+              {newsList.length ? (
+                <NewsList
+                  newsList={newsList}
+                  onClickCardItem={onClickCardItem}
+                />
+              ) : (
+                <NewsListEmptyContent />
+              )}
             </section>
           </div>
         </div>

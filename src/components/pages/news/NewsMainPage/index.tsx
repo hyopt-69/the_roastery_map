@@ -12,8 +12,10 @@ type Props = {
 };
 export const NewsMainPage: React.FC<Props> = ({ newsList }) => {
   const {
-    filteredNewsList,
+    displayNewsList,
     activeCategory,
+    isVisibleDisplayMoreButton,
+    handleClickDisplayMore,
     handleClickMenuItem,
     handleClickCardItem,
   } = useNewsMainPage(newsList);
@@ -22,7 +24,7 @@ export const NewsMainPage: React.FC<Props> = ({ newsList }) => {
     <MediaQueryElement
       mobile={
         <MobileLayout
-          newsList={filteredNewsList}
+          newsList={displayNewsList}
           activeCategory={activeCategory}
           onClickMenuItem={handleClickMenuItem}
           onClickCardItem={handleClickCardItem}
@@ -30,7 +32,7 @@ export const NewsMainPage: React.FC<Props> = ({ newsList }) => {
       }
       desktop={
         <DesktopLayout
-          newsList={filteredNewsList}
+          newsList={displayNewsList}
           activeCategory={activeCategory}
           onClickMenuItem={handleClickMenuItem}
           onClickCardItem={handleClickCardItem}
