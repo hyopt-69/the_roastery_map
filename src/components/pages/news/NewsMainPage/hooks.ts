@@ -37,9 +37,13 @@ export const useNewsMainPage = (newsList: News[]) => {
     setDisplayLength(INITIAL_DISPLAY_LENGTH);
   }, []);
 
-  const handleClickMenuItem = useCallback((category: typeof activeCategory) => {
-    setActiveCategory(category);
-  }, []);
+  const handleSelectCategory = useCallback(
+    (category: typeof activeCategory) => {
+      setActiveCategory(category);
+      setDisplayLength(INITIAL_DISPLAY_LENGTH);
+    },
+    []
+  );
 
   const handleClickCardItem = useCallback(
     (id: News['newsID']) => {
@@ -48,7 +52,7 @@ export const useNewsMainPage = (newsList: News[]) => {
     [goTo]
   );
 
-  const handleClickDisplayMore = useCallback(() => {
+  const handleAddDisplayedNews = useCallback(() => {
     setDisplayLength((pre) => pre + INITIAL_DISPLAY_LENGTH);
   }, []);
 
@@ -57,8 +61,8 @@ export const useNewsMainPage = (newsList: News[]) => {
     activeCategory,
     isVisibleDisplayMoreButton,
     handleResetFilter,
-    handleClickDisplayMore,
-    handleClickMenuItem,
+    handleAddDisplayedNews,
+    handleSelectCategory,
     handleClickCardItem,
   };
 };

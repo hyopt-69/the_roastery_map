@@ -8,7 +8,7 @@ export const styles = {
     flexDirection: 'column',
     justifyContent: 'center',
     alignItems: 'flex-start',
-    gap: spaces.s,
+    gap: spaces.m,
     paddingInline: spaces.xs,
     paddingBlock: spaces.s,
   }),

@@ -27,7 +27,7 @@ export const NewsListEmptyContent: React.FC<Props> = ({
         iconPattern="EQUALIZER"
         onClick={onClickResetButton}
       >
-        検索結果をリセット
+        フィルターをリセット
       </TertiaryButton>
     </div>
   );

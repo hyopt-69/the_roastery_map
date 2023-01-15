@@ -7,6 +7,7 @@ import { spaces } from '@/theme/spaces';
 export const styles = {
   container: css({
     display: 'flex',
+    flex: 1,
     justifyContent: 'center',
     backgroundColor: colors.white,
   }),
@@ -20,7 +21,7 @@ export const styles = {
   sideNavigationWrapper: css({
     display: 'flex',
     flexShrink: 3,
-    width: 300,
+    width: '300px',
     borderRight: `1px solid ${colors.blackHaze}`,
   }),
   rightContentsWrapper: css({

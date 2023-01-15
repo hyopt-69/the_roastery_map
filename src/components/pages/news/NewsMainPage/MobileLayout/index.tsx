@@ -15,9 +15,11 @@ type Props = React.ComponentProps<typeof NewsHeaderMenu> &
 export const MobileLayout: React.FC<Props> = ({
   newsList,
   activeCategory,
+  isVisibleDisplayMoreButton,
   onClickMenuItem,
   onClickCardItem,
   onClickResetButton,
+  onClickDisplayMoreButton,
 }) => {
   return (
     <BasicLayout currentPath="NEWS">
@@ -31,7 +33,12 @@ export const MobileLayout: React.FC<Props> = ({
         <NewsCategoryDescription pattern={activeCategory} />
         <section css={styles.contentWrapper}>
           {newsList.length ? (
-            <NewsList newsList={newsList} onClickCardItem={onClickCardItem} />
+            <NewsList
+              newsList={newsList}
+              isVisibleDisplayMoreButton={isVisibleDisplayMoreButton}
+              onClickCardItem={onClickCardItem}
+              onClickDisplayMoreButton={onClickDisplayMoreButton}
+            />
           ) : (
             <NewsListEmptyContent onClickResetButton={onClickResetButton} />
           )}

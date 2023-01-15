@@ -15,9 +15,9 @@ export const NewsMainPage: React.FC<Props> = ({ newsList }) => {
     displayNewsList,
     activeCategory,
     isVisibleDisplayMoreButton,
-    handleClickDisplayMore,
+    handleAddDisplayedNews,
     handleResetFilter,
-    handleClickMenuItem,
+    handleSelectCategory,
     handleClickCardItem,
   } = useNewsMainPage(newsList);
 
@@ -27,7 +27,9 @@ export const NewsMainPage: React.FC<Props> = ({ newsList }) => {
         <MobileLayout
           newsList={displayNewsList}
           activeCategory={activeCategory}
-          onClickMenuItem={handleClickMenuItem}
+          isVisibleDisplayMoreButton={isVisibleDisplayMoreButton}
+          onClickDisplayMoreButton={handleAddDisplayedNews}
+          onClickMenuItem={handleSelectCategory}
           onClickCardItem={handleClickCardItem}
           onClickResetButton={handleResetFilter}
         />
@@ -36,7 +38,9 @@ export const NewsMainPage: React.FC<Props> = ({ newsList }) => {
         <DesktopLayout
           newsList={displayNewsList}
           activeCategory={activeCategory}
-          onClickMenuItem={handleClickMenuItem}
+          isVisibleDisplayMoreButton={isVisibleDisplayMoreButton}
+          onClickDisplayMoreButton={handleAddDisplayedNews}
+          onClickMenuItem={handleSelectCategory}
           onClickCardItem={handleClickCardItem}
           onClickResetButton={handleResetFilter}
         />
