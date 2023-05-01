@@ -16,7 +16,7 @@
   "dependencies": {
     "@emotion/babel-preset-css-prop": "11.10.0",
     "@emotion/react": "11.10.8",
-    "@svgr/webpack": "6.5.1",
+    "@svgr/webpack": "7.0.0",
     "date-fns": "2.30.0",
     "facepaint": "1.2.1",
     "html-react-parser": "3.0.16",
