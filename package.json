@@ -65,6 +65,6 @@
     "stylelint": "15.6.0",
     "stylelint-config-prettier": "9.0.5",
     "stylelint-prettier": "3.0.0",
-    "typescript": "5.0.4"
+    "typescript": "5.9.3"
   }
 }
